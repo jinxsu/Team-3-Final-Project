@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering.Universal;
@@ -11,7 +13,12 @@ public class PlayerControllerScript : MonoBehaviour
     private PlayerControls controls;
 
     [SerializeField] 
-    private float moveSpeed = 6f;
+    private float baseMoveSpeed = 6f;
+    
+    [SerializeField] 
+    private float crouchSpeed = 3f;
+
+    private float moveSpeed;
 
     private Vector3 velocity;
 
@@ -43,11 +50,21 @@ public class PlayerControllerScript : MonoBehaviour
 
     private float recentJumpTimer = 0.5f;
 
+    private Vector3 crouchScale = new Vector3(1f, 0.75f, 1f);
+
+    private Vector3 standScale = new Vector3(1f,1f,1f);
+
+    private float crouchCamHeight = 0f;
+
+    private float standCamHeight = 1.567f;
+
+
     void Awake()
     {
         controls = new PlayerControls();
         controller = GetComponent<CharacterController>();
         coyoteTimer = coyoteTimerStart;
+        moveSpeed = baseMoveSpeed;
     }
 
     private void OnEnable()
@@ -65,6 +82,7 @@ public class PlayerControllerScript : MonoBehaviour
     {
         Jump();
         Grav();
+        Crouch();
         PlayerMovement();
 
         if (recentJump)
@@ -78,6 +96,20 @@ public class PlayerControllerScript : MonoBehaviour
             }
         }
 
+    }
+
+    private void Crouch()
+    {
+        if (controls.Player.Crouch.IsPressed())
+        {
+            moveSpeed = crouchSpeed;
+            transform.localScale = crouchScale;
+        }
+        else
+        {
+            moveSpeed = baseMoveSpeed;
+            transform.localScale = standScale;
+        }
     }
 
     //Basic movement functions
