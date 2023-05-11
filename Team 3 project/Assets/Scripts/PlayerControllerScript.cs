@@ -58,6 +58,11 @@ public class PlayerControllerScript : MonoBehaviour
 
     private float standCamHeight = 1.567f;
 
+    [SerializeField]
+    private GameObject[] heldObject;
+
+    private int activeObject = 0;
+
 
     void Awake()
     {
@@ -65,6 +70,11 @@ public class PlayerControllerScript : MonoBehaviour
         controller = GetComponent<CharacterController>();
         coyoteTimer = coyoteTimerStart;
         moveSpeed = baseMoveSpeed;
+    }
+
+    private void Start()
+    {
+        Instantiate(heldObject[0],transform.GetChild(0).transform.GetChild(0),false);
     }
 
     private void OnEnable()
@@ -84,6 +94,7 @@ public class PlayerControllerScript : MonoBehaviour
         Grav();
         Crouch();
         PlayerMovement();
+        WeaponSwap();
 
         if (recentJump)
         {
@@ -95,7 +106,41 @@ public class PlayerControllerScript : MonoBehaviour
                 recentJump = false;
             }
         }
+        
 
+    }
+
+    private void WeaponSwap()
+    {
+        float scrollVar = controls.Player.WeaponScroll.ReadValue<Vector2>().y;
+        if (scrollVar > 0f)
+        {
+            
+            if (activeObject -1 < 0)
+            {
+                activeObject = heldObject.Length - 1;
+            }
+            else
+            {
+                activeObject -= 1;
+            }
+            Destroy(transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).gameObject);
+            Instantiate(heldObject[activeObject], transform.GetChild(0).transform.GetChild(0), false);
+        }
+        if (scrollVar < 0f || controls.Player.WeaponNext.triggered)
+        {
+            
+            if (activeObject + 1 == heldObject.Length)
+            {
+                activeObject = 0;
+            }
+            else
+            {
+                activeObject += 1;
+            }
+            Destroy(transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).gameObject);
+            Instantiate(heldObject[activeObject], transform.GetChild(0).transform.GetChild(0), false);
+        }
     }
 
     private void Crouch()
