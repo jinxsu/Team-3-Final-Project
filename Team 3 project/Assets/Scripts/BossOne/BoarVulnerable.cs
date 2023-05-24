@@ -5,6 +5,8 @@ using UnityEngine;
 public class BoarVulnerable : State
 {
     protected BoarBossStateController bsc;
+
+
     protected override void OnEnter()
     {
         // Code placed here can be overridden

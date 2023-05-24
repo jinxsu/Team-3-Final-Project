@@ -6,8 +6,8 @@ using UnityEngine;
 public class State
 {
     public StateController sc;
-    IState currentState;
-
+    //IState currentState;
+    
     public virtual void OnStateEnter(StateController stateController)
     {
         sc = stateController;

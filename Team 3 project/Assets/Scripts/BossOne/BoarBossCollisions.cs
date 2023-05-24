@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Transactions;
 using UnityEngine;
 
 public class BoarBossCollisions : MonoBehaviour
 {
     [SerializeField] BoarBossStateController bsc;
+    [SerializeField] LayerMask groundMask;
 
     //Checking for Bullet hit, will always override chase and update charge
     public void OnCollisionEnter(Collision collision)
     {
+        
         if (collision.transform.tag == "PistolBullet")
         {
             Destroy(collision.gameObject);
@@ -19,8 +22,20 @@ public class BoarBossCollisions : MonoBehaviour
                 bsc.ChangeState(bsc.ChargeState);
 
             }
-            
-            Debug.Log("OW HIT BY BULLET!");
+        }
+
+        //if(bsc.CheckCurrentState() is BoarCharge)
+        else if (collision.gameObject.layer == 8)
+        {
+            Debug.Log("Collided with not Bullet or ground");
+
+            bsc.ChangeState(bsc.RecoilState);
+
+        }
+        else
+        {
+            Debug.Log("Collided with  ground");
+            bsc.ChangeState(bsc.RecoilState);
         }
     }
 

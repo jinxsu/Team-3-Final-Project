@@ -10,8 +10,6 @@ public class BoarBossStateController : StateController
     
     public State ChargeState = new BoarCharge();
 
-    
-
     // Start is called before the first frame update
     void Start()
     {
