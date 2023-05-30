@@ -19,11 +19,12 @@ public class BoarPatrol : BoarVulnerable
         // Code placed here can be overridden
         //Debug.Log("Chase coords: " + target.transform.position);
         sc.transform.LookAt(target.transform);
-
-        if (Vector3.Distance(sc.transform.position, target.transform.position) >= minDist)
-        {
-            sc.transform.position += sc.transform.forward * moveSpd * Time.deltaTime;
-        }
+        bsc.navMeshAgent.destination = target.transform.position;
+        
+        //if (Vector3.Distance(sc.transform.position, target.transform.position) >= minDist)
+        //{
+        //    sc.transform.position += sc.transform.forward * moveSpd * Time.deltaTime;
+        //}
     }
 
     protected override void OnEnter()
@@ -31,8 +32,12 @@ public class BoarPatrol : BoarVulnerable
         base.OnEnter();
         target = GameObject.FindWithTag("Player");
         Debug.Log("Chase State");
-
-
+        bsc.navMeshAgent.enabled = true;
+        bsc.navMeshAgent.ResetPath();
+        if (bsc.navMeshAgent.isStopped)
+        {
+            bsc.navMeshAgent.isStopped = false;
+        }
     }
 
     protected override void OnExit()

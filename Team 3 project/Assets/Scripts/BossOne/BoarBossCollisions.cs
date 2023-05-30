@@ -32,9 +32,14 @@ public class BoarBossCollisions : MonoBehaviour
             bsc.ChangeState(bsc.RecoilState);
 
         }
-        else
+        else if (collision.gameObject.layer == 6)
         {
             Debug.Log("Collided with  ground");
+          //  bsc.ChangeState(bsc.RecoilState);
+        }
+        else if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("Collided with  player");
             bsc.ChangeState(bsc.RecoilState);
         }
     }

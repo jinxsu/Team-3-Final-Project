@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BoarCharge : BoarVulnerable
 {
-    protected Vector3 target;
+    protected GameObject target;
     private float chargePause = 3f;
     private float chargePauseTimer;
     private int moveSpd = 20;
@@ -34,12 +34,14 @@ public class BoarCharge : BoarVulnerable
     protected override void OnEnter()
     {
         base.OnEnter();
-        target = GameObject.FindWithTag("Player").transform.position;
+        target = GameObject.FindWithTag("Player");
         Debug.Log("Charge State");
 
-        sc.transform.LookAt(target);
+        sc.transform.LookAt(target.transform.position);
         chargePauseTimer = chargePause;
         chargeMaxTimer = chargeMax;
+
+        bsc.navMeshAgent.enabled = false;
     }
 
     protected override void OnExit()

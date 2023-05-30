@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class BoarBossStateController : StateController
 {
@@ -9,6 +11,13 @@ public class BoarBossStateController : StateController
     public State RecoilState = new BoarRecoil();
     
     public State ChargeState = new BoarCharge();
+
+    public NavMeshAgent navMeshAgent;
+
+    private void Awake()
+    {
+        navMeshAgent = GetComponent<NavMeshAgent>();
+    }
 
     // Start is called before the first frame update
     void Start()
