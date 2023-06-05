@@ -23,6 +23,7 @@ public class BoarBossCollisions : MonoBehaviour
 
             }
         }
+        
 
         //if(bsc.CheckCurrentState() is BoarCharge)
         else if (collision.gameObject.layer == 8)
@@ -48,12 +49,12 @@ public class BoarBossCollisions : MonoBehaviour
     //Checking for trap trigger, that will be bigger than the trap collider
     void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag == "Trap")
+        if (other.transform.tag == "Trap" && bsc.CheckCurrentState() == bsc.ChargeState)
         {
             if (bsc.CheckCurrentState() is BoarVulnerable)
             {
                 bsc.ChangeState(bsc.RecoilState);
-
+                Debug.Log("OW! A TRAP");
             }
         }
     }

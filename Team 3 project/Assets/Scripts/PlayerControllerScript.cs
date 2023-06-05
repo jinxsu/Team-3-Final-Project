@@ -10,7 +10,7 @@ using UnityEngine.Rendering.Universal;
 public class PlayerControllerScript : MonoBehaviour
 {
 
-    private PlayerControls controls;
+    public PlayerControls controls;
 
     [SerializeField] 
     private float baseMoveSpeed = 6f;
@@ -107,7 +107,7 @@ public class PlayerControllerScript : MonoBehaviour
             }
         }
         
-
+        
     }
 
     private void WeaponSwap()

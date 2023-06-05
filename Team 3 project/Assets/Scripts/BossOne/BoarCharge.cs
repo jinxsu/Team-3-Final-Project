@@ -36,8 +36,8 @@ public class BoarCharge : BoarVulnerable
         base.OnEnter();
         target = GameObject.FindWithTag("Player");
         Debug.Log("Charge State");
-
-        sc.transform.LookAt(target.transform.position);
+        Vector3 chargeTarget = new Vector3(target.transform.position.x, bsc.transform.position.y, target.transform.position.z);
+        sc.transform.LookAt(chargeTarget);
         chargePauseTimer = chargePause;
         chargeMaxTimer = chargeMax;
 
