@@ -19,6 +19,7 @@ public class ButtonTrapScript : MonoBehaviour
         { 
             player = other.gameObject.GetComponent<PlayerControllerScript>().controls;
             playerDetected = true;
+            Debug.Log("player detected");
         }
     }
 
@@ -26,9 +27,9 @@ public class ButtonTrapScript : MonoBehaviour
     {
         if (playerDetected)
         {
-            if(player.Player.Interact.triggered)
+            if (player.Player.Interact.triggered)
             {
-                Instantiate(trapToSpawn, spawnLocation.transform.position,spawnLocation.transform.rotation);
+                Instantiate(trapToSpawn, spawnLocation.transform.position, spawnLocation.transform.rotation);
             }
         }
     }
