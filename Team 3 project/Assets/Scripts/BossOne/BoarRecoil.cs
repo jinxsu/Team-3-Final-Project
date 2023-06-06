@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BoarRecoil : State
 {
+
+    //This is the state that happens after a boss either hits a trap, charges into a wall, or hits the player
+
     BoarBossStateController bsc;
 
     private float recoilStun;
@@ -11,7 +14,7 @@ public class BoarRecoil : State
     private int moveSpd = 4;
     protected override void OnEnter()
     {
-        // Code placed here can be overridden
+        // Initiation of variables for this state
         bsc = (BoarBossStateController)sc;
         recoilStunTimer = 4f;
         Debug.Log("Recoil State");
@@ -19,6 +22,7 @@ public class BoarRecoil : State
 
     protected override void OnUpdate()
     {
+        //This makes the boss back up, it doesn't account for anything such as gravity or edges for now
         sc.transform.position -= sc.transform.forward * moveSpd * Time.deltaTime;
         recoilStunTimer -= Time.deltaTime;
         if (recoilStunTimer < 0)
@@ -26,6 +30,5 @@ public class BoarRecoil : State
             bsc.ChangeState(bsc.PatrolState);
         }
     }
-    // Start is called before the first frame update
 
 }

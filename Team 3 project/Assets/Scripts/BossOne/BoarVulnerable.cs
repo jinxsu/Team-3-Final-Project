@@ -4,29 +4,16 @@ using UnityEngine;
 
 public class BoarVulnerable : State
 {
+    //States that have this as a parent are able to have their actions interrupted by being shot so that the boss will charge
+    
     protected BoarBossStateController bsc;
 
 
     protected override void OnEnter()
     {
-        // Code placed here can be overridden
+        //Establishing a variable that is frequently used here so that all the children automatically have it
         bsc = (BoarBossStateController)sc;
         Debug.Log("Vulnerable Enter");
     }
 
-
-    // Start is called before the first frame update
-    protected override void  OnHurt()
-    {
-        // Code placed here can be overridden
-
-        
-    }
-
-
-    //Checking for Bullet hit, will always override chase and update charge
-    public void OnCollisionEnter(Collision collision)
-    {
-       
-    }
 }

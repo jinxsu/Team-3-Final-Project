@@ -12,6 +12,8 @@ public class BoarBossStateController : StateController
     
     public State ChargeState = new BoarCharge();
 
+    public State FallState = new BoarFall();
+
     public NavMeshAgent navMeshAgent;
 
     private void Awake()

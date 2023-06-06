@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class BoarPatrol : BoarVulnerable
 {
+    //This is the boss' main state where it chases the player
+
     protected GameObject target;
 
     
@@ -16,37 +18,29 @@ public class BoarPatrol : BoarVulnerable
     // Start is called before the first frame update
     protected override void OnUpdate()
     {
-        // Code placed here can be overridden
-        //Debug.Log("Chase coords: " + target.transform.position);
-        sc.transform.LookAt(target.transform);
-        bsc.navMeshAgent.destination = target.transform.position;
         
-        //if (Vector3.Distance(sc.transform.position, target.transform.position) >= minDist)
-        //{
-        //    sc.transform.position += sc.transform.forward * moveSpd * Time.deltaTime;
-        //}
+        //sc.transform.LookAt(target.transform); 
+        bsc.navMeshAgent.destination = target.transform.position;
+
     }
 
     protected override void OnEnter()
     {
+        //BoarVulnerable OnEnter
         base.OnEnter();
+
+        // Initiation of variables for this state
         target = GameObject.FindWithTag("Player");
         Debug.Log("Chase State");
+
+        //re-enabling navmesh agent after a charge
         bsc.navMeshAgent.enabled = true;
         bsc.navMeshAgent.ResetPath();
-        if (bsc.navMeshAgent.isStopped)
-        {
-            bsc.navMeshAgent.isStopped = false;
-        }
+        //if (bsc.navMeshAgent.isStopped)
+        //{
+        //    bsc.navMeshAgent.isStopped = false;
+        //}
     }
-
-    protected override void OnExit()
-    {
-        // Code placed here can be overridden
-    }
-
-    
-
 
 
 }
