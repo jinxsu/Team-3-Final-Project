@@ -10,7 +10,7 @@ using UnityEngine.Rendering.Universal;
 public class PlayerControllerScript : MonoBehaviour
 {
 
-    private PlayerControls controls;
+    public PlayerControls controls;
 
     [SerializeField] 
     private float baseMoveSpeed = 6f;
@@ -30,6 +30,8 @@ public class PlayerControllerScript : MonoBehaviour
     [SerializeField]
     private float jumpHeight = 2.4f;
 
+
+    //Coyote timer is used to determine how long a player can have slipped off of a surface and still jump
     [SerializeField]
     private float coyoteTimerStart = 3f;
 
@@ -107,11 +109,13 @@ public class PlayerControllerScript : MonoBehaviour
             }
         }
         
-
+        
     }
 
     private void WeaponSwap()
     {
+        //This function is how the player swaps between items in their inventory.
+        // It is built so that if we need to add items, or we chose to remove them, this script doesn't have to change
         float scrollVar = controls.Player.WeaponScroll.ReadValue<Vector2>().y;
         if (scrollVar > 0f)
         {
@@ -161,6 +165,7 @@ public class PlayerControllerScript : MonoBehaviour
 
     private void Jump()
     {
+        //Jumping has "coyote time" as a quality of life thing. If the player presses the space bar just too late, they still jump
         if (controls.Player.Jump.triggered && (isGrounded || coyoteTimer > 0))
         {
             velocity.y = MathF.Sqrt(jumpHeight * -2f * gravity);

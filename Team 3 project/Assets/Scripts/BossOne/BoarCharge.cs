@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class BoarCharge : BoarVulnerable
 {
+    //This is the boss' charge state. It can be reset by being shot again and doesn't account for gravity
+
     protected GameObject target;
     private float chargePause = 3f;
     private float chargePauseTimer;
@@ -33,22 +35,20 @@ public class BoarCharge : BoarVulnerable
 
     protected override void OnEnter()
     {
+        //BoarVulnerable OnEnter
         base.OnEnter();
+
+        // Initiation of variables for this state
         target = GameObject.FindWithTag("Player");
         Debug.Log("Charge State");
-
-        sc.transform.LookAt(target.transform.position);
+        Vector3 chargeTarget = new Vector3(target.transform.position.x, bsc.transform.position.y, target.transform.position.z);
+        sc.transform.LookAt(chargeTarget);
         chargePauseTimer = chargePause;
         chargeMaxTimer = chargeMax;
 
+        //disabling the navmesh agent so that the boar can charge off of cliffs
         bsc.navMeshAgent.enabled = false;
     }
-
-    protected override void OnExit()
-    {
-        // Code placed here can be overridden
-    }
-
 
     
 }
