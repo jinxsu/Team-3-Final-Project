@@ -68,10 +68,11 @@ public class PlayerControllerScript : MonoBehaviour
 
     void Awake()
     {
-        controls = new PlayerControls();
+        controls = InputManager.inputActions;
         controller = GetComponent<CharacterController>();
         coyoteTimer = coyoteTimerStart;
         moveSpeed = baseMoveSpeed;
+        
     }
 
     private void Start()
