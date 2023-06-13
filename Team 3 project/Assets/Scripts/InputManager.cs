@@ -13,9 +13,25 @@ public class InputManager : MonoBehaviour
     public static PlayerControls inputActions;
     public static bool editingKeyboardControls;
 
+    public static bool yInvert = false;
+    public static bool xInvert = false;
+
     public static event Action rebindComplete;
     public static event Action rebindCanceled;
     public static event Action<InputAction, int> rebindStarted;
+
+
+    public static void ToggleYInvert(bool toggleState)
+    {
+        yInvert = toggleState;
+        PlayerPrefs.SetInt("YInvert", (toggleState ? 1 : 0));
+    }
+
+    public static void ToggleXInvert(bool toggleState)
+    {
+        xInvert = toggleState;
+        PlayerPrefs.SetInt("XInvert", (toggleState ? 1 : 0));
+    }
 
 
     private void Awake()
@@ -25,6 +41,15 @@ public class InputManager : MonoBehaviour
             inputActions = new PlayerControls();
         }
         DontDestroyOnLoad(this.gameObject);
+
+        yInvert = (PlayerPrefs.GetInt("YInvert") != 0);
+        xInvert = (PlayerPrefs.GetInt("XInvert") != 0);
+    }
+
+
+    private void Update()
+    {
+        //Debug.Log(inputActions.currentControlScheme);
     }
 
     public static void StartRebind(string actionName, int bindingIndex, TextMeshProUGUI statusText, bool excludeMouse)

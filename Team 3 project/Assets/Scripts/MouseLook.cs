@@ -68,6 +68,23 @@ public class MouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (InputManager.yInvert)
+        {
+            invertValY = -1;
+        }
+        else
+        {
+            invertValY = 1;
+        }
+        if (InputManager.xInvert)
+        {
+            invertValX = -1;
+        }
+        else
+        {
+            invertValX = 1;
+        }
+
         Look();
     }
 }
