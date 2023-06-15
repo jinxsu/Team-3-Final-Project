@@ -12,4 +12,12 @@ public class SpikeTrapScript : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Boss")
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }

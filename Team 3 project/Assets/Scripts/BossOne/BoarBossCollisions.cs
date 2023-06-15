@@ -63,7 +63,7 @@ public class BoarBossCollisions : MonoBehaviour
     {
 
         //if the boss hits a trap's trigger zone this is what will be used to determine damage
-        if (other.transform.tag == "Trap" && bsc.CheckCurrentState() == bsc.ChargeState)
+        if (other.transform.tag == "Trap")
         {
             if (bsc.CheckCurrentState() is BoarVulnerable)
             {
