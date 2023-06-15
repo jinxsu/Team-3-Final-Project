@@ -10,8 +10,10 @@ public class MouseLook : MonoBehaviour
 
     private PlayerControls controls;
 
-    [SerializeField]
-    private float mouseSens = 100f;
+    
+    public float mouseSens;
+
+    public float controllerSens;
 
     private Vector2 mouseLook;
 
@@ -21,16 +23,20 @@ public class MouseLook : MonoBehaviour
 
     public int invertValX;
 
-    public int invertValY;  
+    public int invertValY;
+
+    
     // Start is called before the first frame update
 
     void Awake()
     {
-
+        
         playerBody = transform.parent;
 
         controls = new PlayerControls();
         Cursor.lockState = CursorLockMode.Locked;
+        mouseSens = (float)PlayerPrefs.GetInt("knmSens",100);
+        controllerSens = (float)PlayerPrefs.GetInt("ctrSens", 150);
 
     }
 
@@ -46,16 +52,47 @@ public class MouseLook : MonoBehaviour
 
     private void Look()
     {
+        InputAction playerControllerInput = controls.Player.Look;
         mouseLook = controls.Player.Look.ReadValue<Vector2>();
 
-        float mouseX = mouseLook.x * mouseSens * Time.deltaTime * invertValX;
-        float mouseY = mouseLook.y * mouseSens * Time.deltaTime * invertValY;
 
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        if (playerControllerInput.activeControl != null)
+        {
+            InputDevice device = playerControllerInput.activeControl.device;
 
-        transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
-        playerBody.Rotate(Vector3.up * mouseX);
+            //When the player is using a keyboard
+            if (device is Pointer)
+            {
+                
+
+                float mouseX = mouseLook.x * mouseSens * Time.deltaTime * invertValX;
+                float mouseY = mouseLook.y * mouseSens * Time.deltaTime * invertValY;
+
+                xRotation -= mouseY;
+                xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+                transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
+                playerBody.Rotate(Vector3.up * mouseX);
+            }
+
+            //When the player is using a controller
+            else if (device is Gamepad)
+            {
+                float controllerX = mouseLook.x * controllerSens * Time.deltaTime * invertValX;
+                float controllerY = mouseLook.y * controllerSens * Time.deltaTime * invertValY;
+
+                xRotation -= controllerY;
+                xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+                transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
+                playerBody.Rotate(Vector3.up * controllerX);
+            }
+        }
+        
+
+        
+
+        
 
     }
 
@@ -68,6 +105,8 @@ public class MouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        Debug.Log("Mouse Sensitivity :" + mouseSens.ToString());
         if (InputManager.yInvert)
         {
             invertValY = -1;

@@ -36,6 +36,17 @@ public class InputManager : MonoBehaviour
 
     private void Awake()
     {
+
+        if (!PlayerPrefs.HasKey("knmSens"))
+        {
+            PlayerPrefs.SetInt("knmSens", 100);
+        }
+        
+        if (!PlayerPrefs.HasKey("ctrSens"))
+        {
+            PlayerPrefs.SetInt("ctrSens", 150);
+        }
+
         if (inputActions== null)
         {
             inputActions = new PlayerControls();
