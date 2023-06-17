@@ -93,24 +93,25 @@ public class PlayerControllerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Jump();
-        Grav();
-        Crouch();
-        PlayerMovement();
-        WeaponSwap();
-
-        if (recentJump)
+        if(!PauseMenuScript.isPaused)
         {
-            recentJumpTimer -= Time.deltaTime;
+            Jump();
+            Grav();
+            Crouch();
+            PlayerMovement();
+            WeaponSwap();
 
-            if (recentJumpTimer < 0)
+            if (recentJump)
             {
-                recentJumpTimer = 0.5f;
-                recentJump = false;
+                recentJumpTimer -= Time.deltaTime;
+
+                if (recentJumpTimer < 0)
+                {
+                    recentJumpTimer = 0.5f;
+                    recentJump = false;
+                }
             }
         }
-        
-        
     }
 
     private void WeaponSwap()

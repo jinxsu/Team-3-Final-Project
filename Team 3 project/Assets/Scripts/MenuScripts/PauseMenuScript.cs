@@ -20,7 +20,7 @@ public class PauseMenuScript : MonoBehaviour
     public GameObject ctrSensSlider;
     public GameObject ctrSensValue;
 
-    public bool isPaused;
+    public static bool isPaused;
     // Start is called before the first frame update
     void Start()
     {

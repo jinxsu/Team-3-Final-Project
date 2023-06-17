@@ -49,7 +49,7 @@ public class SimpleShoot : MonoBehaviour
     void Update()
     {
         //If you want a different input, change it here
-        if (controls.Player.Fire.triggered)
+        if (controls.Player.Fire.triggered && !PauseMenuScript.isPaused)
         {
             //Calls animation on the gun that has the relevant animation events that will fire
             gunAnimator.SetTrigger("Fire");
