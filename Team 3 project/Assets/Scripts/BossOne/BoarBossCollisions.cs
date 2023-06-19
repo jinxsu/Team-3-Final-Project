@@ -42,7 +42,7 @@ public class BoarBossCollisions : MonoBehaviour
         else if (collision.gameObject.layer == 6)
         {
             Debug.Log("Collided with  ground");
-            if (bsc.CheckCurrentState() == bsc.FallState)
+            if (bsc.CheckCurrentState() == bsc.FallState || bsc.CheckCurrentState() == bsc.ChargeState)
             {
                 bsc.ChangeState(bsc.PatrolState);
             }
