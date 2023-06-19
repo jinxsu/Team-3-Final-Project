@@ -106,7 +106,7 @@ public class MouseLook : MonoBehaviour
     void Update()
     {
 
-        Debug.Log("Mouse Sensitivity :" + mouseSens.ToString());
+       
         if (InputManager.yInvert)
         {
             invertValY = -1;

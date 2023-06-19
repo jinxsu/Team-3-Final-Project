@@ -5,9 +5,10 @@ using UnityEngine;
 public class StateController : MonoBehaviour
 {
     protected State currentState;
+    public int hp;
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         if (currentState != null)
         {

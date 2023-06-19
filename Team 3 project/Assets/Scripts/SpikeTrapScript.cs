@@ -15,6 +15,7 @@ public class SpikeTrapScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Boss")
         {
+            other.GetComponent<StateController>().hp -= 1;
             Destroy(this.gameObject);
         }
     }
