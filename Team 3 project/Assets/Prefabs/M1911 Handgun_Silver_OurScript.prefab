@@ -78,7 +78,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1690370004738036, guid: a78a725941312494b930d664f3b315d0, type: 3}
       propertyPath: m_Name
-      value: M1911 Handgun_Silver
+      value: M1911 Handgun_Silver_OurScript
       objectReference: {fileID: 0}
     - target: {fileID: 4878850369403266, guid: a78a725941312494b930d664f3b315d0, type: 3}
       propertyPath: m_RootOrder
@@ -168,7 +168,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7759634740334517627}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7798968858712535683
+--- !u!114 &5456228013671949043
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -177,15 +177,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7757947126742549135}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6be84e4d7829855419c06b94e56bd135, type: 3}
+  m_Script: {fileID: 11500000, guid: 9bd8dbd899a6f2344a4146c0274277c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
-  casingPrefab: {fileID: 0}
-  muzzleFlashPrefab: {fileID: 0}
-  gunAnimator: {fileID: 0}
-  barrelLocation: {fileID: 0}
-  casingExitLocation: {fileID: 0}
-  destroyTimer: 2
-  shotPower: 500
-  ejectPower: 150
+  playerCam: {fileID: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 449

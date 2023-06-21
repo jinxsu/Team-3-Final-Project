@@ -1592,11 +1592,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 179628434311620107, guid: 34ddce59bf398ab44850029065948c5e,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 2390531471114590197, guid: 34ddce59bf398ab44850029065948c5e,
+        type: 3}
+      propertyPath: m_Name
+      value: Crosshair
+      objectReference: {fileID: 0}
+    - target: {fileID: 6122350639436458158, guid: 34ddce59bf398ab44850029065948c5e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6830388005406068974, guid: 34ddce59bf398ab44850029065948c5e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6830388005942920769, guid: 34ddce59bf398ab44850029065948c5e,
         type: 3}
       propertyPath: m_Name
       value: PlayerCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 6830388005942920780, guid: 34ddce59bf398ab44850029065948c5e,
+        type: 3}
+      propertyPath: groundMask.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 6830388005942920780, guid: 34ddce59bf398ab44850029065948c5e,
+        type: 3}
+      propertyPath: heldObject.Array.data[0]
+      value: 
+      objectReference: {fileID: 7757947126742549135, guid: 76bfc2ef3ed69fe418ca027d12e79c5e,
+        type: 3}
     - target: {fileID: 6830388005942920783, guid: 34ddce59bf398ab44850029065948c5e,
         type: 3}
       propertyPath: m_RootOrder
@@ -1651,6 +1682,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6830388006208403958, guid: 34ddce59bf398ab44850029065948c5e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6830388006415778089, guid: 34ddce59bf398ab44850029065948c5e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6830388006615613680, guid: 34ddce59bf398ab44850029065948c5e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6830388006615613692, guid: 34ddce59bf398ab44850029065948c5e,
         type: 3}
