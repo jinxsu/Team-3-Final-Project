@@ -20,12 +20,15 @@ public class PauseMenuScript : MonoBehaviour
     public GameObject ctrSensSlider;
     public GameObject ctrSensValue;
 
+    public GameObject playerUI;
+
     public static bool isPaused;
     // Start is called before the first frame update
     void Start()
     {
         pauseMenu.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player");
+        playerUI = GameObject.FindGameObjectWithTag("PlayerUI");
         playerControls = player.GetComponent<PlayerControllerScript>().controls;
         manager = GameObject.FindGameObjectWithTag("Manager");
     }
@@ -49,6 +52,7 @@ public class PauseMenuScript : MonoBehaviour
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
+        playerUI.SetActive(false);
         Time.timeScale = 0.0f;
         isPaused = true;
         Cursor.lockState = CursorLockMode.None;
@@ -57,6 +61,7 @@ public class PauseMenuScript : MonoBehaviour
     public void ResumeGame()
     {
         pauseMenu.SetActive(false);
+        playerUI.SetActive(true);
         Time.timeScale = 1.0f;
         isPaused = false;
         Cursor.lockState = CursorLockMode.Locked;

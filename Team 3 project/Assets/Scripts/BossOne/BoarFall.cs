@@ -29,7 +29,7 @@ public class BoarFall : State
         hitDistance = hitData.distance;
         if (hitDistance < 3)
         {
-            bsc.ChangeState(bsc.PatrolState);
+            bsc.ChangeState(bsc.RecoilState);
         }
     }
 
