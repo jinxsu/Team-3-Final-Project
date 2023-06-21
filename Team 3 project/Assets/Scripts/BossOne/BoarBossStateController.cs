@@ -53,4 +53,12 @@ public class BoarBossStateController : StateController
     {
         return currentState;
     }
+
+    public override void BossHitByRay()
+    {
+        if (currentState is BoarVulnerable )
+        {
+            ChangeState(ChargeState);
+        }
+    }
 }

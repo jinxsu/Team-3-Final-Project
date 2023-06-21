@@ -16,4 +16,6 @@ public class BoarVulnerable : State
         Debug.Log("Vulnerable Enter");
     }
 
+
+
 }
