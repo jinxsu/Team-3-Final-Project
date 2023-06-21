@@ -60,7 +60,14 @@ public class InputManager : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log(inputActions.currentControlScheme);
+        if (inputActions != null)
+        {
+            Debug.Log(inputActions.ToString());
+        }
+        else
+        {
+            Debug.Log("I stopped existing");
+        }
     }
 
     public static void StartRebind(string actionName, int bindingIndex, TextMeshProUGUI statusText, bool excludeMouse)

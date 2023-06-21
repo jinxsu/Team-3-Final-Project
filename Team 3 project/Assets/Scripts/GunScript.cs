@@ -12,15 +12,7 @@ public class GunScript : MonoBehaviour
 
     public LayerMask layerMask;
 
-    private void OnEnable()
-    {
-        controls.Enable();
-    }
 
-    private void OnDisable()
-    {
-        controls.Disable();
-    }
 
     private void Awake()
     {
@@ -44,10 +36,10 @@ public class GunScript : MonoBehaviour
     public void Shoot()
     {
         RaycastHit hit;
-        if(Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, 500, layerMask))
+        if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, 500, layerMask))
         {
             Debug.Log("Shot: " + hit.transform.tag);
-            if(hit.transform.tag == "Boss")
+            if (hit.transform.tag == "Boss")
             {
                 hit.transform.SendMessage("BossHitByRay");
             }
