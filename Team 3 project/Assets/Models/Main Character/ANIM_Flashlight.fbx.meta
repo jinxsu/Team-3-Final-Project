@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b14a86e7511901a4a8efe001b9349b70
+guid: 0bb6d93aa6a11a54ca6b23e67f376fe8
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -23,7 +23,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    importConstraints: 0
+    importConstraints: 1
     animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -33,18 +33,18 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: mixamo.com
+      name: Flashlight
       takeName: mixamo.com
       internalID: -203655887218126122
-      firstFrame: 0
-      lastFrame: 380
+      firstFrame: 4
+      lastFrame: 4
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -526,68 +526,68 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: Character_TPOSED(Clone)
+    - name: Character_FullBody(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Shirt
-      parentName: Character_TPOSED(Clone)
+      parentName: Character_FullBody(Clone)
       position: {x: 0.00044278178, y: -120.97654, z: -5.198341}
       rotation: {x: -0.6917135, y: 0, z: -0, w: 0.722172}
       scale: {x: 100, y: 100, z: 100}
     - name: Pants
-      parentName: Character_TPOSED(Clone)
+      parentName: Character_FullBody(Clone)
       position: {x: -0.00069338107, y: -90.32864, z: -1.5774697}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 103.67302, y: 103.67302, z: 103.67302}
     - name: Eyes
-      parentName: Character_TPOSED(Clone)
+      parentName: Character_FullBody(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Vest
-      parentName: Character_TPOSED(Clone)
+      parentName: Character_FullBody(Clone)
       position: {x: 0.00020466778, y: -120.76929, z: -5.851665}
       rotation: {x: -0.6886986, y: 0, z: -0, w: 0.72504777}
       scale: {x: 100.83211, y: 100.83211, z: 100.83211}
     - name: Buckle
-      parentName: Character_TPOSED(Clone)
+      parentName: Character_FullBody(Clone)
       position: {x: 0.008986318, y: 1.073065, z: -0.12532292}
       rotation: {x: -0.012118241, y: 0.022148255, z: 0.7041146, w: 0.7096374}
       scale: {x: 4.5718346, y: 3.9483447, z: 0.4900582}
     - name: Tie
-      parentName: Character_TPOSED(Clone)
+      parentName: Character_FullBody(Clone)
       position: {x: -0, y: 1.4718935, z: 0.058338918}
       rotation: {x: -0.2209239, y: 0, z: -0, w: 0.9752911}
       scale: {x: 4.523218, y: 4.523218, z: 1.1637897}
     - name: HairEyebrows
-      parentName: Character_TPOSED(Clone)
+      parentName: Character_FullBody(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Eyelashes
-      parentName: Character_TPOSED(Clone)
+      parentName: Character_FullBody(Clone)
       position: {x: -1.0483321, y: -162.7516, z: 4.833172}
       rotation: {x: -0.7439998, y: 0.020386193, z: 0.016441042, w: 0.6676664}
       scale: {x: 100, y: 100, z: 100}
     - name: BaseMesh
-      parentName: Character_TPOSED(Clone)
+      parentName: Character_FullBody(Clone)
       position: {x: -0, y: -87.05058, z: -1.5528996}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 100, y: 100, z: 100}
     - name: ShoeRight
-      parentName: Character_TPOSED(Clone)
+      parentName: Character_FullBody(Clone)
       position: {x: 0.14026904, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: ShoeLeft
-      parentName: Character_TPOSED(Clone)
+      parentName: Character_FullBody(Clone)
       position: {x: 0.1995478, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: mixamorig:Hips
-      parentName: Character_TPOSED(Clone)
+      parentName: Character_FullBody(Clone)
       position: {x: 0.000086893604, y: 0.9634125, z: 0.013255283}
       rotation: {x: 7.716392e-10, y: 0.0000000013106114, z: 2.0034992e-10, w: 1}
       scale: {x: 0.99999994, y: 0.99999994, z: 1}
