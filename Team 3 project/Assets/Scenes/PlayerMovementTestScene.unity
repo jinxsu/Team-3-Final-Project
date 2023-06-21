@@ -1602,6 +1602,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crosshair
       objectReference: {fileID: 0}
+    - target: {fileID: 4562255627523544974, guid: 34ddce59bf398ab44850029065948c5e,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 6122350639436458158, guid: 34ddce59bf398ab44850029065948c5e,
         type: 3}
       propertyPath: m_Layer
@@ -1619,15 +1624,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6830388005942920780, guid: 34ddce59bf398ab44850029065948c5e,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6830388005942920780, guid: 34ddce59bf398ab44850029065948c5e,
+        type: 3}
       propertyPath: groundMask.m_Bits
       value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 6830388005942920780, guid: 34ddce59bf398ab44850029065948c5e,
         type: 3}
+      propertyPath: heldObject.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6830388005942920780, guid: 34ddce59bf398ab44850029065948c5e,
+        type: 3}
       propertyPath: heldObject.Array.data[0]
+      value: 
+      objectReference: {fileID: 2204222607329406836, guid: 73ce359cd630ee24e91c8534746c9b3d,
+        type: 3}
+    - target: {fileID: 6830388005942920780, guid: 34ddce59bf398ab44850029065948c5e,
+        type: 3}
+      propertyPath: heldObject.Array.data[1]
       value: 
       objectReference: {fileID: 7757947126742549135, guid: 76bfc2ef3ed69fe418ca027d12e79c5e,
         type: 3}
+    - target: {fileID: 6830388005942920780, guid: 34ddce59bf398ab44850029065948c5e,
+        type: 3}
+      propertyPath: heldObject.Array.data[2]
+      value: 
+      objectReference: {fileID: 7757947126742549135, guid: 76bfc2ef3ed69fe418ca027d12e79c5e,
+        type: 3}
+    - target: {fileID: 6830388005942920782, guid: 34ddce59bf398ab44850029065948c5e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6830388005942920783, guid: 34ddce59bf398ab44850029065948c5e,
         type: 3}
       propertyPath: m_RootOrder
@@ -1711,7 +1743,7 @@ PrefabInstance:
     - target: {fileID: 6830388006615613694, guid: 34ddce59bf398ab44850029065948c5e,
         type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 375
+      value: 1527
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34ddce59bf398ab44850029065948c5e, type: 3}
