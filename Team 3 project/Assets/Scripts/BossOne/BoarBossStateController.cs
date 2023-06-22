@@ -49,10 +49,7 @@ public class BoarBossStateController : StateController
         ChangeState(PatrolState);
     }
 
-    public State CheckCurrentState()
-    {
-        return currentState;
-    }
+    
 
     public override void BossHitByRay()
     {

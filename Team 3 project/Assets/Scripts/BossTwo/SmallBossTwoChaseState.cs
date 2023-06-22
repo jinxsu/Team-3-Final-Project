@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SmallBossTwoChaseState : MonoBehaviour
+public class SmallBossTwoChaseState : SmallBossTwoVulnerable
 {
     // Start is called before the first frame update
     void Start()

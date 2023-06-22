@@ -3,17 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class BigBossTwoStateController : StateController
+public class SpitterBossTwoStateController : StateController
 {
-    BigBossTwoChargeState ChargeState = new BigBossTwoChargeState();
 
-    BigBossTwoChaseState ChaseState = new BigBossTwoChaseState();
+    SpitterBossTwoChaseState ChaseState = new SpitterBossTwoChaseState();
 
-    BigBossTwoDeathState DeathState = new BigBossTwoDeathState();
-
-    BigBossTwoFallState FallState = new BigBossTwoFallState();
-
-    BigBossTwoRecoilState RecoilState = new BigBossTwoRecoilState();
+    SpitterBossTwoSpitState SpitState = new SpitterBossTwoSpitState();
 
     public NavMeshAgent navMeshAgent;
 
@@ -25,7 +20,6 @@ public class BigBossTwoStateController : StateController
         navMeshAgent = GetComponent<NavMeshAgent>();
         hp = startHealth;
     }
-
 
     // Start is called before the first frame update
     void Start()

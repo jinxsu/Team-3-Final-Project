@@ -25,6 +25,11 @@ public class StateController : MonoBehaviour
         currentState.OnStateEnter(this);
     }
 
+    public State CheckCurrentState()
+    {
+        return currentState;
+    }
+
     public virtual void BossHitByRay()
     {
         Debug.Log("I was hit by a ray, but this hasn't been overriden.");

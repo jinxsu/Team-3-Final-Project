@@ -71,6 +71,7 @@ public class PauseMenuScript : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenuScene");
+        isPaused = false;
     }
 
     public void QuitGame()
@@ -95,14 +96,14 @@ public class PauseMenuScript : MonoBehaviour
     {
         knmSensValue.GetComponent<TextMeshProUGUI>().text = knmSensSlider.GetComponent<Slider>().value.ToString();
         PlayerPrefs.SetInt("knmSens", (int)knmSensSlider.GetComponent<Slider>().value * 5);
-        player.GetComponent<MouseLook>().mouseSens = (int)knmSensSlider.GetComponent<Slider>().value * 5;
+        player.GetComponentInChildren<MouseLook>().mouseSens = (int)knmSensSlider.GetComponent<Slider>().value * 5;
     }
 
     public void UpdateControllerSens()
     {
         ctrSensValue.GetComponent<TextMeshProUGUI>().text = ctrSensSlider.GetComponent<Slider>().value.ToString();
         PlayerPrefs.SetInt("ctrSens", (int)ctrSensSlider.GetComponent<Slider>().value * 10);
-        player.GetComponent<MouseLook>().controllerSens = (int)ctrSensSlider.GetComponent<Slider>().value * 10;
+        player.GetComponentInChildren<MouseLook>().controllerSens = (int)ctrSensSlider.GetComponent<Slider>().value * 10;
     }
 
     public void ToggleYInvert(bool toggleState)
