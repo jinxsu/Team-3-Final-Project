@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -65,6 +66,20 @@ public class PlayerControllerScript : MonoBehaviour
 
     private int activeObject = 0;
 
+    private bool swapping;
+    private bool goingUp;
+    private bool armWentDown;
+
+    [SerializeField] 
+    private GameObject holdPoint;
+
+    [SerializeField]
+    private Transform[] armPositions;
+    private Transform armTarget;
+
+    [SerializeField]
+    private float armSpeed;
+
 
     void Awake()
     {
@@ -100,6 +115,7 @@ public class PlayerControllerScript : MonoBehaviour
             Crouch();
             PlayerMovement();
             WeaponSwap();
+            MoveArm();
 
             if (recentJump)
             {
@@ -121,8 +137,53 @@ public class PlayerControllerScript : MonoBehaviour
         float scrollVar = controls.Player.WeaponScroll.ReadValue<Vector2>().y;
         if (scrollVar > 0f)
         {
-            
-            if (activeObject -1 < 0)
+            goingUp = true;
+            swapping = true;
+        }
+        if (scrollVar < 0f || controls.Player.WeaponNext.triggered)
+        {
+            goingUp = false; 
+            swapping = true;
+        }
+    }
+
+    private void MoveArm()
+    {
+        if (swapping)
+        {
+            if (armWentDown)
+            {
+                armTarget = armPositions[0];
+
+                if (holdPoint.transform.position == armTarget.position)
+                {
+                    swapping = false;
+                    armWentDown = false;
+                }
+            }
+            else
+            {
+                armTarget = armPositions[1];
+
+                if (holdPoint.transform.position == armTarget.position)
+                {
+                    ChangeWeapon();
+                    armWentDown = true;
+                }
+            }
+
+            Vector3 newPos = Vector3.MoveTowards(holdPoint.transform.position, armTarget.position, armSpeed * Time.deltaTime);
+            holdPoint.transform.position = newPos;
+        }
+    }
+
+
+
+    public void ChangeWeapon()
+    {
+        if(goingUp)
+        {
+            if (activeObject - 1 < 0)
             {
                 activeObject = heldObject.Length - 1;
             }
@@ -130,12 +191,11 @@ public class PlayerControllerScript : MonoBehaviour
             {
                 activeObject -= 1;
             }
-            Destroy(transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).gameObject);
-            Instantiate(heldObject[activeObject], transform.GetChild(0).transform.GetChild(0), false);
+            Destroy(GameObject.FindWithTag("HeldItem"));
+            Instantiate(heldObject[activeObject], holdPoint.transform, false);
         }
-        if (scrollVar < 0f || controls.Player.WeaponNext.triggered)
+        else
         {
-            
             if (activeObject + 1 == heldObject.Length)
             {
                 activeObject = 0;
@@ -144,8 +204,8 @@ public class PlayerControllerScript : MonoBehaviour
             {
                 activeObject += 1;
             }
-            Destroy(transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).gameObject);
-            Instantiate(heldObject[activeObject], transform.GetChild(0).transform.GetChild(0), false);
+            Destroy(GameObject.FindWithTag("HeldItem"));
+            Instantiate(heldObject[activeObject], holdPoint.transform, false);
         }
     }
 
