@@ -36,7 +36,7 @@ ModelImporter:
       name: Flashlight
       takeName: mixamo.com
       internalID: -203655887218126122
-      firstFrame: 4
+      firstFrame: 1
       lastFrame: 4
       wrapMode: 0
       orientationOffsetY: 0
@@ -45,7 +45,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
