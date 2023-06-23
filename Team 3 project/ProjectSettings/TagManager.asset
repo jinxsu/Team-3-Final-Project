@@ -9,6 +9,8 @@ TagManager:
   - Manager
   - Boss
   - PlayerUI
+  - HoldPoint
+  - HeldItem
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - Wall
   - HeldItems
   - Player
-  - 
+  - FullBodyPlayer
   - 
   - 
   - 

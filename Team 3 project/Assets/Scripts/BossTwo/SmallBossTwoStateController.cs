@@ -3,17 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class BigBossTwoStateController : StateController
+public class SmallBossTwoStateController : StateController
 {
-    BigBossTwoChargeState ChargeState = new BigBossTwoChargeState();
 
-    BigBossTwoChaseState ChaseState = new BigBossTwoChaseState();
 
-    BigBossTwoDeathState DeathState = new BigBossTwoDeathState();
+    SmallBossTwoChargeState ChargeState = new SmallBossTwoChargeState();    
 
-    BigBossTwoFallState FallState = new BigBossTwoFallState();
+    SmallBossTwoChargeState ChaseState = new SmallBossTwoChargeState();
 
-    BigBossTwoRecoilState RecoilState = new BigBossTwoRecoilState();
+    SmallBossTwoRecoilState RecoilState = new SmallBossTwoRecoilState();
 
     public NavMeshAgent navMeshAgent;
 
@@ -25,7 +23,6 @@ public class BigBossTwoStateController : StateController
         navMeshAgent = GetComponent<NavMeshAgent>();
         hp = startHealth;
     }
-
 
     // Start is called before the first frame update
     void Start()
