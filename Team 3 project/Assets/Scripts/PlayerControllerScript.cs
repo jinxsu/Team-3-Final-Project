@@ -10,9 +10,9 @@ using UnityEngine.Rendering.Universal;
 
 public class PlayerControllerScript : MonoBehaviour
 {
-
     public PlayerControls controls;
 
+    [Header("Player Movement")]
     [SerializeField] 
     private float baseMoveSpeed = 6f;
     
@@ -61,6 +61,8 @@ public class PlayerControllerScript : MonoBehaviour
 
     private float standCamHeight = 1.567f;
 
+    [Header("Arm Movement")]
+
     [SerializeField]
     private GameObject[] heldObject;
 
@@ -80,19 +82,27 @@ public class PlayerControllerScript : MonoBehaviour
     [SerializeField]
     private float armSpeed;
 
+    [Header("Animation")]
+
+    [SerializeField]
+    private Animator anim;
+
+    [SerializeField]
+    private Animator fullbodyAnim;
+
 
     void Awake()
     {
         controls = InputManager.inputActions;
         controller = GetComponent<CharacterController>();
+        anim = GetComponentInChildren<Animator>();
         coyoteTimer = coyoteTimerStart;
         moveSpeed = baseMoveSpeed;
-        
     }
 
     private void Start()
     {
-        Instantiate(heldObject[0],transform.GetChild(0).transform.GetChild(0),false);
+        Instantiate(heldObject[0], holdPoint.transform, false);
     }
 
     private void OnEnable()
@@ -113,6 +123,7 @@ public class PlayerControllerScript : MonoBehaviour
             Jump();
             Grav();
             Crouch();
+            Interact();
             PlayerMovement();
             WeaponSwap();
             MoveArm();
@@ -215,11 +226,24 @@ public class PlayerControllerScript : MonoBehaviour
         {
             moveSpeed = crouchSpeed;
             transform.localScale = crouchScale;
+            anim.SetBool("crouching", true);
+            fullbodyAnim.SetBool("crouching", true);
         }
         else
         {
             moveSpeed = baseMoveSpeed;
             transform.localScale = standScale;
+            anim.SetBool("crouching", false);
+            fullbodyAnim.SetBool("crouching", false);
+        }
+    }
+
+    private void Interact()
+    {
+        if(controls.Player.Interact.triggered)
+        {
+            //interact with item code here
+            anim.SetTrigger("interact");
         }
     }
 
@@ -243,6 +267,9 @@ public class PlayerControllerScript : MonoBehaviour
 
         Vector3 movement = (move.y * transform.forward) + (move.x * transform.right);
         controller.Move(movement * moveSpeed * Time.deltaTime);
+
+        anim.SetFloat("velocity", move.magnitude);
+        fullbodyAnim.SetFloat("velocity", move.magnitude);
     }
 
     private void Grav()
