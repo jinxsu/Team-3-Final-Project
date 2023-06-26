@@ -20,11 +20,6 @@ public class GunScript : MonoBehaviour
         playerCam = GameObject.FindWithTag("Player").GetComponentInChildren<Camera>();
     }
 
-    private void Start()
-    {
-        
-    }
-
     private void Update()
     {
         if (controls.Player.Fire.triggered && !PauseMenuScript.isPaused)

@@ -14,6 +14,7 @@ public class MainMenuScript : MonoBehaviour
 
     public GameObject ctrSensSlider;
     public GameObject ctrSensValue;
+    private Slider kSlider;
 
     public void Start()
     {
@@ -49,8 +50,12 @@ public class MainMenuScript : MonoBehaviour
 
     public void UpdateMouseSens()
     {
-        knmSensValue.GetComponent<TextMeshProUGUI>().text = knmSensSlider.GetComponent<Slider>().value.ToString();
-        PlayerPrefs.SetInt("knmSens", ((int)knmSensSlider.GetComponent<Slider>().value * 5));
+        if (kSlider == null)
+        {
+            kSlider = knmSensSlider.GetComponent<Slider>(); 
+        }
+        knmSensValue.GetComponent<TextMeshProUGUI>().text = kSlider.value.ToString();
+        PlayerPrefs.SetInt("knmSens", ((int)kSlider.value * 5));
     }
 
     public void UpdateControllerSens()

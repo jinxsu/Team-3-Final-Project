@@ -35,9 +35,8 @@ public class MouseLook : MonoBehaviour
 
         controls = new PlayerControls();
         Cursor.lockState = CursorLockMode.Locked;
-        mouseSens = (float)PlayerPrefs.GetInt("knmSens",100);
-        controllerSens = (float)PlayerPrefs.GetInt("ctrSens", 150);
-
+        mouseSens = PlayerPrefs.GetInt("knmSens", 100);
+        controllerSens = PlayerPrefs.GetInt("ctrSens", 150);
     }
 
     private void OnEnable()

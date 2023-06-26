@@ -1,22 +1,15 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
-using UnityEditor.UIElements;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.Rendering.Universal;
 
 public class PlayerControllerScript : MonoBehaviour
 {
     public PlayerControls controls;
 
     [Header("Player Movement")]
-    [SerializeField] 
+    [SerializeField]
     private float baseMoveSpeed = 6f;
-    
-    [SerializeField] 
+
+    [SerializeField]
     private float crouchSpeed = 3f;
 
     private float moveSpeed;
@@ -55,7 +48,7 @@ public class PlayerControllerScript : MonoBehaviour
 
     private Vector3 crouchScale = new Vector3(1f, 0.75f, 1f);
 
-    private Vector3 standScale = new Vector3(1f,1f,1f);
+    private Vector3 standScale = new Vector3(1f, 1f, 1f);
 
     private float crouchCamHeight = 0f;
 
@@ -72,7 +65,7 @@ public class PlayerControllerScript : MonoBehaviour
     private bool goingUp;
     private bool armWentDown;
 
-    [SerializeField] 
+    [SerializeField]
     private GameObject holdPoint;
 
     [SerializeField]
@@ -118,7 +111,7 @@ public class PlayerControllerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!PauseMenuScript.isPaused)
+        if (!PauseMenuScript.isPaused)
         {
             Jump();
             Grav();
@@ -153,7 +146,7 @@ public class PlayerControllerScript : MonoBehaviour
         }
         if (scrollVar < 0f || controls.Player.WeaponNext.triggered)
         {
-            goingUp = false; 
+            goingUp = false;
             swapping = true;
         }
     }
@@ -192,7 +185,7 @@ public class PlayerControllerScript : MonoBehaviour
 
     public void ChangeWeapon()
     {
-        if(goingUp)
+        if (goingUp)
         {
             if (activeObject - 1 < 0)
             {
@@ -202,8 +195,6 @@ public class PlayerControllerScript : MonoBehaviour
             {
                 activeObject -= 1;
             }
-            Destroy(GameObject.FindWithTag("HeldItem"));
-            Instantiate(heldObject[activeObject], holdPoint.transform, false);
         }
         else
         {
@@ -215,9 +206,9 @@ public class PlayerControllerScript : MonoBehaviour
             {
                 activeObject += 1;
             }
-            Destroy(GameObject.FindWithTag("HeldItem"));
-            Instantiate(heldObject[activeObject], holdPoint.transform, false);
         }
+        Destroy(GameObject.FindWithTag("HeldItem"));
+        Instantiate(heldObject[activeObject], holdPoint.transform, false);
     }
 
     private void Crouch()
@@ -240,7 +231,7 @@ public class PlayerControllerScript : MonoBehaviour
 
     private void Interact()
     {
-        if(controls.Player.Interact.triggered)
+        if (controls.Player.Interact.triggered)
         {
             //interact with item code here
             anim.SetTrigger("interact");
@@ -260,13 +251,13 @@ public class PlayerControllerScript : MonoBehaviour
         }
     }
 
-    
+
     private void PlayerMovement()
     {
         move = controls.Player.Move.ReadValue<Vector2>();
 
         Vector3 movement = (move.y * transform.forward) + (move.x * transform.right);
-        controller.Move(movement * moveSpeed * Time.deltaTime);
+        controller.Move(moveSpeed * Time.deltaTime * movement);
 
         anim.SetFloat("velocity", move.magnitude);
         fullbodyAnim.SetFloat("velocity", move.magnitude);
@@ -278,11 +269,11 @@ public class PlayerControllerScript : MonoBehaviour
 
         if (isGrounded)
         {
-            if (!recentJump)   coyoteTimer = coyoteTimerStart;
+            if (!recentJump) coyoteTimer = coyoteTimerStart;
         }
         else
         {
-            if (coyoteTimer > 0)    coyoteTimer -= Time.deltaTime;
+            if (coyoteTimer > 0) coyoteTimer -= Time.deltaTime;
         }
 
         if (isGrounded && velocity.y < 0)
