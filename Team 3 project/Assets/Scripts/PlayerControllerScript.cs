@@ -46,13 +46,14 @@ public class PlayerControllerScript : MonoBehaviour
 
     private float recentJumpTimer = 0.5f;
 
-    private Vector3 crouchScale = new Vector3(1f, 0.75f, 1f);
-
-    private Vector3 standScale = new Vector3(1f, 1f, 1f);
-
-    private float crouchCamHeight = 0f;
+    private Vector3 standCenter = new Vector3(0f, 1.15f, 0.15f);
+    private Vector3 crouchCenter = new Vector3(0f, 0.75f, 0.15f);
 
     private float standCamHeight = 1.567f;
+    private float crouchCamHeight = 1.1f;
+
+    private float standPlayerHeight = 2.2f;
+    private float crouchPlayerHeight = 1.5f;
 
     [Header("Arm Movement")]
 
@@ -216,14 +217,14 @@ public class PlayerControllerScript : MonoBehaviour
         if (controls.Player.Crouch.IsPressed())
         {
             moveSpeed = crouchSpeed;
-            transform.localScale = crouchScale;
+            //transform.localScale = crouchScale;
             anim.SetBool("crouching", true);
             fullbodyAnim.SetBool("crouching", true);
         }
         else
         {
             moveSpeed = baseMoveSpeed;
-            transform.localScale = standScale;
+            //transform.localScale = standScale;
             anim.SetBool("crouching", false);
             fullbodyAnim.SetBool("crouching", false);
         }
@@ -283,9 +284,10 @@ public class PlayerControllerScript : MonoBehaviour
         {
             if (coyoteTimer > 0) coyoteTimer -= Time.deltaTime;
 
-            if (recentJump && velocity.y == 0 || velocity.y < -2)
+            if (recentJump || velocity.y < -2)
             {
                 fullbodyAnim.SetBool("isFalling", true);
+                fullbodyAnim.SetBool("isGrounded", false);
             }
         }
 
