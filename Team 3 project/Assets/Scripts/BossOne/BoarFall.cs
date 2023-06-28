@@ -37,6 +37,6 @@ public class BoarFall : State
     protected override void OnUpdate()
     {
         //transform.position = transform.position + new Vector3(0, +5, 0);
-        sc.transform.position -= sc.transform.up * grav * Time.deltaTime;
+        sc.transform.position -= grav * Time.deltaTime * sc.transform.up;
     }
 }

@@ -9,7 +9,7 @@ public class BoarBossCollisions : MonoBehaviour
 
 
     [SerializeField] BoarBossStateController bsc;
-    [SerializeField] LayerMask groundMask;
+   
 
     //Checking for Bullet hit, will always override chase and update charge
     public void OnCollisionEnter(Collision collision)

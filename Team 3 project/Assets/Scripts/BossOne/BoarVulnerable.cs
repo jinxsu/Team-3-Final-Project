@@ -13,7 +13,6 @@ public class BoarVulnerable : State
     {
         //Establishing a variable that is frequently used here so that all the children automatically have it
         bsc = (BoarBossStateController)sc;
-        Debug.Log("Vulnerable Enter");
     }
 
 

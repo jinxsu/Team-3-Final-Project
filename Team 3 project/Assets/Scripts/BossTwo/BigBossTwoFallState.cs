@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class BigBossTwoFallState : State
 {
-    // Start is called before the first frame update
-    void Start()
+    BigBossTwoStateController bsc;
+    Transform transform;
+    Ray ray;
+    RaycastHit hitData;
+    float hitDistance;
+
+    private float grav = 5;
+
+    protected override void OnEnter()
     {
-        
+        bsc = (BigBossTwoStateController)sc;
+        base.OnEnter();
+        transform = bsc.transform;
+        ray = new Ray(transform.position, (-1 * transform.up));
+
+
+        Physics.Raycast(ray, out hitData);
+        hitDistance = hitData.distance;
+        if (hitDistance < 3)
+        {
+            bsc.ChangeState(bsc.RecoilState);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void OnUpdate()
     {
-        
+        bsc.transform.position = grav * Time.deltaTime * bsc.transform.up;
     }
 }

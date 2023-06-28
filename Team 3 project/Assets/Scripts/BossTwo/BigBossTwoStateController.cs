@@ -5,17 +5,19 @@ using UnityEngine.AI;
 
 public class BigBossTwoStateController : StateController
 {
-    BigBossTwoChargeState ChargeState = new BigBossTwoChargeState();
+    public BigBossTwoChargeState ChargeState = new BigBossTwoChargeState();
 
-    BigBossTwoChaseState ChaseState = new BigBossTwoChaseState();
+    public BigBossTwoChaseState ChaseState = new BigBossTwoChaseState();
 
-    BigBossTwoDeathState DeathState = new BigBossTwoDeathState();
+    public BigBossTwoDeathState DeathState = new BigBossTwoDeathState();
 
-    BigBossTwoFallState FallState = new BigBossTwoFallState();
+    public BigBossTwoFallState FallState = new BigBossTwoFallState();
 
-    BigBossTwoRecoilState RecoilState = new BigBossTwoRecoilState();
+    public BigBossTwoRecoilState RecoilState = new BigBossTwoRecoilState();
 
     public NavMeshAgent navMeshAgent;
+
+    public bool destroyMe = false;
 
     [SerializeField]
     int startHealth = 10;
@@ -34,9 +36,19 @@ public class BigBossTwoStateController : StateController
     }
 
     // Update is called once per frame
-    void Update()
+    new void Update()
     {
         base.Update();
+
+        if (hp <= 0 && currentState != DeathState)
+        {
+            ChangeState(DeathState);
+        }
+
+        if(destroyMe)
+        {
+
+        }
     }
 
 

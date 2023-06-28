@@ -1689,6 +1689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 0
   navMeshAgent: {fileID: 0}
+  destroyMe: 0
   startHealth: 10
 --- !u!195 &1750805776
 NavMeshAgent:
