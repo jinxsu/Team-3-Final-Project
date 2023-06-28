@@ -5,9 +5,10 @@ using UnityEngine;
 public class StateController : MonoBehaviour
 {
     protected State currentState;
+    public int hp;
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         if (currentState != null)
         {
@@ -22,5 +23,15 @@ public class StateController : MonoBehaviour
         }
         currentState = newState;
         currentState.OnStateEnter(this);
+    }
+
+    public State CheckCurrentState()
+    {
+        return currentState;
+    }
+
+    public virtual void BossHitByRay()
+    {
+        Debug.Log("I was hit by a ray, but this hasn't been overriden.");
     }
 }

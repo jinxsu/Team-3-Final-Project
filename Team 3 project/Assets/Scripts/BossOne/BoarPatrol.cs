@@ -10,10 +10,6 @@ public class BoarPatrol : BoarVulnerable
     protected GameObject target;
 
     
-    private int moveSpd = 7;
-    
-    private int minDist = 5;
-    
     
     // Start is called before the first frame update
     protected override void OnUpdate()

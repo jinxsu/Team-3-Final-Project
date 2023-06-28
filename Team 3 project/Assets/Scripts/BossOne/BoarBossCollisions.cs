@@ -15,23 +15,13 @@ public class BoarBossCollisions : MonoBehaviour
     public void OnCollisionEnter(Collision collision)
     {
         //If a bullet hits the boss
-        if (collision.transform.tag == "PistolBullet")
-        {
-            Destroy(collision.gameObject);
-
-            //check if in vulnerable state (boarpatrol and boarcharge)
-            if (bsc.CheckCurrentState() is BoarVulnerable)
-            {
-                bsc.ChangeState(bsc.ChargeState);
-
-            }
-        }
+       
         
 
         //if(bsc.CheckCurrentState() is BoarCharge)
 
         //if the boss hits a wall 
-        else if (collision.gameObject.layer == 8)
+        if (collision.gameObject.layer == 8)
         {
             Debug.Log("Collided with not Bullet or ground");
 
@@ -42,7 +32,7 @@ public class BoarBossCollisions : MonoBehaviour
         else if (collision.gameObject.layer == 6)
         {
             Debug.Log("Collided with  ground");
-            if (bsc.CheckCurrentState() == bsc.FallState)
+            if (bsc.CheckCurrentState() == bsc.FallState || bsc.CheckCurrentState() == bsc.ChargeState)
             {
                 bsc.ChangeState(bsc.PatrolState);
             }
@@ -63,7 +53,7 @@ public class BoarBossCollisions : MonoBehaviour
     {
 
         //if the boss hits a trap's trigger zone this is what will be used to determine damage
-        if (other.transform.tag == "Trap" && bsc.CheckCurrentState() == bsc.ChargeState)
+        if (other.transform.tag == "Trap")
         {
             if (bsc.CheckCurrentState() is BoarVulnerable)
             {

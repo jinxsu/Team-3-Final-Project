@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6303430159477811199}
   - component: {fileID: 8751658388931251594}
   - component: {fileID: 4534353267072507192}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 1021187041017340049}
   - component: {fileID: 6189128407468718484}
   - component: {fileID: 1578572632316615670}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6477665319250930676}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Flashlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -6,6 +6,11 @@ TagManager:
   tags:
   - PistolBullet
   - Trap
+  - Manager
+  - Boss
+  - PlayerUI
+  - HoldPoint
+  - HeldItem
   layers:
   - Default
   - TransparentFX
@@ -16,9 +21,9 @@ TagManager:
   - Ground
   - Lighter
   - Wall
-  - 
-  - 
-  - 
+  - HeldItems
+  - Player
+  - FullBodyPlayer
   - 
   - 
   - 

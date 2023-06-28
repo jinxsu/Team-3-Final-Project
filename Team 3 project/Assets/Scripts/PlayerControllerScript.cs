@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,9 +10,9 @@ using UnityEngine.Rendering.Universal;
 
 public class PlayerControllerScript : MonoBehaviour
 {
-
     public PlayerControls controls;
 
+    [Header("Player Movement")]
     [SerializeField] 
     private float baseMoveSpeed = 6f;
     
@@ -60,23 +61,48 @@ public class PlayerControllerScript : MonoBehaviour
 
     private float standCamHeight = 1.567f;
 
+    [Header("Arm Movement")]
+
     [SerializeField]
     private GameObject[] heldObject;
 
     private int activeObject = 0;
 
+    private bool swapping;
+    private bool goingUp;
+    private bool armWentDown;
+
+    [SerializeField] 
+    private GameObject holdPoint;
+
+    [SerializeField]
+    private Transform[] armPositions;
+    private Transform armTarget;
+
+    [SerializeField]
+    private float armSpeed;
+
+    [Header("Animation")]
+
+    [SerializeField]
+    private Animator anim;
+
+    [SerializeField]
+    private Animator fullbodyAnim;
+
 
     void Awake()
     {
-        controls = new PlayerControls();
+        controls = InputManager.inputActions;
         controller = GetComponent<CharacterController>();
+        anim = GetComponentInChildren<Animator>();
         coyoteTimer = coyoteTimerStart;
         moveSpeed = baseMoveSpeed;
     }
 
     private void Start()
     {
-        Instantiate(heldObject[0],transform.GetChild(0).transform.GetChild(0),false);
+        Instantiate(heldObject[0], holdPoint.transform, false);
     }
 
     private void OnEnable()
@@ -92,24 +118,27 @@ public class PlayerControllerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Jump();
-        Grav();
-        Crouch();
-        PlayerMovement();
-        WeaponSwap();
-
-        if (recentJump)
+        if(!PauseMenuScript.isPaused)
         {
-            recentJumpTimer -= Time.deltaTime;
+            Jump();
+            Grav();
+            Crouch();
+            Interact();
+            PlayerMovement();
+            WeaponSwap();
+            MoveArm();
 
-            if (recentJumpTimer < 0)
+            if (recentJump)
             {
-                recentJumpTimer = 0.5f;
-                recentJump = false;
+                recentJumpTimer -= Time.deltaTime;
+
+                if (recentJumpTimer < 0)
+                {
+                    recentJumpTimer = 0.5f;
+                    recentJump = false;
+                }
             }
         }
-        
-        
     }
 
     private void WeaponSwap()
@@ -119,8 +148,53 @@ public class PlayerControllerScript : MonoBehaviour
         float scrollVar = controls.Player.WeaponScroll.ReadValue<Vector2>().y;
         if (scrollVar > 0f)
         {
-            
-            if (activeObject -1 < 0)
+            goingUp = true;
+            swapping = true;
+        }
+        if (scrollVar < 0f || controls.Player.WeaponNext.triggered)
+        {
+            goingUp = false; 
+            swapping = true;
+        }
+    }
+
+    private void MoveArm()
+    {
+        if (swapping)
+        {
+            if (armWentDown)
+            {
+                armTarget = armPositions[0];
+
+                if (holdPoint.transform.position == armTarget.position)
+                {
+                    swapping = false;
+                    armWentDown = false;
+                }
+            }
+            else
+            {
+                armTarget = armPositions[1];
+
+                if (holdPoint.transform.position == armTarget.position)
+                {
+                    ChangeWeapon();
+                    armWentDown = true;
+                }
+            }
+
+            Vector3 newPos = Vector3.MoveTowards(holdPoint.transform.position, armTarget.position, armSpeed * Time.deltaTime);
+            holdPoint.transform.position = newPos;
+        }
+    }
+
+
+
+    public void ChangeWeapon()
+    {
+        if(goingUp)
+        {
+            if (activeObject - 1 < 0)
             {
                 activeObject = heldObject.Length - 1;
             }
@@ -128,12 +202,11 @@ public class PlayerControllerScript : MonoBehaviour
             {
                 activeObject -= 1;
             }
-            Destroy(transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).gameObject);
-            Instantiate(heldObject[activeObject], transform.GetChild(0).transform.GetChild(0), false);
+            Destroy(GameObject.FindWithTag("HeldItem"));
+            Instantiate(heldObject[activeObject], holdPoint.transform, false);
         }
-        if (scrollVar < 0f || controls.Player.WeaponNext.triggered)
+        else
         {
-            
             if (activeObject + 1 == heldObject.Length)
             {
                 activeObject = 0;
@@ -142,8 +215,8 @@ public class PlayerControllerScript : MonoBehaviour
             {
                 activeObject += 1;
             }
-            Destroy(transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).gameObject);
-            Instantiate(heldObject[activeObject], transform.GetChild(0).transform.GetChild(0), false);
+            Destroy(GameObject.FindWithTag("HeldItem"));
+            Instantiate(heldObject[activeObject], holdPoint.transform, false);
         }
     }
 
@@ -153,11 +226,24 @@ public class PlayerControllerScript : MonoBehaviour
         {
             moveSpeed = crouchSpeed;
             transform.localScale = crouchScale;
+            anim.SetBool("crouching", true);
+            fullbodyAnim.SetBool("crouching", true);
         }
         else
         {
             moveSpeed = baseMoveSpeed;
             transform.localScale = standScale;
+            anim.SetBool("crouching", false);
+            fullbodyAnim.SetBool("crouching", false);
+        }
+    }
+
+    private void Interact()
+    {
+        if(controls.Player.Interact.triggered)
+        {
+            //interact with item code here
+            anim.SetTrigger("interact");
         }
     }
 
@@ -181,6 +267,9 @@ public class PlayerControllerScript : MonoBehaviour
 
         Vector3 movement = (move.y * transform.forward) + (move.x * transform.right);
         controller.Move(movement * moveSpeed * Time.deltaTime);
+
+        anim.SetFloat("velocity", move.magnitude);
+        fullbodyAnim.SetFloat("velocity", move.magnitude);
     }
 
     private void Grav()

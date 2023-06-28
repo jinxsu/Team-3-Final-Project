@@ -18,6 +18,7 @@ public class BoarRecoil : State
         bsc = (BoarBossStateController)sc;
         recoilStunTimer = 4f;
         Debug.Log("Recoil State");
+        bsc.navMeshAgent.enabled = false;
     }
 
     protected override void OnUpdate()

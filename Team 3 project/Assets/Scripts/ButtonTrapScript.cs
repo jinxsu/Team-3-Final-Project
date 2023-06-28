@@ -7,6 +7,8 @@ public class ButtonTrapScript : MonoBehaviour
     [SerializeField] private GameObject trapToSpawn;
     [SerializeField] private GameObject spawnLocation;
     [SerializeField] private float trapTimer;
+    [SerializeField] private bool canBreak;
+    private bool isBroken;
     public float trapTime;
     public GameObject spawnedTrap;
     
@@ -31,18 +33,25 @@ public class ButtonTrapScript : MonoBehaviour
 
     private void Update()
     {
-        if (playerDetected)
+        if (!isBroken)
         {
-            if (player.Player.Interact.triggered && buttonEnabled)
+            if (playerDetected)
             {
+                if (player.Player.Interact.triggered && buttonEnabled)
+                {
 
-                //Spawns an instance of a trap prefab at the position of the spawnLocation gameobject. 
-                //This allows for both the location of the trap to change and which trap is spawned to change as well
-                spawnedTrap = Instantiate(trapToSpawn, spawnLocation.transform.position, spawnLocation.transform.rotation);
-                trapTime = trapTimer;
+                    //Spawns an instance of a trap prefab at the position of the spawnLocation gameobject. 
+                    //This allows for both the location of the trap to change and which trap is spawned to change as well
+                    spawnedTrap = Instantiate(trapToSpawn, spawnLocation.transform.position, spawnLocation.transform.rotation);
+                    trapTime = trapTimer;
+                }
             }
         }
-
+        
+        if(spawnedTrap == null && trapTime > 0 && canBreak)
+        {
+            isBroken = true;
+        }
 
         //The trap spawned despawns after some time. Also disables the button so that more traps can't be spawned while one is out
         if (trapTime > 0)
