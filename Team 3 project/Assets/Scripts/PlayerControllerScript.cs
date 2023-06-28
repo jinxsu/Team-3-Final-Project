@@ -1,22 +1,16 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
-using UnityEditor.UIElements;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.Rendering.Universal;
 
 public class PlayerControllerScript : MonoBehaviour
 {
     public PlayerControls controls;
 
     [Header("Player Movement")]
-    [SerializeField] 
+
+    [SerializeField]
     private float baseMoveSpeed = 6f;
-    
-    [SerializeField] 
+
+    [SerializeField]
     private float crouchSpeed = 3f;
 
     private float moveSpeed;
@@ -28,9 +22,10 @@ public class PlayerControllerScript : MonoBehaviour
 
     private Vector2 move;
 
+    [Header("Jumping")]
+
     [SerializeField]
     private float jumpHeight = 2.4f;
-
 
     //Coyote timer is used to determine how long a player can have slipped off of a surface and still jump
     [SerializeField]
@@ -53,13 +48,25 @@ public class PlayerControllerScript : MonoBehaviour
 
     private float recentJumpTimer = 0.5f;
 
-    private Vector3 crouchScale = new Vector3(1f, 0.75f, 1f);
+    [Header("Crouching")]
 
-    private Vector3 standScale = new Vector3(1f,1f,1f);
+    [SerializeField]
+    private GameObject POV;
 
-    private float crouchCamHeight = 0f;
+    [SerializeField]
+    private float camSpeed = 5f;
 
-    private float standCamHeight = 1.567f;
+    [SerializeField]
+    private Transform standCamHeight;
+
+    [SerializeField]
+    private Transform crouchCamHeight;
+
+    private Vector3 standCenter = new Vector3(0f, 1.15f, 0.15f);
+    private Vector3 crouchCenter = new Vector3(0f, 0.75f, 0.15f);
+
+    private float standPlayerHeight = 2.2f;
+    private float crouchPlayerHeight = 1.5f;
 
     [Header("Arm Movement")]
 
@@ -72,7 +79,7 @@ public class PlayerControllerScript : MonoBehaviour
     private bool goingUp;
     private bool armWentDown;
 
-    [SerializeField] 
+    [SerializeField]
     private GameObject holdPoint;
 
     [SerializeField]
@@ -80,7 +87,7 @@ public class PlayerControllerScript : MonoBehaviour
     private Transform armTarget;
 
     [SerializeField]
-    private float armSpeed;
+    private float armSpeed = 5f;
 
     [Header("Animation")]
 
@@ -118,7 +125,7 @@ public class PlayerControllerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!PauseMenuScript.isPaused)
+        if (!PauseMenuScript.isPaused)
         {
             Jump();
             Grav();
@@ -153,7 +160,7 @@ public class PlayerControllerScript : MonoBehaviour
         }
         if (scrollVar < 0f || controls.Player.WeaponNext.triggered)
         {
-            goingUp = false; 
+            goingUp = false;
             swapping = true;
         }
     }
@@ -192,7 +199,7 @@ public class PlayerControllerScript : MonoBehaviour
 
     public void ChangeWeapon()
     {
-        if(goingUp)
+        if (goingUp)
         {
             if (activeObject - 1 < 0)
             {
@@ -202,8 +209,6 @@ public class PlayerControllerScript : MonoBehaviour
             {
                 activeObject -= 1;
             }
-            Destroy(GameObject.FindWithTag("HeldItem"));
-            Instantiate(heldObject[activeObject], holdPoint.transform, false);
         }
         else
         {
@@ -215,9 +220,9 @@ public class PlayerControllerScript : MonoBehaviour
             {
                 activeObject += 1;
             }
-            Destroy(GameObject.FindWithTag("HeldItem"));
-            Instantiate(heldObject[activeObject], holdPoint.transform, false);
         }
+        Destroy(GameObject.FindWithTag("HeldItem"));
+        Instantiate(heldObject[activeObject], holdPoint.transform, false);
     }
 
     private void Crouch()
@@ -225,22 +230,39 @@ public class PlayerControllerScript : MonoBehaviour
         if (controls.Player.Crouch.IsPressed())
         {
             moveSpeed = crouchSpeed;
-            transform.localScale = crouchScale;
+            controller.center = crouchCenter;
+            controller.height = crouchPlayerHeight;
+
             anim.SetBool("crouching", true);
             fullbodyAnim.SetBool("crouching", true);
+
+            if (POV.transform.position != crouchCamHeight.position)
+            {
+                Vector3 newPos = Vector3.MoveTowards(POV.transform.position, crouchCamHeight.position, camSpeed * Time.deltaTime);
+                POV.transform.position = newPos;
+            }
+
         }
         else
         {
             moveSpeed = baseMoveSpeed;
-            transform.localScale = standScale;
+            controller.center = standCenter;
+            controller.height = standPlayerHeight;
+
             anim.SetBool("crouching", false);
             fullbodyAnim.SetBool("crouching", false);
+
+            if (POV.transform.position != standCamHeight.position)
+            {
+                Vector3 newPos = Vector3.MoveTowards(POV.transform.position, standCamHeight.position, camSpeed * Time.deltaTime);
+                POV.transform.position = newPos;
+            }
         }
     }
 
     private void Interact()
     {
-        if(controls.Player.Interact.triggered)
+        if (controls.Player.Interact.triggered)
         {
             //interact with item code here
             anim.SetTrigger("interact");
@@ -257,16 +279,17 @@ public class PlayerControllerScript : MonoBehaviour
             velocity.y = MathF.Sqrt(jumpHeight * -2f * gravity);
             coyoteTimer = 0f;
             recentJump = true;
+            fullbodyAnim.SetTrigger("isJumping");
         }
     }
 
-    
+
     private void PlayerMovement()
     {
         move = controls.Player.Move.ReadValue<Vector2>();
 
         Vector3 movement = (move.y * transform.forward) + (move.x * transform.right);
-        controller.Move(movement * moveSpeed * Time.deltaTime);
+        controller.Move(moveSpeed * Time.deltaTime * movement);
 
         anim.SetFloat("velocity", move.magnitude);
         fullbodyAnim.SetFloat("velocity", move.magnitude);
@@ -278,11 +301,24 @@ public class PlayerControllerScript : MonoBehaviour
 
         if (isGrounded)
         {
-            if (!recentJump)   coyoteTimer = coyoteTimerStart;
+            if (!recentJump)
+            {
+                coyoteTimer = coyoteTimerStart;
+
+                fullbodyAnim.SetBool("isGrounded", true);
+                fullbodyAnim.SetBool("isFalling", false);
+            }
+
         }
         else
         {
-            if (coyoteTimer > 0)    coyoteTimer -= Time.deltaTime;
+            if (coyoteTimer > 0) coyoteTimer -= Time.deltaTime;
+
+            if (recentJump || velocity.y < -2)
+            {
+                fullbodyAnim.SetBool("isFalling", true);
+                fullbodyAnim.SetBool("isGrounded", false);
+            }
         }
 
         if (isGrounded && velocity.y < 0)
