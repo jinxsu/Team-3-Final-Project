@@ -6,6 +6,7 @@ public class PlayerControllerScript : MonoBehaviour
     public PlayerControls controls;
 
     [Header("Player Movement")]
+
     [SerializeField]
     private float baseMoveSpeed = 6f;
 
@@ -21,9 +22,10 @@ public class PlayerControllerScript : MonoBehaviour
 
     private Vector2 move;
 
+    [Header("Jumping")]
+
     [SerializeField]
     private float jumpHeight = 2.4f;
-
 
     //Coyote timer is used to determine how long a player can have slipped off of a surface and still jump
     [SerializeField]
@@ -46,11 +48,22 @@ public class PlayerControllerScript : MonoBehaviour
 
     private float recentJumpTimer = 0.5f;
 
+    [Header("Crouching")]
+
+    [SerializeField]
+    private GameObject POV;
+
+    [SerializeField]
+    private float camSpeed = 5f;
+
+    [SerializeField]
+    private Transform standCamHeight;
+
+    [SerializeField]
+    private Transform crouchCamHeight;
+
     private Vector3 standCenter = new Vector3(0f, 1.15f, 0.15f);
     private Vector3 crouchCenter = new Vector3(0f, 0.75f, 0.15f);
-
-    private float standCamHeight = 1.567f;
-    private float crouchCamHeight = 1.1f;
 
     private float standPlayerHeight = 2.2f;
     private float crouchPlayerHeight = 1.5f;
@@ -74,7 +87,7 @@ public class PlayerControllerScript : MonoBehaviour
     private Transform armTarget;
 
     [SerializeField]
-    private float armSpeed;
+    private float armSpeed = 5f;
 
     [Header("Animation")]
 
@@ -217,16 +230,33 @@ public class PlayerControllerScript : MonoBehaviour
         if (controls.Player.Crouch.IsPressed())
         {
             moveSpeed = crouchSpeed;
-            //transform.localScale = crouchScale;
+            controller.center = crouchCenter;
+            controller.height = crouchPlayerHeight;
+
             anim.SetBool("crouching", true);
             fullbodyAnim.SetBool("crouching", true);
+
+            if (POV.transform.position != crouchCamHeight.position)
+            {
+                Vector3 newPos = Vector3.MoveTowards(POV.transform.position, crouchCamHeight.position, camSpeed * Time.deltaTime);
+                POV.transform.position = newPos;
+            }
+
         }
         else
         {
             moveSpeed = baseMoveSpeed;
-            //transform.localScale = standScale;
+            controller.center = standCenter;
+            controller.height = standPlayerHeight;
+
             anim.SetBool("crouching", false);
             fullbodyAnim.SetBool("crouching", false);
+
+            if (POV.transform.position != standCamHeight.position)
+            {
+                Vector3 newPos = Vector3.MoveTowards(POV.transform.position, standCamHeight.position, camSpeed * Time.deltaTime);
+                POV.transform.position = newPos;
+            }
         }
     }
 
