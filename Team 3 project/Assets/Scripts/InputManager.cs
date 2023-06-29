@@ -1,12 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using System;
-using UnityEngine.InputSystem;
 using TMPro;
-using UnityEditor;
-using System.IO;
+using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
@@ -51,16 +46,10 @@ public class InputManager : MonoBehaviour
         {
             inputActions = new PlayerControls();
         }
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(gameObject);
 
         yInvert = (PlayerPrefs.GetInt("YInvert") != 0);
         xInvert = (PlayerPrefs.GetInt("XInvert") != 0);
-    }
-
-
-    private void Update()
-    {
-        
     }
 
     public static void StartRebind(string actionName, int bindingIndex, TextMeshProUGUI statusText, bool excludeMouse)

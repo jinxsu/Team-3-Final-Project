@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -54,7 +52,7 @@ public class BigBossTwoStateController : StateController
 
         if(destroyMe)
         {
-
+            Destroy(gameObject);
         }
     }
 
@@ -76,11 +74,10 @@ public class BigBossTwoStateController : StateController
             {
                 ChangeState(ChaseState);
             }
-            //  bsc.ChangeState(bsc.RecoilState);
         }
 
         //if the boss hits the player
-        else if (collision.gameObject.tag == "Player")
+        else if (collision.gameObject.CompareTag("Player"))
         {
             player.GetComponent<PlayerControllerScript>().HurtPlayer();
             ChangeState(FallState);
@@ -91,9 +88,9 @@ public class BigBossTwoStateController : StateController
     {
 
         //if the boss hits a trap's trigger zone this is what will be used to determine damage
-        if (other.transform.tag == "Trap")
+        if (other.transform.CompareTag("Trap"))
         {
-            if (currentState is BoarVulnerable)
+            if (currentState is BigBossTwoVulnerable)
             {
                 ChangeState(RecoilState);
                 Debug.Log("OW! A TRAP");
@@ -103,6 +100,6 @@ public class BigBossTwoStateController : StateController
 
     public override void BossHitByRay()
     {
-        ChangeState(StompState);
+        ChangeState(ChargeState);
     }
 }

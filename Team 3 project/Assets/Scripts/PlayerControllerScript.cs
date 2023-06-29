@@ -99,6 +99,7 @@ public class PlayerControllerScript : MonoBehaviour
 
     private int maxHp = 4;
 
+    //I don't know why it says it's not used, it is used in the awake and in the hurtplayer functions
     private int currentHp;
 
     void Awake()

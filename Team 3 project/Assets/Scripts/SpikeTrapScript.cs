@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using Unity.AI.Navigation;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class SpikeTrapScript : MonoBehaviour
 {
@@ -13,10 +10,10 @@ public class SpikeTrapScript : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Boss")
+        if (other.gameObject.CompareTag("Boss"))
         {
             other.GetComponent<StateController>().hp -= 1;
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

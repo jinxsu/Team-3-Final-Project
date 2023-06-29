@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+//Unoptimized because I'm not done working on this one
+
 public class BigBossTwoDeathState : State
 {
     float deathCountdown = 3f;

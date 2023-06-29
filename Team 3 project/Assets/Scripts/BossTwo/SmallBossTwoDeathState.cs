@@ -1,22 +1,21 @@
 using UnityEngine;
 
-public class BoarDeath : State
+public class SmallBossTwoDeathState : State
 {
     float deathCountdown = 3f;
-    BoarBossStateController bsc;
+    SmallBossTwoStateController bsc;
 
     protected override void OnEnter()
     {
-        bsc = (BoarBossStateController)sc;
+        bsc = (SmallBossTwoStateController)sc;
     }
 
     protected override void OnUpdate()
     {
         deathCountdown -= Time.deltaTime;
-        if (deathCountdown < 0 )
+        if (deathCountdown < 0)
         {
             bsc.destroyMe = true;
         }
     }
 }
-
