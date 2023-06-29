@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class BoarCharge : BoarVulnerable
@@ -41,7 +38,7 @@ public class BoarCharge : BoarVulnerable
         // Initiation of variables for this state
         target = GameObject.FindWithTag("Player");
         Debug.Log("Charge State");
-        Vector3 chargeTarget = new Vector3(target.transform.position.x, bsc.transform.position.y, target.transform.position.z);
+        Vector3 chargeTarget = new(target.transform.position.x, bsc.transform.position.y, target.transform.position.z);
         sc.transform.LookAt(chargeTarget);
         chargePauseTimer = chargePause;
         chargeMaxTimer = chargeMax;

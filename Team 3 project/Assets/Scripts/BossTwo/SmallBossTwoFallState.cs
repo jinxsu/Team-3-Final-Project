@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class BigBossTwoFallState : State
+public class SmallBossTwoFallState : State
 {
-    BigBossTwoStateController bsc;
+    SmallBossTwoStateController bsc;
     Transform transform;
     Ray ray;
     RaycastHit hitData;
@@ -10,9 +10,10 @@ public class BigBossTwoFallState : State
 
     private float grav = 5;
 
+
     protected override void OnEnter()
     {
-        bsc = (BigBossTwoStateController)sc;
+        bsc = (SmallBossTwoStateController)sc;
         base.OnEnter();
         transform = bsc.transform;
         ray = new Ray(transform.position, (-1 * transform.up));

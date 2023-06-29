@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BigBossTwoChargeState : BigBossTwoVulnerable
 {
-    protected GameObject target;
     private float chargePause = 3f;
     private float chargePauseTimer;
     private int moveSpd = 20;
@@ -33,8 +30,7 @@ public class BigBossTwoChargeState : BigBossTwoVulnerable
     {
         base.OnEnter();
 
-        target = bsc.player;
-        Vector3 chargeTarget = new Vector3(target.transform.position.x, bsc.transform.position.y, target.transform.position.z);
+        Vector3 chargeTarget = new Vector3(bsc.player.transform.position.x, bsc.transform.position.y, bsc.player.transform.position.z);
         sc.transform.LookAt(chargeTarget);
         chargePauseTimer = chargePause;
         chargeMaxTimer = chargeMax;

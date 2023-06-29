@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,15 +5,21 @@ public class SmallBossTwoStateController : StateController
 {
 
 
-    SmallBossTwoChargeState ChargeState = new SmallBossTwoChargeState();    
+    public SmallBossTwoChargeState ChargeState = new SmallBossTwoChargeState();
 
-    SmallBossTwoChargeState ChaseState = new SmallBossTwoChargeState();
+    public SmallBossTwoChargeState ChaseState = new SmallBossTwoChargeState();
 
-    SmallBossTwoRecoilState RecoilState = new SmallBossTwoRecoilState();
+    public SmallBossTwoRecoilState RecoilState = new SmallBossTwoRecoilState();
+
+    public SmallBossTwoDeathState DeathState = new SmallBossTwoDeathState();
+
+    public SmallBossTwoFallState FallState = new SmallBossTwoFallState();
 
     public NavMeshAgent navMeshAgent;
 
     public GameObject player;
+
+    public bool destroyMe = false;
 
     [SerializeField]
     int startHealth = 10;
@@ -38,5 +42,62 @@ public class SmallBossTwoStateController : StateController
     new void Update()
     {
         base.Update();
+
+        if (hp <= 0 && currentState != DeathState)
+        {
+            ChangeState(DeathState);
+        }
+
+        if (destroyMe)
+        {
+
+        }
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        //if the boss hits a wall 
+        if (collision.gameObject.layer == 8)
+        {
+            Debug.Log("Collided with not Bullet or ground");
+
+            ChangeState(FallState);
+
+        }
+        //if the boss hits the ground, this does proc over and over as the boss is walking around
+        else if (collision.gameObject.layer == 6)
+        {
+            Debug.Log("Collided with  ground");
+            if (currentState == FallState || currentState == ChargeState)
+            {
+                ChangeState(ChaseState);
+            }
+        }
+
+        //if the boss hits the player
+        else if (collision.gameObject.CompareTag("Player"))
+        {
+            player.GetComponent<PlayerControllerScript>().HurtPlayer();
+            ChangeState(FallState);
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+
+        //if the boss hits a trap's trigger zone this is what will be used to determine damage
+        if (other.transform.CompareTag("Trap"))
+        {
+            if (currentState is SmallBossTwoVulnerable)
+            {
+                ChangeState(RecoilState);
+                Debug.Log("OW! A TRAP");
+            }
+        }
+    }
+
+    public override void BossHitByRay()
+    {
+        ChangeState(ChargeState);
     }
 }
