@@ -1,18 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BigBossTwoDeathState : State
 {
-    // Start is called before the first frame update
-    void Start()
+    float deathCountdown = 3f;
+    BigBossTwoStateController bsc;
+
+    protected override void OnEnter()
     {
-        
+        bsc = (BigBossTwoStateController)sc;
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void OnUpdate()
     {
-        
+        deathCountdown -= Time.deltaTime;
+        if (deathCountdown < 0 )
+        {
+            //need to add spawning the second phase bosses
+            bsc.destroyMe = true;
+        }
     }
 }

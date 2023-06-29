@@ -23,7 +23,7 @@ public class BoarCharge : BoarVulnerable
         }
         else
         {
-            sc.transform.position += sc.transform.forward * moveSpd * Time.deltaTime;
+            sc.transform.position += moveSpd * Time.deltaTime * sc.transform.forward;
             chargeMaxTimer -= Time.deltaTime;
             if (chargeMaxTimer < 0)
             {

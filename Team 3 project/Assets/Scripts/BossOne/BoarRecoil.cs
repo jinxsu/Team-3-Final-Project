@@ -9,7 +9,7 @@ public class BoarRecoil : State
 
     BoarBossStateController bsc;
 
-    private float recoilStun;
+
     private float recoilStunTimer;
     private int moveSpd = 4;
     protected override void OnEnter()
@@ -24,7 +24,7 @@ public class BoarRecoil : State
     protected override void OnUpdate()
     {
         //This makes the boss back up, it doesn't account for anything such as gravity or edges for now
-        sc.transform.position -= sc.transform.forward * moveSpd * Time.deltaTime;
+        sc.transform.position -= moveSpd * Time.deltaTime * sc.transform.forward;
         recoilStunTimer -= Time.deltaTime;
         if (recoilStunTimer < 0)
         {
