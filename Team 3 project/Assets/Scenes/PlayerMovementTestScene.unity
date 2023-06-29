@@ -1030,7 +1030,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1082205782}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 49.579998, y: 7.99, z: -58.7}
+  m_LocalPosition: {x: 49.579998, y: 7.99, z: -72.1}
   m_LocalScale: {x: 2.1591833, y: 2.2934844, z: 3.9700904}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1052,6 +1052,7 @@ MonoBehaviour:
   hp: 0
   navMeshAgent: {fileID: 0}
   player: {fileID: 0}
+  destroyMe: 0
   startHealth: 10
 --- !u!195 &1082205788
 NavMeshAgent:
@@ -1670,7 +1671,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1750805770}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 40.62, y: 7.99, z: -74.58689}
+  m_LocalPosition: {x: 40.62, y: 7.99, z: -118}
   m_LocalScale: {x: 5.0747, y: 5.390346, z: 9.330851}
   m_ConstrainProportionsScale: 0
   m_Children: []
