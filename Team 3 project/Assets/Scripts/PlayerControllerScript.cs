@@ -97,6 +97,9 @@ public class PlayerControllerScript : MonoBehaviour
     [SerializeField]
     private Animator fullbodyAnim;
 
+    private int maxHp = 4;
+
+    private int currentHp;
 
     void Awake()
     {
@@ -105,6 +108,13 @@ public class PlayerControllerScript : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         coyoteTimer = coyoteTimerStart;
         moveSpeed = baseMoveSpeed;
+        currentHp = maxHp;
+    }
+
+    public void HurtPlayer()
+    {
+        currentHp--;
+        Debug.Log("PlayerHurt.wav");
     }
 
     private void Start()

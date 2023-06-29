@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class BigBossTwoChaseState : BigBossTwoVulnerable
 {
-    // Start is called before the first frame update
-    void Start()
+    protected GameObject target;
+
+    protected override void OnUpdate()
     {
-        
+        bsc.navMeshAgent.destination = target.transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void OnEnter()
     {
-        
+        base.OnEnter();
+
+        target = bsc.player;
+
+        bsc.navMeshAgent.enabled = true;
+        bsc.navMeshAgent.ResetPath();
     }
 }

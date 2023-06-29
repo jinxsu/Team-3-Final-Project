@@ -15,6 +15,8 @@ public class SmallBossTwoStateController : StateController
 
     public NavMeshAgent navMeshAgent;
 
+    public GameObject player;
+
     [SerializeField]
     int startHealth = 10;
 
@@ -22,6 +24,8 @@ public class SmallBossTwoStateController : StateController
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         hp = startHealth;
+        player = GameObject.FindWithTag("Player");
+
     }
 
     // Start is called before the first frame update
@@ -31,7 +35,7 @@ public class SmallBossTwoStateController : StateController
     }
 
     // Update is called once per frame
-    void Update()
+    new void Update()
     {
         base.Update();
     }
