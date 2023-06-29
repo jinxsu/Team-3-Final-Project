@@ -15,7 +15,13 @@ public class BigBossTwoStateController : StateController
 
     public BigBossTwoRecoilState RecoilState = new BigBossTwoRecoilState();
 
+    public BigBossTwoStompState StompState = new BigBossTwoStompState();
+
     public NavMeshAgent navMeshAgent;
+
+    public GameObject player;
+
+    public GameObject stompObject;
 
     public bool destroyMe = false;
 
@@ -24,6 +30,7 @@ public class BigBossTwoStateController : StateController
 
     private void Awake()
     {
+        player = GameObject.FindWithTag("Player");
         navMeshAgent = GetComponent<NavMeshAgent>();
         hp = startHealth;
     }
@@ -51,17 +58,8 @@ public class BigBossTwoStateController : StateController
         }
     }
 
-
-
-
     public void OnCollisionEnter(Collision collision)
     {
-        //If a bullet hits the boss
-
-
-
-        //if(bsc.CheckCurrentState() is BoarCharge)
-
         //if the boss hits a wall 
         if (collision.gameObject.layer == 8)
         {
@@ -84,16 +82,10 @@ public class BigBossTwoStateController : StateController
         //if the boss hits the player
         else if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("Collided with  player");
+            player.GetComponent<PlayerControllerScript>().HurtPlayer();
             ChangeState(FallState);
         }
     }
-
-
-
-
-
-
 
     void OnTriggerEnter(Collider other)
     {
@@ -109,4 +101,8 @@ public class BigBossTwoStateController : StateController
         }
     }
 
+    public override void BossHitByRay()
+    {
+        ChangeState(StompState);
+    }
 }

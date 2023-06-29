@@ -15,7 +15,7 @@ public class BigBossTwoChaseState : BigBossTwoVulnerable
     {
         base.OnEnter();
 
-        target = GameObject.FindWithTag("Player");
+        target = bsc.player;
 
         bsc.navMeshAgent.enabled = true;
         bsc.navMeshAgent.ResetPath();

@@ -601,6 +601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 0
   navMeshAgent: {fileID: 0}
+  player: {fileID: 0}
   startHealth: 10
 --- !u!195 &523096880
 NavMeshAgent:
@@ -1050,6 +1051,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 0
   navMeshAgent: {fileID: 0}
+  player: {fileID: 0}
   startHealth: 10
 --- !u!195 &1082205788
 NavMeshAgent:
@@ -1689,6 +1691,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 0
   navMeshAgent: {fileID: 0}
+  player: {fileID: 0}
+  stompObject: {fileID: 7161613254280738983, guid: cb2fd3fc320793841ab17df149e82f2b,
+    type: 3}
   destroyMe: 0
   startHealth: 10
 --- !u!195 &1750805776

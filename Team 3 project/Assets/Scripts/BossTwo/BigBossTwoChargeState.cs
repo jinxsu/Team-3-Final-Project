@@ -33,7 +33,7 @@ public class BigBossTwoChargeState : BigBossTwoVulnerable
     {
         base.OnEnter();
 
-        target = GameObject.FindWithTag("Player");
+        target = bsc.player;
         Vector3 chargeTarget = new Vector3(target.transform.position.x, bsc.transform.position.y, target.transform.position.z);
         sc.transform.LookAt(chargeTarget);
         chargePauseTimer = chargePause;
