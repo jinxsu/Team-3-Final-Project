@@ -1,9 +1,9 @@
 public class SmallBossTwoVulnerable : State
 {
-    protected BigBossTwoStateController bsc;
+    protected SmallBossTwoStateController bsc;
 
     protected override void OnEnter()
     {
-        bsc = (BigBossTwoStateController)sc;
+        bsc = (SmallBossTwoStateController)sc;
     }
 }

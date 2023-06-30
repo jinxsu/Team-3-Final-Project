@@ -3,11 +3,9 @@ using UnityEngine.AI;
 
 public class SmallBossTwoStateController : StateController
 {
-
-
     public SmallBossTwoChargeState ChargeState = new SmallBossTwoChargeState();
 
-    public SmallBossTwoChargeState ChaseState = new SmallBossTwoChargeState();
+    public SmallBossTwoChaseState ChaseState = new SmallBossTwoChaseState();
 
     public SmallBossTwoRecoilState RecoilState = new SmallBossTwoRecoilState();
 
@@ -18,8 +16,6 @@ public class SmallBossTwoStateController : StateController
     public NavMeshAgent navMeshAgent;
 
     public GameObject player;
-
-    public bool destroyMe = false;
 
     [SerializeField]
     int startHealth = 10;
@@ -42,7 +38,6 @@ public class SmallBossTwoStateController : StateController
     new void Update()
     {
         base.Update();
-
         if (hp <= 0 && currentState != DeathState)
         {
             ChangeState(DeathState);
@@ -50,7 +45,7 @@ public class SmallBossTwoStateController : StateController
 
         if (destroyMe)
         {
-
+            Destroy(gameObject);
         }
     }
 

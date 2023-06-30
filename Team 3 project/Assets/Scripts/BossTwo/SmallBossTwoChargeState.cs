@@ -4,8 +4,8 @@ public class SmallBossTwoChargeState : SmallBossTwoVulnerable
 {
     private float chargePause = 3f;
     private float chargePauseTimer;
-    private int moveSpd;
-    private float chargeMax;
+    private int moveSpd = 3;
+    private float chargeMax = 2;
     private float chargeMaxTimer;
 
     protected override void OnUpdate()

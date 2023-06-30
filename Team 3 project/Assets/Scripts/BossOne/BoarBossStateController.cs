@@ -14,8 +14,6 @@ public class BoarBossStateController : StateController
 
     public int startHealth;
 
-    public bool destroyMe = false;
-
     public NavMeshAgent navMeshAgent;
 
     private void Awake()

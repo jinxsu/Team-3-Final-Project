@@ -4,6 +4,7 @@ public class StateController : MonoBehaviour
 {
     protected State currentState;
     public int hp;
+    public bool destroyMe = false;
 
     // Update is called once per frame
     protected void Update()

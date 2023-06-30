@@ -21,8 +21,6 @@ public class BigBossTwoStateController : StateController
 
     public GameObject stompObject;
 
-    public bool destroyMe = false;
-
     [SerializeField]
     int startHealth = 10;
 
