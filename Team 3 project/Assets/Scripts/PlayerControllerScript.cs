@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 
 public class PlayerControllerScript : MonoBehaviour
 {
@@ -89,6 +90,9 @@ public class PlayerControllerScript : MonoBehaviour
     [SerializeField]
     private float armSpeed = 5f;
 
+    [SerializeField]
+    private MultiRotationConstraint wristMovement;
+
     [Header("Animation")]
 
     [SerializeField]
@@ -107,6 +111,7 @@ public class PlayerControllerScript : MonoBehaviour
         controls = InputManager.inputActions;
         controller = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animator>();
+        wristMovement = GetComponentInChildren<MultiRotationConstraint>();
         coyoteTimer = coyoteTimerStart;
         moveSpeed = baseMoveSpeed;
         currentHp = maxHp;
@@ -234,6 +239,32 @@ public class PlayerControllerScript : MonoBehaviour
         }
         Destroy(GameObject.FindWithTag("HeldItem"));
         Instantiate(heldObject[activeObject], holdPoint.transform, false);
+        WristRotation(activeObject);
+    }
+
+    private void WristRotation(int target)
+    {
+        var sources = wristMovement.data.sourceObjects;
+
+        switch(target)
+        {
+            case 0:
+                sources.SetWeight(0, 1f);
+                sources.SetWeight(1, 0f);
+                sources.SetWeight(2, 0f);
+                break;
+            case 1:
+                sources.SetWeight(0, 0f);
+                sources.SetWeight(1, 1f);
+                sources.SetWeight(2, 0f);
+                break;
+            case 2:
+                sources.SetWeight(0, 0f);
+                sources.SetWeight(1, 0f);
+                sources.SetWeight(2, 1f);
+                break;
+        }
+        wristMovement.data.sourceObjects = sources;
     }
 
     private void Crouch()
