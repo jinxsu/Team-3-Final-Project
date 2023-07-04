@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class SmallBossTwoChaseState : SmallBossTwoVulnerable
 {
-    // Start is called before the first frame update
-    void Start()
+
+    protected override void OnUpdate()
     {
-        
+        bsc.navMeshAgent.destination = bsc.player.transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void OnEnter()
     {
-        
+        base.OnEnter();
+
+        bsc.navMeshAgent.enabled = true;
+        bsc.navMeshAgent.ResetPath();
     }
 }

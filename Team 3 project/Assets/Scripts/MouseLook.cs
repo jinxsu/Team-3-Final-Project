@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
 
 public class MouseLook : MonoBehaviour
 {
@@ -88,18 +84,6 @@ public class MouseLook : MonoBehaviour
                 playerBody.Rotate(Vector3.up * controllerX);
             }
         }
-        
-
-        
-
-        
-
-    }
-
-
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame

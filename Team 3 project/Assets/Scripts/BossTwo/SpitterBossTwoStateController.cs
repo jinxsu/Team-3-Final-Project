@@ -6,19 +6,29 @@ using UnityEngine.AI;
 public class SpitterBossTwoStateController : StateController
 {
 
-    SpitterBossTwoChaseState ChaseState = new SpitterBossTwoChaseState();
+    public SpitterBossTwoChaseState ChaseState = new SpitterBossTwoChaseState();
 
-    SpitterBossTwoSpitState SpitState = new SpitterBossTwoSpitState();
+    public SpitterBossTwoSpitState SpitState = new SpitterBossTwoSpitState();
+
+    public SpitterBossTwoDeathState DeathState = new SpitterBossTwoDeathState();
+
+    public GameObject bossSpitProjectile;
 
     public NavMeshAgent navMeshAgent;
 
-    [SerializeField]
-    int startHealth = 10;
+    public GameObject player;
+
+
+    int startHealth = 60;
+
+    float spitterHealth;
+
 
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        hp = startHealth;
+        spitterHealth = startHealth;
+        player = GameObject.FindWithTag("Player");
     }
 
     // Start is called before the first frame update
@@ -28,8 +38,21 @@ public class SpitterBossTwoStateController : StateController
     }
 
     // Update is called once per frame
-    void Update()
+    new void Update()
     {
         base.Update();
+        spitterHealth -= Time.deltaTime;
+
+        if ( spitterHealth < 0 )
+        {
+            ChangeState(DeathState);
+        }
+
+        if (destroyMe)
+        {
+            Destroy(gameObject);
+        }
     }
+
+    
 }

@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 
 public class BoarDeath : State
@@ -22,6 +18,5 @@ public class BoarDeath : State
             bsc.destroyMe = true;
         }
     }
-
 }
 

@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEngine.UI.Image;
 
 public class BoarFall : State
 {
@@ -36,7 +32,6 @@ public class BoarFall : State
     // Update is called once per frame
     protected override void OnUpdate()
     {
-        //transform.position = transform.position + new Vector3(0, +5, 0);
-        sc.transform.position -= sc.transform.up * grav * Time.deltaTime;
+        sc.transform.position -= grav * Time.deltaTime * sc.transform.up;
     }
 }

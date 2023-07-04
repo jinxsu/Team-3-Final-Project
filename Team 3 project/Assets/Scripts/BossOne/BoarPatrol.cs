@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class BoarPatrol : BoarVulnerable
@@ -15,7 +12,6 @@ public class BoarPatrol : BoarVulnerable
     protected override void OnUpdate()
     {
         
-        //sc.transform.LookAt(target.transform); 
         bsc.navMeshAgent.destination = target.transform.position;
 
     }
@@ -32,10 +28,7 @@ public class BoarPatrol : BoarVulnerable
         //re-enabling navmesh agent after a charge
         bsc.navMeshAgent.enabled = true;
         bsc.navMeshAgent.ResetPath();
-        //if (bsc.navMeshAgent.isStopped)
-        //{
-        //    bsc.navMeshAgent.isStopped = false;
-        //}
+
     }
 
 

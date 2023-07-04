@@ -1,18 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BigBossTwoChaseState : BigBossTwoVulnerable
 {
-    // Start is called before the first frame update
-    void Start()
+    protected GameObject target;
+    float proximityTimer;
+
+    protected override void OnUpdate()
     {
-        
+        bsc.navMeshAgent.destination = target.transform.position;
+        if ((target.transform.position - bsc.transform.position).magnitude < 15)
+        {
+            Debug.Log("Player close");
+            proximityTimer -= Time.deltaTime;
+            if (proximityTimer < 0 )
+            {
+                bsc.ChangeState(bsc.StompState);
+            }
+        }
+        else
+        {
+            proximityTimer = 3f;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void OnEnter()
     {
-        
+        base.OnEnter();
+        proximityTimer = 3f;
+        target = bsc.player;
+
+        bsc.navMeshAgent.enabled = true;
+        bsc.navMeshAgent.ResetPath();
     }
 }

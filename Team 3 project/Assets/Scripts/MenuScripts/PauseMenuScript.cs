@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -31,6 +28,7 @@ public class PauseMenuScript : MonoBehaviour
         playerUI = GameObject.FindGameObjectWithTag("PlayerUI");
         playerControls = player.GetComponent<PlayerControllerScript>().controls;
         manager = GameObject.FindGameObjectWithTag("Manager");
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame

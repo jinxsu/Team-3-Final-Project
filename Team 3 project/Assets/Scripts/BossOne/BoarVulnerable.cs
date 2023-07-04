@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class BoarVulnerable : State
 {
     //States that have this as a parent are able to have their actions interrupted by being shot so that the boss will charge
@@ -13,7 +9,6 @@ public class BoarVulnerable : State
     {
         //Establishing a variable that is frequently used here so that all the children automatically have it
         bsc = (BoarBossStateController)sc;
-        Debug.Log("Vulnerable Enter");
     }
 
 

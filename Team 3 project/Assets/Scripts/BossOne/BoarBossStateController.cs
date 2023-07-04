@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.AI;
 
 public class BoarBossStateController : StateController
@@ -17,8 +13,6 @@ public class BoarBossStateController : StateController
     public State DeathState = new BoarDeath();
 
     public int startHealth;
-
-    public bool destroyMe = false;
 
     public NavMeshAgent navMeshAgent;
 

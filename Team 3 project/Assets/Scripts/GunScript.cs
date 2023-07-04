@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class GunScript : MonoBehaviour
 {
@@ -18,11 +15,6 @@ public class GunScript : MonoBehaviour
     {
         controls = InputManager.inputActions;
         playerCam = GameObject.FindWithTag("Player").GetComponentInChildren<Camera>();
-    }
-
-    private void Start()
-    {
-        
     }
 
     private void Update()

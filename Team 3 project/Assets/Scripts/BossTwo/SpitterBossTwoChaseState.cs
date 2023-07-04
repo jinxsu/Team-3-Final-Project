@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class SpitterBossTwoChaseState : State
 {
-    // Start is called before the first frame update
-    void Start()
+    SpitterBossTwoStateController bsc;
+
+    protected override void OnUpdate()
     {
-        
+        bsc.navMeshAgent.destination = bsc.player.transform.position;
+        //check if playing has entered the spitting range, entering needs the player to be closer than they need to be to leave the spitting range
+        if ((bsc.player.transform.position - bsc.transform.position).magnitude < 15)
+        {
+            bsc.ChangeState(bsc.SpitState);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void OnEnter()
     {
-        
+        base.OnEnter();
+        bsc = (SpitterBossTwoStateController)sc;
+
+        bsc.navMeshAgent.enabled = true;
+        bsc.navMeshAgent.ResetPath();
     }
 }

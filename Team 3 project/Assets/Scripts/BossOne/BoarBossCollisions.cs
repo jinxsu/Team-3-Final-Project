@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Transactions;
 using UnityEngine;
 
 public class BoarBossCollisions : MonoBehaviour
@@ -9,16 +6,17 @@ public class BoarBossCollisions : MonoBehaviour
 
 
     [SerializeField] BoarBossStateController bsc;
-    [SerializeField] LayerMask groundMask;
+
+    public GameObject player;
+
+    private void Awake()
+    {
+        player = GameObject.FindWithTag("Player");
+    }
 
     //Checking for Bullet hit, will always override chase and update charge
     public void OnCollisionEnter(Collision collision)
     {
-        //If a bullet hits the boss
-       
-        
-
-        //if(bsc.CheckCurrentState() is BoarCharge)
 
         //if the boss hits a wall 
         if (collision.gameObject.layer == 8)
@@ -40,7 +38,7 @@ public class BoarBossCollisions : MonoBehaviour
         }
 
         //if the boss hits the player
-        else if (collision.gameObject.tag == "Player")
+        else if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("Collided with  player");
             bsc.ChangeState(bsc.FallState);
@@ -53,7 +51,7 @@ public class BoarBossCollisions : MonoBehaviour
     {
 
         //if the boss hits a trap's trigger zone this is what will be used to determine damage
-        if (other.transform.tag == "Trap")
+        if (other.transform.CompareTag("Trap"))
         {
             if (bsc.CheckCurrentState() is BoarVulnerable)
             {
