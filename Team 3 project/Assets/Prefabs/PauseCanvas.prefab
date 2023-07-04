@@ -2343,7 +2343,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-      - m_Target: {fileID: 6749711576391512726}
+      - m_Target: {fileID: 1765508333780332114}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -6757,7 +6757,7 @@ PrefabInstance:
     - target: {fileID: 6540536495187859176, guid: a4c7c45cdee82b344ae437670dadbd97,
         type: 3}
       propertyPath: m_text
-      value: X
+      value: B
       objectReference: {fileID: 0}
     - target: {fileID: 6540536495520971633, guid: a4c7c45cdee82b344ae437670dadbd97,
         type: 3}
@@ -6782,7 +6782,7 @@ PrefabInstance:
     - target: {fileID: 6540536497259211222, guid: a4c7c45cdee82b344ae437670dadbd97,
         type: 3}
       propertyPath: inputBinding.m_Path
-      value: <Gamepad>/buttonWest
+      value: <Gamepad>/buttonEast
       objectReference: {fileID: 0}
     - target: {fileID: 6540536497259211222, guid: a4c7c45cdee82b344ae437670dadbd97,
         type: 3}
@@ -6803,7 +6803,7 @@ PrefabInstance:
     - target: {fileID: 6540536497259211222, guid: a4c7c45cdee82b344ae437670dadbd97,
         type: 3}
       propertyPath: inputBinding.m_Groups
-      value: 
+      value: Gamepad
       objectReference: {fileID: 0}
     - target: {fileID: 6540536497259211223, guid: a4c7c45cdee82b344ae437670dadbd97,
         type: 3}
@@ -7315,7 +7315,7 @@ PrefabInstance:
     - target: {fileID: 6540536497259211222, guid: a4c7c45cdee82b344ae437670dadbd97,
         type: 3}
       propertyPath: inputBinding.m_Groups
-      value: 
+      value: Keyboard&Mouse
       objectReference: {fileID: 0}
     - target: {fileID: 6540536497259211223, guid: a4c7c45cdee82b344ae437670dadbd97,
         type: 3}

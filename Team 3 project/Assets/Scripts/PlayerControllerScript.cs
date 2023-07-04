@@ -115,6 +115,7 @@ public class PlayerControllerScript : MonoBehaviour
         coyoteTimer = coyoteTimerStart;
         moveSpeed = baseMoveSpeed;
         currentHp = maxHp;
+        DontDestroyOnLoad(gameObject);
     }
 
     public void HurtPlayer()

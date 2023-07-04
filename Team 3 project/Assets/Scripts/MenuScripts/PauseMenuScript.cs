@@ -28,6 +28,7 @@ public class PauseMenuScript : MonoBehaviour
         playerUI = GameObject.FindGameObjectWithTag("PlayerUI");
         playerControls = player.GetComponent<PlayerControllerScript>().controls;
         manager = GameObject.FindGameObjectWithTag("Manager");
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
