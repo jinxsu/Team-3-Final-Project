@@ -8,7 +8,7 @@ public class PlayerSpawnScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject.FindWithTag("Player");
+        player = GameObject.FindWithTag("Player");
         player.transform.position = transform.position;
     }
 }
