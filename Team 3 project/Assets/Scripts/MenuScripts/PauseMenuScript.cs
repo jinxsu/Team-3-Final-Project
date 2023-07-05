@@ -19,6 +19,8 @@ public class PauseMenuScript : MonoBehaviour
 
     public GameObject playerUI;
 
+    public GameObject deathMenu;
+
     public static bool isPaused;
     // Start is called before the first frame update
     void Start()
@@ -70,6 +72,8 @@ public class PauseMenuScript : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenuScene");
         isPaused = false;
+        Destroy(player);
+        Destroy(gameObject);
     }
 
     public void QuitGame()
@@ -112,5 +116,14 @@ public class PauseMenuScript : MonoBehaviour
     public void ToggleXInvert(bool toggleState)
     {
         InputManager.ToggleXInvert(toggleState);
+    }
+
+    public void PlayerDeath()
+    {
+        deathMenu.SetActive(true);
+        playerUI.SetActive(false);
+        Time.timeScale = 0.0f;
+        isPaused = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 }
