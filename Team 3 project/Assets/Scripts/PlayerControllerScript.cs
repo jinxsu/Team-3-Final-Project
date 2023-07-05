@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
+using UnityEngine.SceneManagement;
 
 public class PlayerControllerScript : MonoBehaviour
 {
@@ -103,6 +104,10 @@ public class PlayerControllerScript : MonoBehaviour
 
     private int maxHp = 4;
 
+
+    //required to make sure that the player is moved by the playerspawn object
+    private int spawnTime = 5;
+
     //I don't know why it says it's not used, it is used in the awake and in the hurtplayer functions
     private int currentHp;
 
@@ -132,36 +137,45 @@ public class PlayerControllerScript : MonoBehaviour
     private void OnEnable()
     {
         controls.Enable();
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnDisable()
     {
         controls.Disable();
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!PauseMenuScript.isPaused)
+        if (spawnTime < 0)
         {
-            Jump();
-            Grav();
-            Crouch();
-            Interact();
-            PlayerMovement();
-            WeaponSwap();
-            MoveArm();
-
-            if (recentJump)
+            if (!PauseMenuScript.isPaused)
             {
-                recentJumpTimer -= Time.deltaTime;
+                Jump();
+                Grav();
+                Crouch();
+                Interact();
+                PlayerMovement();
+                WeaponSwap();
+                MoveArm();
 
-                if (recentJumpTimer < 0)
+                if (recentJump)
                 {
-                    recentJumpTimer = 0.5f;
-                    recentJump = false;
+                    recentJumpTimer -= Time.deltaTime;
+
+                    if (recentJumpTimer < 0)
+                    {
+                        recentJumpTimer = 0.5f;
+                        recentJump = false;
+                    }
                 }
             }
+        }
+        else
+        {
+            spawnTime--;
         }
     }
 
@@ -212,7 +226,10 @@ public class PlayerControllerScript : MonoBehaviour
         }
     }
 
-
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        spawnTime = 5;
+    }
 
     public void ChangeWeapon()
     {

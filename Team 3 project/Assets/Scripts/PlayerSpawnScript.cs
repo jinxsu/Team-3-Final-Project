@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class PlayerSpawnScript : MonoBehaviour
 {
-    GameObject player;
+    public GameObject player;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        GameObject.FindWithTag("Player");
+        player = GameObject.FindWithTag("Player");
+        Debug.Log("Player selected", this);
+    }
+
+    private void Start()
+    {
         player.transform.position = transform.position;
+        Debug.Log("Player moved", this);
     }
 }

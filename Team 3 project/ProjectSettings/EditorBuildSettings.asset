@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenuScene.unity
     guid: 13d89f84305b09f409cf38b070c20bba
   - enabled: 1
+    path: Assets/Scenes/PreGameScene.unity
+    guid: f0fa55a6b44fe8240b8ff6abfc000771
+  - enabled: 1
     path: Assets/Scenes/Starting Area.unity
     guid: 835caf3564ff23342b1b127682c3de3f
+  - enabled: 1
+    path: Assets/Scenes/PlayerMovementTestScene.unity
+    guid: c2941b55a69de3148a63c1aa27453b08
   m_configObjects: {}
