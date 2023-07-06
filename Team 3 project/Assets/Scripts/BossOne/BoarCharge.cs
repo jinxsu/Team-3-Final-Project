@@ -44,7 +44,7 @@ public class BoarCharge : BoarVulnerable
         chargeMaxTimer = chargeMax;
 
         //disabling the navmesh agent so that the boar can charge off of cliffs
-        //bsc.navMeshAgent.enabled = false;
+        bsc.navMeshAgent.enabled = false;
     }
 
     
