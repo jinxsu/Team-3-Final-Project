@@ -21,7 +21,7 @@ public class BoarBossCollisions : MonoBehaviour
         //if the boss hits a wall 
         if (collision.gameObject.layer == 8)
         {
-            Debug.Log("Collided with not Bullet or ground");
+            Debug.Log("Collided with wall");
 
             bsc.ChangeState(bsc.FallState);
 
