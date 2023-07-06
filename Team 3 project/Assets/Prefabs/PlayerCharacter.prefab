@@ -609,7 +609,6 @@ MonoBehaviour:
   - {fileID: 6989053678186794222}
   armSpeed: 5
   wristMovement: {fileID: 0}
-  interactMovement: {fileID: 0}
   anim: {fileID: 0}
   fullbodyAnim: {fileID: 2612883178388281094}
   isDead: 0
@@ -1769,7 +1768,7 @@ Animator:
   m_GameObject: {fileID: 6129903372726292287}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 63a40eb39d18a884facd470596048005, type: 3}
-  m_Controller: {fileID: 9100000, guid: 84746b4e27c31f84d98e4cd52a095599, type: 2}
+  m_Controller: {fileID: 9100000, guid: 286959fc34cd5e646b48f2bd7b6b60e5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

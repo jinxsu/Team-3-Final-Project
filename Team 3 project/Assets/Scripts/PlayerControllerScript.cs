@@ -336,6 +336,7 @@ public class PlayerControllerScript : MonoBehaviour
         {
             //interact with item code here
             anim.SetTrigger("interact");
+            fullbodyAnim.SetTrigger("interact");
         }
     }
 
