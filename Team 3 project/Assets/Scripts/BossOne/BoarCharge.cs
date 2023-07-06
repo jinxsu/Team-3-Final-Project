@@ -5,7 +5,7 @@ public class BoarCharge : BoarVulnerable
     //This is the boss' charge state. It can be reset by being shot again and doesn't account for gravity
 
     protected GameObject target;
-    private float chargePause = 3f;
+    private float chargePause = 1f;
     private float chargePauseTimer;
     private int moveSpd = 20;
     private float chargeMax = 10f;
@@ -44,7 +44,7 @@ public class BoarCharge : BoarVulnerable
         chargeMaxTimer = chargeMax;
 
         //disabling the navmesh agent so that the boar can charge off of cliffs
-        bsc.navMeshAgent.enabled = false;
+        //bsc.navMeshAgent.enabled = false;
     }
 
     

@@ -31,6 +31,7 @@ public class GunScript : MonoBehaviour
         if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, 500, layerMask))
         {
             Debug.Log("Shot: " + hit.transform.tag);
+            Debug.DrawRay(playerCam.transform.position, playerCam.transform.forward, Color.green);
             if (hit.transform.tag == "Boss")
             {
                 hit.transform.SendMessage("BossHitByRay");
