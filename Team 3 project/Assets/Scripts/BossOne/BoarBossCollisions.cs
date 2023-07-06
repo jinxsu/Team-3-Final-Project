@@ -22,8 +22,14 @@ public class BoarBossCollisions : MonoBehaviour
         if (collision.gameObject.layer == 8)
         {
             Debug.Log("Collided with wall");
-
-            bsc.ChangeState(bsc.FallState);
+            if (bsc.CheckCurrentState() == bsc.ChargeState)
+            {
+                bsc.ChangeState(bsc.FallState);
+            }
+            else
+            {
+                bsc.ChangeState(bsc.PatrolState);
+            }
 
         }
         //if the boss hits the ground, this does proc over and over as the boss is walking around
