@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 using UnityEngine.SceneManagement;
@@ -94,6 +95,9 @@ public class PlayerControllerScript : MonoBehaviour
     [SerializeField]
     private MultiRotationConstraint wristMovement;
 
+    [SerializeField]
+    private TwoBoneIKConstraint interactMovement;
+
     [Header("Animation")]
 
     [SerializeField]
@@ -117,6 +121,7 @@ public class PlayerControllerScript : MonoBehaviour
         controller = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animator>();
         wristMovement = GetComponentInChildren<MultiRotationConstraint>();
+        interactMovement = GetComponentInChildren<TwoBoneIKConstraint>();
         coyoteTimer = coyoteTimerStart;
         moveSpeed = baseMoveSpeed;
         currentHp = maxHp;
@@ -300,6 +305,7 @@ public class PlayerControllerScript : MonoBehaviour
             {
                 Vector3 newPos = Vector3.MoveTowards(POV.transform.position, crouchCamHeight.position, camSpeed * Time.deltaTime);
                 POV.transform.position = newPos;
+                interactMovement.weight += 0.005f;
             }
 
         }
@@ -308,6 +314,7 @@ public class PlayerControllerScript : MonoBehaviour
             moveSpeed = baseMoveSpeed;
             controller.center = standCenter;
             controller.height = standPlayerHeight;
+            interactMovement.weight = 0.5f;
 
             anim.SetBool("crouching", false);
             fullbodyAnim.SetBool("crouching", false);
@@ -316,6 +323,7 @@ public class PlayerControllerScript : MonoBehaviour
             {
                 Vector3 newPos = Vector3.MoveTowards(POV.transform.position, standCamHeight.position, camSpeed * Time.deltaTime);
                 POV.transform.position = newPos;
+                interactMovement.weight -= 0.005f;
             }
         }
     }
