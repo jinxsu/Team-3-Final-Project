@@ -14,7 +14,7 @@ public class BoarRecoil : State
     {
         // Initiation of variables for this state
         bsc = (BoarBossStateController)sc;
-        recoilStunTimer = 4f;
+        recoilStunTimer = 2f;
         Debug.Log("Recoil State");
         bsc.navMeshAgent.enabled = false;
     }
