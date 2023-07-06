@@ -9,19 +9,22 @@ public class GunScript : MonoBehaviour
 
     public LayerMask layerMask;
 
+    public Animator animator;
+
 
 
     private void Awake()
     {
         controls = InputManager.inputActions;
         playerCam = GameObject.FindWithTag("Player").GetComponentInChildren<Camera>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
         if (controls.Player.Fire.triggered && !PauseMenuScript.isPaused)
         {
-            Shoot();
+            animator.SetTrigger("Fire");
         }
     }
 
