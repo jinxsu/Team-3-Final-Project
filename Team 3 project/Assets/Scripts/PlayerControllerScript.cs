@@ -1,4 +1,5 @@
 using System;
+using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 using UnityEngine.SceneManagement;
@@ -111,6 +112,8 @@ public class PlayerControllerScript : MonoBehaviour
     //I don't know why it says it's not used, it is used in the awake and in the hurtplayer functions
     private int currentHp;
 
+    public bool isDead;
+
     void Awake()
     {
         controls = InputManager.inputActions;
@@ -121,6 +124,7 @@ public class PlayerControllerScript : MonoBehaviour
         moveSpeed = baseMoveSpeed;
         currentHp = maxHp;
         DontDestroyOnLoad(gameObject);
+        isDead = false;
     }
 
     public void HurtPlayer()
@@ -171,6 +175,11 @@ public class PlayerControllerScript : MonoBehaviour
                         recentJump = false;
                     }
                 }
+            }
+
+            if (currentHp < 0 && !isDead)
+            {
+                isDead = true;
             }
         }
         else
@@ -229,6 +238,7 @@ public class PlayerControllerScript : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         spawnTime = 5;
+        currentHp = maxHp;
     }
 
     public void ChangeWeapon()

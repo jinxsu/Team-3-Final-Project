@@ -12,6 +12,7 @@ TagManager:
   - HoldPoint
   - HeldItem
   - BossProjectile
+  - ItemCamera
   layers:
   - Default
   - TransparentFX

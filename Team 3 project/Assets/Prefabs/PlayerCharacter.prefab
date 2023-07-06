@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 8784395516483658938}
   m_Layer: 0
   m_Name: ItemCamera
-  m_TagString: Untagged
+  m_TagString: ItemCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -523,6 +523,7 @@ MonoBehaviour:
   wristMovement: {fileID: 0}
   anim: {fileID: 0}
   fullbodyAnim: {fileID: 2612883178388281094}
+  isDead: 0
 --- !u!1 &6830388006208403958
 GameObject:
   m_ObjectHideFlags: 0

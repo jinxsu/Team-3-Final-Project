@@ -8,6 +8,7 @@ public class PauseMenuScript : MonoBehaviour
     public GameObject pauseMenu;
     public PlayerControls playerControls;
     public GameObject player;
+    PlayerControllerScript playerController;
 
     public GameObject manager;
 
@@ -21,6 +22,8 @@ public class PauseMenuScript : MonoBehaviour
 
     public GameObject deathMenu;
 
+    bool playerDied;
+
     public static bool isPaused;
     // Start is called before the first frame update
     void Start()
@@ -28,9 +31,11 @@ public class PauseMenuScript : MonoBehaviour
         pauseMenu.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player");
         playerUI = GameObject.FindGameObjectWithTag("PlayerUI");
-        playerControls = player.GetComponent<PlayerControllerScript>().controls;
+        playerController = player.GetComponent<PlayerControllerScript>();
+        playerControls = playerController.controls;
         manager = GameObject.FindGameObjectWithTag("Manager");
         DontDestroyOnLoad(gameObject);
+        playerDied = false;
     }
 
     // Update is called once per frame
@@ -46,6 +51,12 @@ public class PauseMenuScript : MonoBehaviour
             {
                 PauseGame();
             }
+        }
+
+        if (playerController.isDead && !playerDied)
+        {
+            playerDied = true;
+            PlayerDeath();
         }
     }
 
@@ -120,6 +131,7 @@ public class PauseMenuScript : MonoBehaviour
 
     public void PlayerDeath()
     {
+        GameObject.FindWithTag("ItemCamera").SetActive(false);
         deathMenu.SetActive(true);
         playerUI.SetActive(false);
         Time.timeScale = 0.0f;
