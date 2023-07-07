@@ -20,7 +20,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -3925427449959772061, guid: 66f6a538d141af247a46a0eea667965d,
+  m_Motion: {fileID: -2992822042774685701, guid: 4ac7090b0f6493b41b3b6a64c9777f2e,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -40,8 +40,8 @@ AnimatorStateMachine:
     m_State: {fileID: -4480037410932115786}
     m_Position: {x: 370, y: 110, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 8072966866207140760}
-    m_Position: {x: 370, y: 220, z: 0}
+    m_State: {fileID: 1854816822869100262}
+    m_Position: {x: 405, y: 285, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -51,7 +51,7 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 100, y: 100, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: -4480037410932115786}
+  m_DefaultState: {fileID: 1854816822869100262}
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -74,14 +74,14 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1102 &8072966866207140760
+--- !u!1102 &1854816822869100262
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dash
+  m_Name: Charge
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
