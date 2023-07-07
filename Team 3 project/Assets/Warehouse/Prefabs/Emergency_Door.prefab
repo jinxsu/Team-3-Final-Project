@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 211317252}
   m_Layer: 14
   m_Name: Emergency_Door
-  m_TagString: Untagged
+  m_TagString: EmergencyDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,8 +162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b1b15ac9f646054fa44607bb5d3e74b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emLightbulb: {fileID: 4475624616117069141}
-  emLight: {fileID: 54497942}
+  lightbulb: {fileID: 4475624616117069141}
+  areaLight: {fileID: 54497942}
   doorAnim: {fileID: 6011396405000999613}
 --- !u!65 &211317252
 BoxCollider:
@@ -176,8 +176,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5514946, y: 3.4767704, z: 2.5449982}
-  m_Center: {x: 3.9493084, y: -0.3153944, z: 0.036445618}
+  m_Size: {x: 0.22042465, y: 3.4767704, z: 2.5449982}
+  m_Center: {x: 3.133955, y: -0.3153944, z: 0.036445618}
 --- !u!1001 &4133651886544894888
 PrefabInstance:
   m_ObjectHideFlags: 0

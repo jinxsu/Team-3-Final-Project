@@ -13,6 +13,7 @@ TagManager:
   - HeldItem
   - BossProjectile
   - ItemCamera
+  - EmergencyDoor
   layers:
   - Default
   - TransparentFX
