@@ -612,6 +612,9 @@ MonoBehaviour:
   anim: {fileID: 0}
   fullbodyAnim: {fileID: 2612883178388281094}
   isDead: 0
+  interactMask:
+    serializedVersion: 2
+    m_Bits: 16384
 --- !u!1 &6830388006208403958
 GameObject:
   m_ObjectHideFlags: 0

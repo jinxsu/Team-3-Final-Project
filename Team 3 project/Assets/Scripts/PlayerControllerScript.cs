@@ -114,6 +114,9 @@ public class PlayerControllerScript : MonoBehaviour
 
     public bool isDead;
 
+    [SerializeField]
+    private LayerMask interactMask;
+
     void Awake()
     {
         controls = InputManager.inputActions;
@@ -334,9 +337,15 @@ public class PlayerControllerScript : MonoBehaviour
     {
         if (controls.Player.Interact.triggered)
         {
-            //interact with item code here
             anim.SetTrigger("interact");
             fullbodyAnim.SetTrigger("interact");
+
+            RaycastHit hit;
+            if (Physics.Raycast(POV.transform.position, POV.transform.forward, out hit, 20, interactMask))
+            {
+                Debug.Log("Interacted!");
+                hit.transform.SendMessage("Interact");
+            }
         }
     }
 
