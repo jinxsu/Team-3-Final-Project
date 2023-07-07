@@ -10,6 +10,7 @@ public class GunScript : MonoBehaviour
     public LayerMask layerMask;
 
     public Animator animator;
+    public ParticleSystem particles;
 
 
 
@@ -39,5 +40,11 @@ public class GunScript : MonoBehaviour
                 hit.transform.SendMessage("BossHitByRay");
             }
         }
+
+        //Neither of these worked to get the particle system to reset and play from the beginning on every click even though, as far as I can tell, they should
+
+        //particles.Clear();
+        //particles.Simulate(0f,true,true);
+        particles.Play();
     }
 }

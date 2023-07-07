@@ -21,6 +21,12 @@ public class BigBossTwoStateController : StateController
 
     public GameObject stompObject;
 
+    public GameObject spitterBoss;
+    public GameObject spitterBossSpawn;
+
+    public GameObject smallBoss;
+    public GameObject smallBossSpawn;
+
     [SerializeField]
     int startHealth = 10;
 

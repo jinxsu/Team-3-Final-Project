@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Crystal_Arena.unity
     guid: 9d54e049f8a26644a969491b00b9217e
+  - enabled: 1
+    path: Assets/Scenes/PlayerMovementTestScene.unity
+    guid: c2941b55a69de3148a63c1aa27453b08
   m_configObjects: {}

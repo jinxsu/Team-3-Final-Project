@@ -190,6 +190,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoarBoss
       objectReference: {fileID: 0}
+    - target: {fileID: 670567846451602532, guid: 78089af15eebf4049b7cd081d6642b96,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 670567846451602543, guid: 78089af15eebf4049b7cd081d6642b96,
         type: 3}
       propertyPath: startHealth
@@ -391,6 +396,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
+--- !u!1 &476217896
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 476217897}
+  m_Layer: 0
+  m_Name: SmallSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &476217897
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476217896}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.509, y: -0.389, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1750805774}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &498678552
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,7 +616,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 523096874}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 71.7, y: -3, z: -147.3}
+  m_LocalPosition: {x: -3, y: 2.5, z: -126.9}
   m_LocalScale: {x: 1.7393086, y: 3.6936939, z: 1.6875879}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1633,7 +1669,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1750805771
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1705,10 +1741,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1750805770}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 40.62, y: 7.99, z: -118}
+  m_LocalPosition: {x: 40.62, y: 7.99, z: -110.4}
   m_LocalScale: {x: 5.0747, y: 5.390346, z: 9.330851}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2132444362}
+  - {fileID: 476217897}
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1730,6 +1768,10 @@ MonoBehaviour:
   player: {fileID: 0}
   stompObject: {fileID: 7161613254280738983, guid: cb2fd3fc320793841ab17df149e82f2b,
     type: 3}
+  spitterBoss: {fileID: 0}
+  spitterBossSpawn: {fileID: 2132444361}
+  smallBoss: {fileID: 0}
+  smallBossSpawn: {fileID: 476217896}
   startHealth: 10
 --- !u!195 &1750805776
 NavMeshAgent:
@@ -1919,6 +1961,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: -25.318, y: 0, z: 0}
+--- !u!1 &2132444361
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2132444362}
+  m_Layer: 0
+  m_Name: SpitterSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2132444362
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132444361}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.442, y: -0.427, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1750805774}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2266050710177782502
 PrefabInstance:
   m_ObjectHideFlags: 0
