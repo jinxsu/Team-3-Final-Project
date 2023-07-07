@@ -14,6 +14,12 @@ public class ButtonTrapScript : MonoBehaviour
     bool playerDetected = false;
     bool buttonEnabled = true;
 
+    Transform buttonTransform;
+
+    private void Start()
+    {
+        buttonTransform = GameObject.FindWithTag("BUTTM").GetComponent<Transform>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -42,6 +48,7 @@ public class ButtonTrapScript : MonoBehaviour
                     //This allows for both the location of the trap to change and which trap is spawned to change as well
                     spawnedTrap = Instantiate(trapToSpawn, spawnLocation.transform.position, spawnLocation.transform.rotation);
                     trapTime = trapTimer;
+                    buttonTransform.position = new(2.8141f, buttonTransform.position.y, buttonTransform.position.z);
                 }
             }
         }
