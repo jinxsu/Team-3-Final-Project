@@ -106,4 +106,9 @@ public class BigBossTwoStateController : StateController
     {
         ChangeState(ChargeState);
     }
+
+    public void SpawnBosses()
+    {
+        Debug.Log("AAAAAAAAAAAA");
+    }
 }

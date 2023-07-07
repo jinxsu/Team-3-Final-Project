@@ -21,7 +21,11 @@ public class BigBossTwoDeathState : State
         if (deathCountdown < 0 )
         {
             //need to add spawning the second phase bosses
+            bsc.SpawnBosses();
+
             bsc.destroyMe = true;
         }
     }
+
+
 }
