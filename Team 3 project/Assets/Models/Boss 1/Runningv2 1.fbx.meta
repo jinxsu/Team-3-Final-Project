@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 016bd9c973a11a2488bbf503d83d6dcc
+guid: 4ac7090b0f6493b41b3b6a64c9777f2e
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Charge
-      takeName: Charge
-      internalID: 842011099488704110
+      name: Runningv2
+      takeName: Runningv2
+      internalID: -2992822042774685701
       firstFrame: 1
-      lastFrame: 40
+      lastFrame: 60
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
