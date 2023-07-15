@@ -109,6 +109,7 @@ public class BigBossTwoStateController : StateController
 
     public void SpawnBosses()
     {
-        Debug.Log("AAAAAAAAAAAA");
+        Instantiate(spitterBoss, spitterBossSpawn.transform.position, spitterBossSpawn.transform.rotation);
+        Instantiate(smallBoss, smallBossSpawn.transform.position, smallBossSpawn.transform.rotation);
     }
 }

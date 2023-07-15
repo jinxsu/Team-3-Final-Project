@@ -13,6 +13,8 @@ public class SpitterBossTwoDeathState : State
     {
         base.OnEnter();
         deathTime = deathTimer;
+        bsc = (SpitterBossTwoStateController)sc;
+        bsc.navMeshAgent.enabled = false;
     }
 
     protected override void OnUpdate()
@@ -20,6 +22,8 @@ public class SpitterBossTwoDeathState : State
         base.OnUpdate();
 
         deathTime -= Time.deltaTime;
+
+        Debug.Log("Death Timer :" + deathTime);
 
         if (deathTime < 0)
         {

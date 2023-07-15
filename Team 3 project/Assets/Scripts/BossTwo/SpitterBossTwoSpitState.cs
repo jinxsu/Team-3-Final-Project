@@ -8,6 +8,8 @@ public class SpitterBossTwoSpitState : State
 
     float spitTimer = 2f;
     float spitTime;
+    int forwardMomentum = 500;
+    int upwardMomentum = 100;
     
     protected override void OnEnter()
     {
@@ -29,7 +31,8 @@ public class SpitterBossTwoSpitState : State
         else
         {
             Debug.Log("I SPIT AT YOU");
-            Object.Instantiate(bsc.bossSpitProjectile);
+            var spitProjectile = Object.Instantiate(bsc.bossSpitProjectile, bsc.spitPoint.transform.position, bsc.spitPoint.transform.rotation);
+            spitProjectile.GetComponent<Rigidbody>().AddForce(spitProjectile.transform.forward * forwardMomentum + new Vector3(0, upwardMomentum, 0));
             //check if playing has left the spitting range, leaving needs the player to be further away than they need to be to enter the spitting range
             if ((bsc.player.transform.position - bsc.transform.position).magnitude > 25)
             {
