@@ -14,12 +14,14 @@ public class SpitterBossTwoStateController : StateController
 
     public GameObject bossSpitProjectile;
 
+    public GameObject spitPoint;
+
     public NavMeshAgent navMeshAgent;
 
     public GameObject player;
 
 
-    int startHealth = 60;
+    int startHealth = 5;
 
     float spitterHealth;
 
@@ -43,7 +45,7 @@ public class SpitterBossTwoStateController : StateController
         base.Update();
         spitterHealth -= Time.deltaTime;
 
-        if ( spitterHealth < 0 )
+        if ( spitterHealth < 0 && currentState != DeathState)
         {
             ChangeState(DeathState);
         }
