@@ -5,16 +5,41 @@ using UnityEngine.SceneManagement;
 
 public class BackDoorScript : MonoBehaviour
 {
-    public void Interact()
+    private bool playerDetected;
+    private PlayerControls player;
+
+    private void OnTriggerEnter(Collider other)
     {
-        StartCoroutine(LoadLevel2());
+        if(other.gameObject.CompareTag("Player"))
+        {
+            playerDetected = true;
+            player = other.gameObject.GetComponent<PlayerControllerScript>().controls;
+        }
     }
+
+    private void Update()
+    {
+        if(playerDetected && player.Player.Interact.triggered)
+        {
+            StartCoroutine(LoadLevel2());
+        }
+    }
+
 
     private IEnumerator LoadLevel2()
     {
         Debug.Log("Fade to black...");
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            player = null;
+            playerDetected = false;
+        }
     }
 
 }
