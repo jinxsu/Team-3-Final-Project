@@ -15,6 +15,7 @@ TagManager:
   - ItemCamera
   - EmergencyDoor
   - BUTTM
+  - UsedTrap
   layers:
   - Default
   - TransparentFX
