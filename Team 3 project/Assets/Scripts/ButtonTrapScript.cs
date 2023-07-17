@@ -25,7 +25,7 @@ public class ButtonTrapScript : MonoBehaviour
     {
 
         //Checks if the player is inside the trigger zone that allows them to press the button. 
-        if(other.gameObject.CompareTag("Player"))
+        if(other.gameObject.tag == "Player")
         { 
             //This fetches the player's inputcontrols componenet so that the script can check if the interact button is pressed.
             //Placing this in the Update function caused consistency issues
