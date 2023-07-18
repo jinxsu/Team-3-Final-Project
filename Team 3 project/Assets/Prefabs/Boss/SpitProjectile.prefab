@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 540605869818397670}
   - component: {fileID: 4055003221346373078}
   - component: {fileID: 6342528214425235874}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SpitProjectile
   m_TagString: BossProjectile
   m_Icon: {fileID: 0}

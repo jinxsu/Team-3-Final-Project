@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4911718743154115499}
   - component: {fileID: 4734133953871244210}
   - component: {fileID: 5828844296214646000}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: pTorus3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 7845593710563365635}
   - component: {fileID: 1731551849769532007}
   - component: {fileID: 5124690296988373142}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: pTorus6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 8895170266117339228}
   - component: {fileID: 4542791095429021792}
   - component: {fileID: 6018055273457370632}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: pTorus8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 2957991781061990250}
   - component: {fileID: 5333186421133096737}
   - component: {fileID: 2323258369088491971}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: pTorus2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 7574390317855313256}
   - component: {fileID: 1177563742241089744}
   - component: {fileID: 7070157811634238170}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: pTorus5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 7784154882598219588}
   - component: {fileID: 2976662556381103705}
   - component: {fileID: 5546881097606369717}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: open_hunting_trap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -509,7 +509,7 @@ GameObject:
   - component: {fileID: 8798715163550397704}
   - component: {fileID: 9048270066977526501}
   - component: {fileID: 9048270066977526500}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: HuntingTrap
   m_TagString: Trap
   m_Icon: {fileID: 0}
@@ -570,7 +570,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3993272709909117283}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Chain_open_trap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -609,7 +609,7 @@ GameObject:
   - component: {fileID: 1280964930866620434}
   - component: {fileID: 7254339811056062942}
   - component: {fileID: 3461947471260552827}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: pTorus4
   m_TagString: Untagged
   m_Icon: {fileID: 0}

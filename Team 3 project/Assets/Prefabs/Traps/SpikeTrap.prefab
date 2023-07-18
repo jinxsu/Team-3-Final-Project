@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5669560310519999501}
   - component: {fileID: 4059876467688675798}
   - component: {fileID: 1095146633427913558}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: pCube3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7832136687899926235}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: transform5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6199721301615587870}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: transform6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2859024212414094777}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: pCone2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 2266050709985683395}
   - component: {fileID: 2266050709985683392}
   - component: {fileID: 4117373383273109279}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: SpikeTrap
   m_TagString: Trap
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3954204869247998689}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: pCone3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -313,7 +313,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6589133092304623215}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: transform4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,7 +344,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7696916807168286283}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: pCone1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,7 +376,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8011020687271276599}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: transform3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,7 +407,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3977982400369902639}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: pCube2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

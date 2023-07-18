@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3803827567429727879}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SpitPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 3803827567581265294}
   - component: {fileID: 3803827567581265301}
   - component: {fileID: 3803827567581265290}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: BossTwoSpitter
   m_TagString: Boss
   m_Icon: {fileID: 0}

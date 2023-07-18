@@ -8,6 +8,7 @@ public class SmallBossTwoDeathState : State
     protected override void OnEnter()
     {
         bsc = (SmallBossTwoStateController)sc;
+        bsc.navMeshAgent.enabled = false;
     }
 
     protected override void OnUpdate()

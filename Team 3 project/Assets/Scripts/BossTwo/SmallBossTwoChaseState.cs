@@ -12,7 +12,7 @@ public class SmallBossTwoChaseState : SmallBossTwoVulnerable
     protected override void OnEnter()
     {
         base.OnEnter();
-
+        Debug.Log("Chase enter");
         bsc.navMeshAgent.enabled = true;
         bsc.navMeshAgent.ResetPath();
     }
