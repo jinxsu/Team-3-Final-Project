@@ -17,10 +17,11 @@ public class SmallBossTwoFallState : State
         base.OnEnter();
         transform = bsc.transform;
         ray = new Ray(transform.position, (-1 * transform.up));
-
+        Debug.Log("Falling Enter");
 
         Physics.Raycast(ray, out hitData);
         hitDistance = hitData.distance;
+        Debug.Log("Ray hit " + hitData.collider);
         if (hitDistance < 3)
         {
             bsc.ChangeState(bsc.RecoilState);
@@ -29,6 +30,6 @@ public class SmallBossTwoFallState : State
 
     protected override void OnUpdate()
     {
-        bsc.transform.position = grav * Time.deltaTime * bsc.transform.up;
+        sc.transform.position -= grav * Time.deltaTime * sc.transform.up;
     }
 }
