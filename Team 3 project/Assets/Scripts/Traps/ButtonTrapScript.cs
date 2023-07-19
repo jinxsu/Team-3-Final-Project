@@ -14,12 +14,18 @@ public class ButtonTrapScript : MonoBehaviour
     bool playerDetected = false;
     bool buttonEnabled = true;
 
+    Transform buttonTransform;
+
+    private void Start()
+    {
+        buttonTransform = GameObject.FindWithTag("BUTTM").GetComponent<Transform>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
 
         //Checks if the player is inside the trigger zone that allows them to press the button. 
-        if(other.gameObject.tag == "Player")
+        if(other.gameObject.CompareTag("Player"))
         { 
             //This fetches the player's inputcontrols componenet so that the script can check if the interact button is pressed.
             //Placing this in the Update function caused consistency issues
@@ -42,6 +48,7 @@ public class ButtonTrapScript : MonoBehaviour
                     //This allows for both the location of the trap to change and which trap is spawned to change as well
                     spawnedTrap = Instantiate(trapToSpawn, spawnLocation.transform.position, spawnLocation.transform.rotation);
                     trapTime = trapTimer;
+                    buttonTransform.position = new(2.8141f, buttonTransform.position.y, buttonTransform.position.z);
                 }
             }
         }

@@ -93,6 +93,10 @@ public class SmallBossTwoStateController : StateController
 
     public override void BossHitByRay()
     {
-        ChangeState(ChargeState);
+        if (currentState is SmallBossTwoVulnerable)
+        {
+            Debug.Log("Small boss hit");
+            ChangeState(ChargeState);
+        }
     }
 }

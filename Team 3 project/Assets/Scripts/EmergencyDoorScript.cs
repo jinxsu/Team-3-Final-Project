@@ -11,12 +11,22 @@ public class EmergencyDoorScript : MonoBehaviour
     [SerializeField] private Animator doorAnim;
     private Material lightbulbMat;
     private bool canDoorOpen;
-    private bool isDoorOpen;
+
+    private bool playerDetected;
+    private PlayerControls player;
 
     private void Start()
     {
         areaLight.GetComponent<Light>().enabled = false;
         lightbulbMat = lightbulb.GetComponent<Renderer>().material;
+    }
+
+    private void Update()
+    {
+        if (canDoorOpen && playerDetected && player.Player.Interact.triggered)
+        {
+            doorAnim.SetTrigger("open");
+        }
     }
 
     public void BossDefeated()
@@ -26,21 +36,21 @@ public class EmergencyDoorScript : MonoBehaviour
         lightbulbMat.EnableKeyword("_EMISSION");
     }
 
-    public void Interact()
+    private void OnTriggerEnter(Collider other)
     {
-        if (canDoorOpen)
+        if (other.gameObject.CompareTag("Player"))
         {
-            doorAnim.SetTrigger("open");
-            isDoorOpen = true;
+            playerDetected = true;
+            player = other.gameObject.GetComponent<PlayerControllerScript>().controls;
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player") && isDoorOpen)
+        if (other.gameObject.CompareTag("Player"))
         {
-            doorAnim.SetTrigger("close");
-            canDoorOpen = false;
+            player = null;
+            playerDetected = false;
         }
     }
 }

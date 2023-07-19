@@ -106,4 +106,10 @@ public class BigBossTwoStateController : StateController
     {
         ChangeState(ChargeState);
     }
+
+    public void SpawnBosses()
+    {
+        Instantiate(spitterBoss, spitterBossSpawn.transform.position, spitterBossSpawn.transform.rotation);
+        Instantiate(smallBoss, smallBossSpawn.transform.position, smallBossSpawn.transform.rotation);
+    }
 }

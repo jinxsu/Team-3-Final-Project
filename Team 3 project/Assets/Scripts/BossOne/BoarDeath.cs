@@ -15,6 +15,7 @@ public class BoarDeath : State
         deathCountdown -= Time.deltaTime;
         if (deathCountdown < 0 )
         {
+            GameObject.FindGameObjectWithTag("EmergencyDoor").GetComponent<EmergencyDoorScript>().BossDefeated();
             bsc.destroyMe = true;
         }
     }

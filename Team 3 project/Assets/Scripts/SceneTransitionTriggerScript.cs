@@ -1,0 +1,17 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class SceneTransitionTriggerScript : MonoBehaviour
+{
+    public string sceneTo;
+
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            SceneManager.LoadScene(sceneTo);
+        }
+    }
+}
