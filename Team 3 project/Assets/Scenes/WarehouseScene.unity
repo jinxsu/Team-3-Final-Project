@@ -12615,6 +12615,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 801907412}
     m_Modifications:
+    - target: {fileID: 654221830187027895, guid: 7be388e993953db4e8a18e41cf34b3fe,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 654221830187027895, guid: 7be388e993953db4e8a18e41cf34b3fe,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1419699089267415702, guid: 7be388e993953db4e8a18e41cf34b3fe,
         type: 3}
       propertyPath: m_Name
