@@ -18,7 +18,7 @@ public class SpitterBossTwoStateController : StateController
 
     public GameObject player;
 
-
+    [SerializeField]
     int startHealth = 5;
 
     float spitterHealth;
