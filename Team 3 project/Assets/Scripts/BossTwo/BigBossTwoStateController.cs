@@ -67,6 +67,11 @@ public class BigBossTwoStateController : StateController
         {
             Debug.Log("Collided with not Bullet or ground");
 
+            if (collision.gameObject.GetComponent<TrapWall>() != null)
+            {
+                collision.gameObject.transform.SendMessage("HitByBoss");
+            }
+
             ChangeState(FallState);
 
         }
