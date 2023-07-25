@@ -15,6 +15,8 @@ public class InputManager : MonoBehaviour
     public static event Action rebindCanceled;
     public static event Action<InputAction, int> rebindStarted;
 
+    public static string sceneTo;
+
 
     public static void ToggleYInvert(bool toggleState)
     {

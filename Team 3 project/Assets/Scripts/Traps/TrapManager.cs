@@ -13,6 +13,7 @@ public class TrapManager : MonoBehaviour
         foreach (TrapSpawn spawn in TrapSpawns)
         {
             if (spawn.isOccupied) canSpawn = false;
+            Debug.Log("Found Trap");
         }
 
         if (canSpawn) FillSpawns();
@@ -24,6 +25,7 @@ public class TrapManager : MonoBehaviour
         foreach (TrapSpawn spawn in TrapSpawns)
         {
             spawn.SpawnTrap();
+            Debug.Log("Populated Trap");
         }
     }
 }

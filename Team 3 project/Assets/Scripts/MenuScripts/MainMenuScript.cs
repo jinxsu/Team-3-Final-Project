@@ -19,6 +19,7 @@ public class MainMenuScript : MonoBehaviour
     }
     public void StartGame()
     {
+        InputManager.sceneTo = "Starting Area";
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -56,4 +57,11 @@ public class MainMenuScript : MonoBehaviour
         ctrSensValue.GetComponent<TextMeshProUGUI>().text = ctrSensSlider.GetComponent<Slider>().value.ToString();
         PlayerPrefs.SetInt("ctrSens", ((int)ctrSensSlider.GetComponent<Slider>().value * 10));
     }
+
+    public void SceneSkip(string sceneTo)
+    {
+        InputManager.sceneTo = sceneTo;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
 }

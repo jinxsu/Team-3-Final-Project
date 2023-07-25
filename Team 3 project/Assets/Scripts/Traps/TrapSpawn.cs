@@ -6,7 +6,7 @@ public class TrapSpawn : MonoBehaviour
 {
 
     [SerializeField]
-    GameObject trap;
+    GameObject[] trap;
 
     public bool isOccupied;
     
@@ -14,7 +14,10 @@ public class TrapSpawn : MonoBehaviour
     {
         if (!isOccupied)
         {
-            var newTrap = Instantiate(trap,transform);
+            var trapToSpawn = Random.Range(0, trap.Length);
+
+
+            var newTrap = Instantiate(trap[trapToSpawn],transform);
 
             newTrap.GetComponent<CrystalTrap>().spawn = this;
 

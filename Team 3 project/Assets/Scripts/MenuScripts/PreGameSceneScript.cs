@@ -8,6 +8,11 @@ public class PreGameSceneScript : MonoBehaviour
     public string sceneTo;
 
 
+    private void Start()
+    {
+        sceneTo = InputManager.sceneTo;
+    }
+
 
     // Update is called once per frame
     void Update()
