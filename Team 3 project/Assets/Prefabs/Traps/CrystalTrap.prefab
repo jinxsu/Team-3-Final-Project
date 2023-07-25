@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 4238449831610620683}
   - component: {fileID: 7938151181172501863}
   - component: {fileID: 1646875360954393916}
-  m_Layer: 0
+  - component: {fileID: 6049072316917607777}
+  m_Layer: 15
   m_Name: CrystalTrap
   m_TagString: Trap
   m_Icon: {fileID: 0}
@@ -125,3 +126,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.03, y: 0.3, z: 0.04}
   m_Center: {x: 0.0035642732, y: 0.00005827099, z: -0.0012831069}
+--- !u!208 &6049072316917607777
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3895779134973552216}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.0175, y: 0.15, z: 0.0225}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.004, y: 0, z: -0.001}
+  m_TimeToStationary: 0.5

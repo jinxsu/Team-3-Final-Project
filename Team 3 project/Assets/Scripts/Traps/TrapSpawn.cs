@@ -15,8 +15,6 @@ public class TrapSpawn : MonoBehaviour
         if (!isOccupied)
         {
             var trapToSpawn = Random.Range(0, trap.Length);
-
-
             var newTrap = Instantiate(trap[trapToSpawn],transform);
 
             newTrap.GetComponent<CrystalTrap>().spawn = this;
