@@ -74123,10 +74123,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 50211900}
     m_Modifications:
+    - target: {fileID: 5518452447837629750, guid: a4d1f9479765b55429434f19008e6a4a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8424030124646625394, guid: a4d1f9479765b55429434f19008e6a4a,
         type: 3}
       propertyPath: m_Name
       value: Ceiling_Light (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658525519757754591, guid: a4d1f9479765b55429434f19008e6a4a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9197470190993943240, guid: a4d1f9479765b55429434f19008e6a4a,
         type: 3}
