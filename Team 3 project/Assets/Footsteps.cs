@@ -6,10 +6,11 @@ public class Footsteps : MonoBehaviour
 {
     // Start is called before the first frame update
     CharacterController characterController;
-    new AudioSource audio;
+    private AudioSource audio;
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        audio=GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -21,5 +22,6 @@ public class Footsteps : MonoBehaviour
             audio.pitch = Random.Range(0.8f, 1.1f);
             audio.Play();
         }
+        
     }
 }

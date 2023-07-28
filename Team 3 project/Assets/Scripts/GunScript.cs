@@ -11,7 +11,7 @@ public class GunScript : MonoBehaviour
 
     public Animator animator;
     public ParticleSystem particles;
-
+    private AudioSource audio;
 
 
     private void Awake()
@@ -19,6 +19,7 @@ public class GunScript : MonoBehaviour
         controls = InputManager.inputActions;
         playerCam = GameObject.FindWithTag("Player").GetComponentInChildren<Camera>();
         animator = GetComponent<Animator>();
+        audio = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -40,7 +41,8 @@ public class GunScript : MonoBehaviour
                 hit.transform.SendMessage("BossHitByRay");
             }
         }
-
+        //add a shot sound
+        audio.Play();
         //Neither of these worked to get the particle system to reset and play from the beginning on every click even though, as far as I can tell, they should
 
         //particles.Clear();
