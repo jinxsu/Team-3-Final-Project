@@ -10,7 +10,7 @@ public class SpitterBossTwoChaseState : State
     {
         bsc.navMeshAgent.destination = bsc.player.transform.position;
         //check if playing has entered the spitting range, entering needs the player to be closer than they need to be to leave the spitting range
-        if ((bsc.player.transform.position - bsc.transform.position).magnitude < 15)
+        if ((bsc.player.transform.position - bsc.transform.position).magnitude < 25)
         {
             bsc.ChangeState(bsc.SpitState);
         }

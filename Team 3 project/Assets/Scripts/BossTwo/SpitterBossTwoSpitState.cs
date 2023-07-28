@@ -4,10 +4,10 @@ public class SpitterBossTwoSpitState : State
 {
     SpitterBossTwoStateController bsc;
 
-    float spitTimer = 2f;
+    float spitTimer = 1.5f;
     float spitTime;
-    int forwardMomentum = 500;
-    int upwardMomentum = 100;
+    int forwardMomentum = 1200;
+    int upwardMomentum = 70;
     
     protected override void OnEnter()
     {
@@ -32,7 +32,7 @@ public class SpitterBossTwoSpitState : State
             var spitProjectile = Object.Instantiate(bsc.bossSpitProjectile, bsc.spitPoint.transform.position, bsc.spitPoint.transform.rotation);
             spitProjectile.GetComponent<Rigidbody>().AddForce(spitProjectile.transform.forward * forwardMomentum + new Vector3(0, upwardMomentum, 0));
             //check if playing has left the spitting range, leaving needs the player to be further away than they need to be to enter the spitting range
-            if ((bsc.player.transform.position - bsc.transform.position).magnitude > 25)
+            if ((bsc.player.transform.position - bsc.transform.position).magnitude > 35)
             {
                 bsc.ChangeState(bsc.ChaseState);
             }

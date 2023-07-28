@@ -19,7 +19,7 @@ public class SpitterBossTwoStateController : StateController
     public GameObject player;
 
     [SerializeField]
-    int startHealth = 5;
+    int startHealth;
 
     float spitterHealth;
 
@@ -41,6 +41,7 @@ public class SpitterBossTwoStateController : StateController
     new void Update()
     {
         base.Update();
+        Debug.Log(spitterHealth);
         spitterHealth -= Time.deltaTime;
 
         if ( spitterHealth < 0 && currentState != DeathState)

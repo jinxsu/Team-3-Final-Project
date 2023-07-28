@@ -5,12 +5,12 @@ public class SmallBossTwoRecoilState : State
     SmallBossTwoStateController bsc;
 
     private float recoilStunTimer;
-    private int moveSpd = 4;
+    private int moveSpd = 3;
 
     protected override void OnEnter()
     {
         bsc = (SmallBossTwoStateController)sc;
-        recoilStunTimer = 4f;
+        recoilStunTimer = 1.5f;
         bsc.navMeshAgent.enabled = false;
     }
 

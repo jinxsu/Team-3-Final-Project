@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class SmallBossTwoChargeState : SmallBossTwoVulnerable
 {
-    private float chargePause = 3f;
+    private float chargePause = 1f;
     private float chargePauseTimer;
-    private int moveSpd = 7;
-    private float chargeMax = 2;
+    private int moveSpd = 14;
+    private float chargeMax = 1.5f;
     private float chargeMaxTimer;
 
     protected override void OnUpdate()
