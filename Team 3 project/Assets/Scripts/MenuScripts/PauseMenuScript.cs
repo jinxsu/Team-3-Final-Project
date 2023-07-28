@@ -20,6 +20,8 @@ public class PauseMenuScript : MonoBehaviour
 
     public GameObject playerUI;
 
+    public GameObject interactUI;
+
     public GameObject deathMenu;
 
     bool playerDied;
