@@ -20,6 +20,7 @@ public class EmergencyDoorScript : MonoBehaviour
     {
         areaLight.GetComponent<Light>().enabled = false;
         lightbulbMat = lightbulb.GetComponent<Renderer>().material;
+        doorOpenSound= GetComponent<AudioSource>();
     }
 
     private void Update()
