@@ -1,3 +1,4 @@
+using UnityEngine;
 using UnityEngine.AI;
 
 public class BoarBossStateController : StateController
@@ -12,6 +13,8 @@ public class BoarBossStateController : StateController
     
     public State DeathState = new BoarDeath();
 
+    public Animator animator;
+
     public int startHealth;
 
     public NavMeshAgent navMeshAgent;
@@ -19,6 +22,7 @@ public class BoarBossStateController : StateController
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
         hp = startHealth;
     }
 

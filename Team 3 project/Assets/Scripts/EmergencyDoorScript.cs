@@ -9,6 +9,7 @@ public class EmergencyDoorScript : MonoBehaviour
     [SerializeField] private GameObject lightbulb;
     [SerializeField] private GameObject areaLight;
     [SerializeField] private Animator doorAnim;
+    private AudioSource doorOpenSound;
     private Material lightbulbMat;
     private bool canDoorOpen;
 
@@ -34,6 +35,8 @@ public class EmergencyDoorScript : MonoBehaviour
         canDoorOpen = true;
         areaLight.GetComponent<Light>().enabled = true;
         lightbulbMat.EnableKeyword("_EMISSION");
+        //play the buzzer sound
+        doorOpenSound.Play();
     }
 
     private void OnTriggerEnter(Collider other)
