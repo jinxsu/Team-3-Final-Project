@@ -48,6 +48,7 @@ public class ButtonTrapScript : MonoBehaviour
                     //This allows for both the location of the trap to change and which trap is spawned to change as well
                     spawnedTrap = Instantiate(trapToSpawn, spawnLocation.transform.position, spawnLocation.transform.rotation);
                     trapTime = trapTimer;
+                    animator.SetBool("enabled", false);
                     animator.SetTrigger("pressed");
                 }
             }
@@ -72,7 +73,7 @@ public class ButtonTrapScript : MonoBehaviour
                 spawnedTrap = null;
             }
             buttonEnabled = true;
-            animator.SetTrigger("enabled");
+            animator.SetBool("enabled", true);
         }
 
     }
