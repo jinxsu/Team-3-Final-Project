@@ -108,7 +108,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.45
+    agentRadius: 3.5
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
@@ -116,7 +116,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.14999999
+    cellSize: 1.1666666
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -20222,6 +20222,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1477975840}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1477975843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580141416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -334000983
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.5
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: aa3fbe919dc68744a85c629628f058b5, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1001 &1478905958
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27195,6 +27225,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4837331525167839882, guid: 5e560853e1a923842aade144944d1ffd,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837331525167839882, guid: 5e560853e1a923842aade144944d1ffd,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.206312
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837331525167839882, guid: 5e560853e1a923842aade144944d1ffd,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 7.2812524
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837331525167839882, guid: 5e560853e1a923842aade144944d1ffd,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.281216
       objectReference: {fileID: 0}
@@ -27243,10 +27288,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4837331525167839882, guid: 5e560853e1a923842aade144944d1ffd,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4837331525167839886, guid: 5e560853e1a923842aade144944d1ffd,
         type: 3}
       propertyPath: m_Name
       value: BossTwoBig
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837331525167839892, guid: 5e560853e1a923842aade144944d1ffd,
+        type: 3}
+      propertyPath: m_Speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837331525167839892, guid: 5e560853e1a923842aade144944d1ffd,
+        type: 3}
+      propertyPath: m_Acceleration
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e560853e1a923842aade144944d1ffd, type: 3}

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BigBossTwoChargeState : BigBossTwoVulnerable
 {
-    private float chargePause = 3f;
+    private float chargePause = 2f;
     private float chargePauseTimer;
     private int moveSpd = 20;
     private float chargeMax = 10f;

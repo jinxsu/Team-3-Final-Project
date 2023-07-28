@@ -54,14 +54,22 @@ public class SmallBossTwoStateController : StateController
         //if the boss hits a wall 
         if (collision.gameObject.layer == 8)
         {
+            
             Debug.Log("Collided with not Bullet or ground");
 
             if (collision.gameObject.GetComponent<TrapWall>() != null)
             {
                 collision.gameObject.transform.SendMessage("HitByBoss");
             }
-
-            ChangeState(FallState);
+            if (currentState == RecoilState)
+            {
+                ChangeState(ChaseState);
+            }
+            else
+            {
+                ChangeState(FallState);
+            }
+            
 
         }
 

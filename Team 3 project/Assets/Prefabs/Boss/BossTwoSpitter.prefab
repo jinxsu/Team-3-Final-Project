@@ -139,8 +139,8 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3803827567581265295}
   m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_AgentTypeID: -334000983
+  m_Radius: 0.7
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -172,3 +172,4 @@ MonoBehaviour:
   spitPoint: {fileID: 3803827567429727876}
   navMeshAgent: {fileID: 0}
   player: {fileID: 0}
+  startHealth: 30

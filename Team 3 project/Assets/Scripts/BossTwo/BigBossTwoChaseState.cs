@@ -19,7 +19,7 @@ public class BigBossTwoChaseState : BigBossTwoVulnerable
         }
         else
         {
-            proximityTimer = 3f;
+            proximityTimer = 2f;
         }
     }
 
