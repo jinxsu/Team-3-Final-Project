@@ -17,6 +17,8 @@ public class SpitterBossTwoStateController : StateController
     public NavMeshAgent navMeshAgent;
 
     public GameObject player;
+    
+    public Animator animator;
 
     [SerializeField]
     int startHealth;
@@ -27,6 +29,7 @@ public class SpitterBossTwoStateController : StateController
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        animator=GetComponentInChildren<Animator>();
         spitterHealth = startHealth;
         player = GameObject.FindWithTag("Player");
     }

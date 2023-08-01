@@ -26,6 +26,7 @@ public class BigBossTwoStateController : StateController
 
     public GameObject smallBoss;
     public GameObject smallBossSpawn;
+    public Animator animator;
 
     [SerializeField]
     int startHealth = 10;
@@ -34,6 +35,7 @@ public class BigBossTwoStateController : StateController
     {
         player = GameObject.FindWithTag("Player");
         navMeshAgent = GetComponent<NavMeshAgent>();
+        animator = GetComponentInChildren<Animator>();
         hp = startHealth;
     }
 
