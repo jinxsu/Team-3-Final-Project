@@ -10,7 +10,7 @@ public class ButtonTrapScript : MonoBehaviour
     public float trapTime;
     public GameObject spawnedTrap;
     
-    private PlayerControls player;
+    private PlayerControllerScript player;
     bool playerDetected = false;
     bool buttonEnabled = true;
 
@@ -26,12 +26,13 @@ public class ButtonTrapScript : MonoBehaviour
 
         //Checks if the player is inside the trigger zone that allows them to press the button. 
         if(other.gameObject.CompareTag("Player"))
-        { 
+        {
             //This fetches the player's inputcontrols componenet so that the script can check if the interact button is pressed.
             //Placing this in the Update function caused consistency issues
-            player = other.gameObject.GetComponent<PlayerControllerScript>().controls;
+            player = other.gameObject.GetComponent<PlayerControllerScript>();
             playerDetected = true;
-            Debug.Log("player detected");
+            player.intString = "activate trap";
+            player.canInteract = true;
         }
     }
 
@@ -41,7 +42,8 @@ public class ButtonTrapScript : MonoBehaviour
         {
             if (playerDetected)
             {
-                if (player.Player.Interact.triggered && buttonEnabled)
+
+                if (player.controls.Player.Interact.triggered && buttonEnabled)
                 {
 
                     //Spawns an instance of a trap prefab at the position of the spawnLocation gameobject. 
@@ -57,6 +59,9 @@ public class ButtonTrapScript : MonoBehaviour
         if(spawnedTrap == null && trapTime > 0 && canBreak)
         {
             isBroken = true;
+            player.intString = "";
+            player.canInteract = false;
+            GetComponent<BoxCollider>().enabled = false;
         }
 
         //The trap spawned despawns after some time. Also disables the button so that more traps can't be spawned while one is out
@@ -82,6 +87,8 @@ public class ButtonTrapScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            player.intString = "";
+            player.canInteract = false;
             player = null;
             playerDetected = false;
         }
