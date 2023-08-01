@@ -7,7 +7,7 @@ public class FrontDoorScript : MonoBehaviour
     private Animator doorAnim;
 
     private bool playerDetected;
-    private PlayerControls player;
+    private PlayerControllerScript player;
 
     private void Start()
     {
@@ -16,9 +16,15 @@ public class FrontDoorScript : MonoBehaviour
 
     private void Update()
     {
-        if (playerDetected && player.Player.Interact.triggered)
+        if(playerDetected)
         {
-            doorAnim.SetTrigger("open");
+            if (player.controls.Player.Interact.triggered)
+            {
+                doorAnim.SetTrigger("open");
+                player.intString = "";
+                player.canInteract = false;
+                GetComponent<BoxCollider>().enabled = false;
+            }
         }
     }
 
@@ -27,7 +33,9 @@ public class FrontDoorScript : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             playerDetected = true;
-            player = other.gameObject.GetComponent<PlayerControllerScript>().controls;
+            player = other.gameObject.GetComponent<PlayerControllerScript>();
+            player.intString = "open door";
+            player.canInteract = true;
         }
     }
 
@@ -35,6 +43,8 @@ public class FrontDoorScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            player.intString = "";
+            player.canInteract = false;
             player = null;
             playerDetected = false;
         }

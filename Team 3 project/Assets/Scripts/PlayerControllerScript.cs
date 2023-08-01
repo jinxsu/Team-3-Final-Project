@@ -105,6 +105,8 @@ public class PlayerControllerScript : MonoBehaviour
 
     private int maxHp = 4;
 
+    public bool canInteract;
+
 
     //required to make sure that the player is moved by the playerspawn object
     private int spawnTime = 5;
@@ -116,6 +118,8 @@ public class PlayerControllerScript : MonoBehaviour
 
     [SerializeField]
     private LayerMask interactMask;
+
+    public string intString;
 
     void Awake()
     {

@@ -24,6 +24,8 @@ public class PauseMenuScript : MonoBehaviour
 
     public GameObject deathMenu;
 
+    public TextMeshProUGUI interactText;
+
     bool playerDied;
 
     public static bool isPaused;
@@ -60,6 +62,8 @@ public class PauseMenuScript : MonoBehaviour
             playerDied = true;
             PlayerDeath();
         }
+
+        InteractUI();
     }
 
     public void PauseGame()
@@ -139,5 +143,17 @@ public class PauseMenuScript : MonoBehaviour
         Time.timeScale = 0.0f;
         isPaused = true;
         Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void InteractUI()
+    {
+        if(playerController.canInteract)
+        {
+            interactText.SetText("Press E to " + playerController.intString);
+        }
+        else
+        {
+            interactText.SetText("");
+        }
     }
 }
