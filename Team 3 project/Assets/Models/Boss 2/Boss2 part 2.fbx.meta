@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b543338a32dab6948a473e3705751a64
+guid: 0a8b005f603c73b47a1588b6d206b154
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -31,36 +31,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Runningv3
-      takeName: Runningv3
-      internalID: 2986798517829020019
-      firstFrame: 1
-      lastFrame: 80
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 1
+    clipAnimations: []
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -122,7 +93,7 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: cd11d62b169f9e54bbcadefe6659f89d,
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 5ef119e8b6c5c8248bd8939b1957bc91,
     type: 3}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2

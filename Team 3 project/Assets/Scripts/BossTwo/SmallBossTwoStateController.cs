@@ -13,6 +13,8 @@ public class SmallBossTwoStateController : StateController
 
     public SmallBossTwoFallState FallState = new SmallBossTwoFallState();
 
+    public Animator animator;
+
     public NavMeshAgent navMeshAgent;
 
     public GameObject player;
@@ -23,6 +25,7 @@ public class SmallBossTwoStateController : StateController
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        animator=GetComponentInChildren<Animator>();
         hp = startHealth;
         player = GameObject.FindWithTag("Player");
 
