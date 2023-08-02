@@ -21,6 +21,8 @@ public class MouseLook : MonoBehaviour
 
     public int invertValY;
 
+    Camera playerCam;
+
     
     // Start is called before the first frame update
 
@@ -33,6 +35,7 @@ public class MouseLook : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         mouseSens = (float)PlayerPrefs.GetInt("knmSens",100);
         controllerSens = (float)PlayerPrefs.GetInt("ctrSens", 150);
+        playerCam = Camera.main;
 
     }
 
@@ -109,5 +112,7 @@ public class MouseLook : MonoBehaviour
         }
 
         Look();
+
+        
     }
 }
