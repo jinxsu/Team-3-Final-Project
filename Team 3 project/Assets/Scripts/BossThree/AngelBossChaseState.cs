@@ -21,7 +21,7 @@ public class AngelBossChaseState : State
 
     protected override void OnUpdate()
     {
-        Debug.Log("Angel slow chasing");
+        //Debug.Log("Angel slow chasing");
         bsc.navMeshAgent.destination = target.transform.position;
         slowTimer -= Time.deltaTime;
         if (slowTimer < 0)
