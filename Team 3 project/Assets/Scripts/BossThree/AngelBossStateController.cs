@@ -23,6 +23,11 @@ public class AngelBossStateController : StateController
 
     public GameObject player;
 
+    public bool visionDamage;
+
+    Ray ray;
+    
+
     private void Awake()
     {
         player = GameObject.FindWithTag("Player");
@@ -88,6 +93,19 @@ public class AngelBossStateController : StateController
     public override void BossHitByRay()
     {
         ChangeState(SlowState);
+    }
+
+    private void OnWillRenderObject()
+    {
+        RaycastHit hitData;
+        Vector3 dir = (transform.position - player.transform.position).normalized;
+        ray = new Ray(transform.position, dir);
+
+        Physics.Raycast(transform.position, dir, out hitData);
+
+        Debug.Log(hitData.transform.tag);
+
+        Debug.DrawLine(transform.position, hitData.transform.position);
     }
 
 }

@@ -13,6 +13,9 @@ public class GunScript : MonoBehaviour
     public ParticleSystem particles;
     private AudioSource audio;
 
+    private float gunCooldown = 0.6f;
+    private float cooldownTime;
+
 
     private void Awake()
     {
@@ -20,13 +23,18 @@ public class GunScript : MonoBehaviour
         playerCam = GameObject.FindWithTag("Player").GetComponentInChildren<Camera>();
         animator = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
+        cooldownTime = -1f;
     }
 
     private void Update()
     {
-        if (controls.Player.Fire.triggered && !PauseMenuScript.isPaused)
+        if (controls.Player.Fire.triggered && !PauseMenuScript.isPaused && cooldownTime <= 0f)
         {
             animator.SetTrigger("Fire");
+        }
+        if (cooldownTime >= 0f)
+        {
+            cooldownTime -= Time.deltaTime;
         }
     }
 
@@ -48,5 +56,7 @@ public class GunScript : MonoBehaviour
         //particles.Clear();
         //particles.Simulate(0f,true,true);
         particles.Play();
+
+        cooldownTime = gunCooldown;
     }
 }

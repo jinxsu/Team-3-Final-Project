@@ -15,6 +15,8 @@ public class BigBossTwoStateController : StateController
 
     public BigBossTwoStompState StompState = new BigBossTwoStompState();
 
+    public BigBossTwoIdle IdleState = new BigBossTwoIdle();
+
     public NavMeshAgent navMeshAgent;
 
     public GameObject player;
@@ -43,7 +45,7 @@ public class BigBossTwoStateController : StateController
     // Start is called before the first frame update
     void Start()
     {
-        ChangeState(ChaseState);
+        ChangeState(IdleState);
     }
 
     // Update is called once per frame
