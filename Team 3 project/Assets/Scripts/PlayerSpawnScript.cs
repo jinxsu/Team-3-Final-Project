@@ -15,6 +15,7 @@ public class PlayerSpawnScript : MonoBehaviour
     private void Start()
     {
         player.transform.position = transform.position;
+        player.transform.rotation = transform.rotation;
         Debug.Log("Player moved", this);
     }
 }
