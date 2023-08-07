@@ -13,6 +13,8 @@ public class BoarBossStateController : StateController
     
     public State DeathState = new BoarDeath();
 
+    public State IdleState = new BoarIdle();
+
     public Animator animator;
 
     public int startHealth;
@@ -44,7 +46,7 @@ public class BoarBossStateController : StateController
     // Start is called before the first frame update
     void Start()
     {
-        ChangeState(PatrolState);
+        ChangeState(IdleState);
     }
 
     

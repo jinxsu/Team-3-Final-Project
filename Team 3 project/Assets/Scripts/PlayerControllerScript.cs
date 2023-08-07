@@ -121,6 +121,11 @@ public class PlayerControllerScript : MonoBehaviour
 
     public string intString;
 
+    public bool inCutscene;
+
+    [SerializeField]
+    private GameObject fullbodyPlayer;
+
     void Awake()
     {
         controls = InputManager.inputActions;
@@ -171,6 +176,7 @@ public class PlayerControllerScript : MonoBehaviour
                 PlayerMovement();
                 WeaponSwap();
                 MoveArm();
+                PlayerCutscene();
 
                 if (recentJump)
                 {
@@ -192,6 +198,22 @@ public class PlayerControllerScript : MonoBehaviour
         else
         {
             spawnTime--;
+        }
+    }
+
+    private void PlayerCutscene()
+    {
+        if(inCutscene)
+        {
+            controls.Disable();
+            POV.SetActive(false);
+            fullbodyPlayer.SetActive(false);
+        }
+        else
+        {
+            controls.Enable();
+            POV.SetActive(true);
+            fullbodyPlayer.SetActive(true);
         }
     }
 
