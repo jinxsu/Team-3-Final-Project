@@ -808,10 +808,14 @@ MonoBehaviour:
   wristMovement: {fileID: 0}
   anim: {fileID: 0}
   fullbodyAnim: {fileID: 2612883178388281094}
+  canInteract: 0
   isDead: 0
   interactMask:
     serializedVersion: 2
     m_Bits: 16384
+  intString: 
+  inCutscene: 0
+  fullbodyPlayer: {fileID: 8784604294610474950}
 --- !u!82 &-8946390848776279472
 AudioSource:
   m_ObjectHideFlags: 0
