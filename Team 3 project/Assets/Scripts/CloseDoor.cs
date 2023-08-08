@@ -4,18 +4,40 @@ using UnityEngine;
 
 public class CloseDoor : MonoBehaviour
 {
+    private EmergencyDoorScript m_DoorScript;
     private Animator m_Animator;
+    private bool playerDetected;
+    private PlayerControls player;
 
     private void Start()
     {
+        m_DoorScript = GetComponentInParent<EmergencyDoorScript>();
         m_Animator = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        if (m_DoorScript.canDoorOpen && playerDetected && player.Player.Interact.triggered)
+        {
+            m_Animator.SetTrigger("open");
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            m_Animator.SetTrigger("close");
+            playerDetected = true;
+            player = other.gameObject.GetComponent<PlayerControllerScript>().controls;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            player = null;
+            playerDetected = false;
         }
     }
 }

@@ -11,24 +11,13 @@ public class EmergencyDoorScript : MonoBehaviour
     [SerializeField] private Animator doorAnim;
     private AudioSource doorOpenSound;
     private Material lightbulbMat;
-    private bool canDoorOpen;
-
-    private bool playerDetected;
-    private PlayerControls player;
+    public bool canDoorOpen;
 
     private void Start()
     {
         areaLight.GetComponent<Light>().enabled = false;
         lightbulbMat = lightbulb.GetComponent<Renderer>().material;
         doorOpenSound= GetComponent<AudioSource>();
-    }
-
-    private void Update()
-    {
-        if (canDoorOpen && playerDetected && player.Player.Interact.triggered)
-        {
-            doorAnim.SetTrigger("open");
-        }
     }
 
     public void BossDefeated()
@@ -42,19 +31,10 @@ public class EmergencyDoorScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            playerDetected = true;
-            player = other.gameObject.GetComponent<PlayerControllerScript>().controls;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            player = null;
-            playerDetected = false;
+            doorAnim.SetTrigger("close");
+            Debug.Log("Closing door");
         }
     }
 }
