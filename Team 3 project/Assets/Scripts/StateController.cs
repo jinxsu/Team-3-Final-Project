@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class StateController : MonoBehaviour
@@ -32,5 +33,10 @@ public class StateController : MonoBehaviour
     public virtual void BossHitByRay()
     {
         Debug.Log("I was hit by a ray, but this hasn't been overriden.");
+    }
+
+    internal void ChangeState(object chaseState)
+    {
+        throw new NotImplementedException();
     }
 }

@@ -12449,6 +12449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a771cd146b13484b82b6b4cae40b042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boss: {fileID: 0}
   cutsceneCam: {fileID: 1405111227}
 --- !u!65 &267441531
 BoxCollider:
@@ -98229,19 +98230,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 211317252, guid: a21e8e2569c80c24a8fd34a26df283d9, type: 3}
       propertyPath: m_Size.x
-      value: 1.8718834
+      value: 0.4460907
+      objectReference: {fileID: 0}
+    - target: {fileID: 211317252, guid: a21e8e2569c80c24a8fd34a26df283d9, type: 3}
+      propertyPath: m_Size.y
+      value: 3.1196074
       objectReference: {fileID: 0}
     - target: {fileID: 211317252, guid: a21e8e2569c80c24a8fd34a26df283d9, type: 3}
       propertyPath: m_Size.z
-      value: 2.8636932
+      value: 2.2089539
       objectReference: {fileID: 0}
     - target: {fileID: 211317252, guid: a21e8e2569c80c24a8fd34a26df283d9, type: 3}
       propertyPath: m_Center.x
-      value: -1.1071033
+      value: 3.8267632
+      objectReference: {fileID: 0}
+    - target: {fileID: 211317252, guid: a21e8e2569c80c24a8fd34a26df283d9, type: 3}
+      propertyPath: m_Center.y
+      value: -0.13513827
       objectReference: {fileID: 0}
     - target: {fileID: 211317252, guid: a21e8e2569c80c24a8fd34a26df283d9, type: 3}
       propertyPath: m_Center.z
-      value: 0.09423065
+      value: 0.13101196
       objectReference: {fileID: 0}
     - target: {fileID: 3184381874021598821, guid: a21e8e2569c80c24a8fd34a26df283d9,
         type: 3}
@@ -98344,8 +98353,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.0072470824, y: 0.10250372, z: 0.09120804}
-  m_Center: {x: -0.118328765, y: -0.0012512167, z: 0.03438003}
+  m_Size: {x: 0.11753666, y: 0.10250372, z: 0.18021289}
+  m_Center: {x: 0.06892912, y: -0.0012512167, z: 0.026970185}
 --- !u!1001 &5811818961752195726
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ public class ButtonTrapScript : MonoBehaviour
     [SerializeField] private GameObject spawnLocation;
     [SerializeField] private float trapTimer;
     [SerializeField] private bool canBreak;
+    [SerializeField] private BoxCollider interactCollider;
     private bool isBroken;
     public float trapTime;
     public GameObject spawnedTrap;
@@ -19,6 +20,7 @@ public class ButtonTrapScript : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
+        interactCollider = GetComponent<BoxCollider>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -59,9 +61,12 @@ public class ButtonTrapScript : MonoBehaviour
         if(spawnedTrap == null && trapTime > 0 && canBreak)
         {
             isBroken = true;
-            player.intString = "";
-            player.canInteract = false;
-            GetComponent<BoxCollider>().enabled = false;
+            interactCollider.enabled = false;
+
+            if(player != null)
+            {
+                ResetPlayer();
+            }
         }
 
         //The trap spawned despawns after some time. Also disables the button so that more traps can't be spawned while one is out
@@ -77,8 +82,12 @@ public class ButtonTrapScript : MonoBehaviour
                 Destroy(spawnedTrap);
                 spawnedTrap = null;
             }
-            buttonEnabled = true;
-            animator.SetBool("enabled", true);
+
+            if(!isBroken)
+            {
+                buttonEnabled = true;
+                animator.SetBool("enabled", true);
+            }
         }
 
     }
@@ -87,11 +96,16 @@ public class ButtonTrapScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            player.intString = "";
-            player.canInteract = false;
-            player = null;
-            playerDetected = false;
+            ResetPlayer();
         }
+    }
+
+    private void ResetPlayer()
+    {
+        player.intString = "";
+        player.canInteract = false;
+        player = null;
+        playerDetected = false;
     }
 
 

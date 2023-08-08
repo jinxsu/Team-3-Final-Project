@@ -7,17 +7,16 @@ using UnityEngine.Playables;
 public class BossCutsceneScript : MonoBehaviour
 {
     private PlayerControllerScript player;
-    private NavMeshAgent boss;
     private PlayableDirector cutscene;
+    public StateController boss;
     [SerializeField] GameObject cutsceneCam;
 
     // Start is called before the first frame update
     void Awake()
     {
         player = GameObject.FindWithTag("Player").GetComponent<PlayerControllerScript>();
-        boss = GameObject.FindWithTag("Boss").GetComponent<NavMeshAgent>();
+        boss = GameObject.FindWithTag("Boss").GetComponent<StateController>();
         cutscene = GetComponent<PlayableDirector>();
-        boss.isStopped = true;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,6 +31,14 @@ public class BossCutsceneScript : MonoBehaviour
         GetComponent<BoxCollider>().enabled = false;
         player.inCutscene = false;
         cutsceneCam.SetActive(false);
-        boss.isStopped = false;
+
+        if(boss.TryGetComponent(out BigBossTwoStateController bigboss))
+        {
+            bigboss.ChangeState(bigboss.ChaseState);
+        }
+        else if(boss.TryGetComponent(out BoarBossStateController boarboss))
+        {
+            boarboss.ChangeState(boarboss.ChargeState);
+        }
     }
 }
