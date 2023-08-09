@@ -21,6 +21,9 @@ public class BoarBossStateController : StateController
 
     public NavMeshAgent navMeshAgent;
 
+    public AudioSource chargeWarning;
+    public AudioClip chargeWarningClip;
+
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -55,6 +58,7 @@ public class BoarBossStateController : StateController
     {
         if (currentState is BoarVulnerable )
         {
+            chargeWarning.PlayOneShot(chargeWarningClip);
             ChangeState(ChargeState);
         }
     }
