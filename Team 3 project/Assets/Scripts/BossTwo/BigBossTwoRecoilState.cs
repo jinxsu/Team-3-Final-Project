@@ -21,6 +21,7 @@ public class BigBossTwoRecoilState : State
         recoilStunTimer -= Time.deltaTime;
         if (recoilStunTimer < 0)
         {
+            bsc.animator.SetBool("chase", true);
             bsc.ChangeState(bsc.ChaseState);
         }
     }

@@ -14,6 +14,7 @@ public class BigBossTwoChaseState : BigBossTwoVulnerable
             proximityTimer -= Time.deltaTime;
             if (proximityTimer < 0 )
             {
+                bsc.animator.SetTrigger("stomp");
                 bsc.ChangeState(bsc.StompState);
             }
         }
