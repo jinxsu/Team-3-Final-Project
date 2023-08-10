@@ -34,6 +34,7 @@ public class BossCutsceneScript : MonoBehaviour
 
         if(boss.TryGetComponent(out BigBossTwoStateController bigboss))
         {
+            bigboss.animator.SetBool("chase", true);
             bigboss.ChangeState(bigboss.ChaseState);
         }
         else if(boss.TryGetComponent(out BoarBossStateController boarboss))

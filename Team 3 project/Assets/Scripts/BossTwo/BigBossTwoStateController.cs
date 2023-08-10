@@ -55,6 +55,8 @@ public class BigBossTwoStateController : StateController
 
         if (hp <= 0 && currentState != DeathState)
         {
+            animator.SetBool("charge", false);
+            animator.SetBool("chase", false);
             ChangeState(DeathState);
         }
 
@@ -76,6 +78,8 @@ public class BigBossTwoStateController : StateController
                 collision.gameObject.transform.SendMessage("HitByBoss");
             }
 
+            animator.SetBool("charge", false);
+            animator.SetBool("chase", false);
             ChangeState(FallState);
 
         }
@@ -85,6 +89,7 @@ public class BigBossTwoStateController : StateController
             Debug.Log("Collided with  ground");
             if (currentState == FallState || currentState == ChargeState)
             {
+                animator.SetBool("chase", true);
                 ChangeState(ChaseState);
             }
         }
@@ -92,6 +97,8 @@ public class BigBossTwoStateController : StateController
         //if the boss hits the player
         else if (collision.gameObject.CompareTag("Player"))
         {
+            animator.SetBool("charge", false);
+            animator.SetBool("chase", false);
             player.GetComponent<PlayerControllerScript>().HurtPlayer();
             ChangeState(FallState);
         }
@@ -105,6 +112,8 @@ public class BigBossTwoStateController : StateController
         {
             if (currentState is BigBossTwoVulnerable)
             {
+                animator.SetBool("charge", false);
+                animator.SetBool("chase", false);
                 ChangeState(RecoilState);
                 Debug.Log("OW! A TRAP");
             }
@@ -113,6 +122,7 @@ public class BigBossTwoStateController : StateController
 
     public override void BossHitByRay()
     {
+        animator.SetBool("charge", true);
         ChangeState(ChargeState);
     }
 

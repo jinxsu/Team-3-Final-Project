@@ -20,6 +20,8 @@ public class BigBossTwoChargeState : BigBossTwoVulnerable
             chargeMax -= Time.deltaTime;
             if(chargeMaxTimer < 0 )
             {
+                bsc.animator.SetBool("charge", false);
+                bsc.animator.SetBool("chase", true);
                 bsc.ChangeState(bsc.ChaseState);
             }
         }
