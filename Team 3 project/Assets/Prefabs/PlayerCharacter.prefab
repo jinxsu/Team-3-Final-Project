@@ -1001,6 +1001,7 @@ GameObject:
   - component: {fileID: 6830388006615613681}
   - component: {fileID: 6830388006615613692}
   - component: {fileID: 6830388006615613693}
+  - component: {fileID: 4623426789347002595}
   m_Layer: 0
   m_Name: Player Camera
   m_TagString: MainCamera
@@ -1129,6 +1130,21 @@ MonoBehaviour:
   controllerSens: 0
   invertValX: 1
   invertValY: 1
+--- !u!114 &4623426789347002595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6830388006615613680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13715f251047e6c4fa692bbcee389a02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStatic: 0
+  cam: {fileID: 6830388006615613694}
+  additionalCameraData: {fileID: 6830388006615613692}
 --- !u!1 &8708796579488317401
 GameObject:
   m_ObjectHideFlags: 0

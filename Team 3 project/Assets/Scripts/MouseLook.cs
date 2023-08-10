@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -22,6 +23,7 @@ public class MouseLook : MonoBehaviour
     public int invertValY;
 
     Camera playerCam;
+
 
     
     // Start is called before the first frame update
