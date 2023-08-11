@@ -25,6 +25,8 @@ public class AngelBossStateController : StateController
 
     public bool visionDamage;
 
+    StaticEffectScript effectScript;
+
     Ray ray;
     
 
@@ -33,6 +35,7 @@ public class AngelBossStateController : StateController
         player = GameObject.FindWithTag("Player");
         navMeshAgent = GetComponent<NavMeshAgent>();
         hp = startHealth;
+        effectScript = player.GetComponentInChildren<StaticEffectScript>();
     }
 
     // Start is called before the first frame update
@@ -95,19 +98,17 @@ public class AngelBossStateController : StateController
         ChangeState(SlowState);
     }
 
-    private void OnWillRenderObject()
+    private void OnBecameVisible()
     {
-        RaycastHit hitData;
-        Vector3 dir = (transform.position - player.transform.position).normalized;
-        ray = new Ray(transform.position, dir);
-
-        Physics.Raycast(transform.position, dir, out hitData);
-
-        Debug.Log(hitData.transform.tag);
-
-        Debug.DrawLine(transform.position, hitData.transform.position);
+        effectScript.isStatic = true;
+        Debug.Log("I see angel");
     }
 
+    private void OnBecameInvisible()
+    {
+        effectScript.isStatic = false;
+        Debug.Log("I no see angel");
+    }
 }
 
 
