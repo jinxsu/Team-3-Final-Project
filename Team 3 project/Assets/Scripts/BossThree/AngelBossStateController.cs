@@ -14,8 +14,8 @@ public class AngelBossStateController : StateController
 
     public NavMeshAgent navMeshAgent;
 
-    [SerializeField]
-    private int startHealth;
+    
+    private int startHealth = 3;
 
     
     public Transform respawnPoint;
@@ -28,6 +28,10 @@ public class AngelBossStateController : StateController
     public LayerMask layerMask;
 
     StaticEffectScript effectScript;
+
+    public float fastSpeed;
+    
+    public float slowSpeed;
 
     Ray ray;
 
@@ -42,6 +46,8 @@ public class AngelBossStateController : StateController
         navMeshAgent = GetComponent<NavMeshAgent>();
         hp = startHealth;
         effectScript = player.GetComponentInChildren<StaticEffectScript>();
+        fastSpeed = 6f;
+        slowSpeed = 2.5f;
     }
 
     // Start is called before the first frame update
@@ -70,13 +76,11 @@ public class AngelBossStateController : StateController
             if (Physics.Linecast(transform.position, player.transform.position, layerMask))
             {
                 effectScript.isStatic = false;
-                Debug.Log("I no see angel");
                 visionDamage = false;
             }
             else
             {
                 effectScript.isStatic = true;
-                Debug.Log("I see angel");
                 visionDamage = true;
             }
         }
@@ -124,7 +128,7 @@ public class AngelBossStateController : StateController
 
     void OnTriggerEnter(Collider other)
     {
-
+        Debug.Log("Trigger detected. Tag : " + other.transform.tag);
         //if the boss hits a trap's trigger zone this is what will be used to determine damage
         if (other.transform.CompareTag("Trap"))
         {

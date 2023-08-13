@@ -17,11 +17,12 @@ public class HuntingTrapScript : MonoBehaviour
             gameObject.transform.GetChild(1).GetComponent<Transform>().position += new Vector3(0,0.5f,-0.5f);
             gameObject.transform.GetChild(1).GetComponent<Transform>().rotation = Quaternion.Euler(0,-10f,0);
 
-            gameObject.tag = "UsedTrap";
+            
 
             other.GetComponent<StateController>().hp -= 1;
 
             isClosed = true;
+            gameObject.GetComponent<BoxCollider>().enabled = false;
         }
     }
 }
