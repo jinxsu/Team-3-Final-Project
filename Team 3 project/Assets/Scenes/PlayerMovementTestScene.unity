@@ -1594,6 +1594,9 @@ MonoBehaviour:
   respawnPoint: {fileID: 1239114839}
   player: {fileID: 0}
   visionDamage: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 49527
 --- !u!195 &1372683503
 NavMeshAgent:
   m_ObjectHideFlags: 0

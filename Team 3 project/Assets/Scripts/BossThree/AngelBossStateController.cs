@@ -25,9 +25,15 @@ public class AngelBossStateController : StateController
 
     public bool visionDamage;
 
+    public LayerMask layerMask;
+
     StaticEffectScript effectScript;
 
     Ray ray;
+
+    bool potentiallyVisible;
+
+    float visionCounter = 0f;
     
 
     private void Awake()
@@ -57,6 +63,40 @@ public class AngelBossStateController : StateController
         if (destroyMe)
         {
             Destroy(gameObject);
+        }
+
+        if(potentiallyVisible)
+        {
+            if (Physics.Linecast(transform.position, player.transform.position, layerMask))
+            {
+                effectScript.isStatic = false;
+                Debug.Log("I no see angel");
+                visionDamage = false;
+            }
+            else
+            {
+                effectScript.isStatic = true;
+                Debug.Log("I see angel");
+                visionDamage = true;
+            }
+        }
+
+        if(visionDamage)
+        {
+            visionCounter += Time.deltaTime;
+        }
+        else
+        {
+            if (visionCounter > 0)
+            {
+                visionCounter -= Time.deltaTime;
+            }
+        }
+
+        if (visionCounter > 20)
+        {
+            player.GetComponent<PlayerControllerScript>().HurtPlayer();
+            visionCounter = 0;
         }
     }
 
@@ -100,14 +140,14 @@ public class AngelBossStateController : StateController
 
     private void OnBecameVisible()
     {
-        effectScript.isStatic = true;
-        Debug.Log("I see angel");
+        potentiallyVisible = true;
     }
 
     private void OnBecameInvisible()
     {
+        potentiallyVisible = false;
         effectScript.isStatic = false;
-        Debug.Log("I no see angel");
+        visionDamage = false;
     }
 }
 
