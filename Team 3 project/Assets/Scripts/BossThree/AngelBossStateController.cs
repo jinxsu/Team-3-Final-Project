@@ -99,7 +99,7 @@ public class AngelBossStateController : StateController
 
         if (visionCounter > 20)
         {
-            player.GetComponent<PlayerControllerScript>().HurtPlayer();
+            player.GetComponent<PlayerControllerScript>().KillPlayer();
             visionCounter = 0;
         }
     }
@@ -122,7 +122,7 @@ public class AngelBossStateController : StateController
         //if the boss hits the player
         else if (collision.gameObject.CompareTag("Player"))
         {
-            player.GetComponent<PlayerControllerScript>().HurtPlayer();
+            player.GetComponent<PlayerControllerScript>().KillPlayer();
         }
     }
 
