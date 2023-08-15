@@ -39,7 +39,7 @@ public class Teleport_Script : MonoBehaviour
             {
                 
                 Debug.Log("Loading New Scene");
-                SceneManager.LoadScene("Starting Area");
+                SceneManager.LoadScene("Level_3");
             }
         }
     }
