@@ -145,6 +145,11 @@ public class PlayerControllerScript : MonoBehaviour
         Debug.Log("PlayerHurt.wav");
     }
 
+    public void KillPlayer()
+    {
+        currentHp = -1;
+    }
+
     private void Start()
     {
         Instantiate(heldObject[0], holdPoint.transform, false);

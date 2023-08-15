@@ -14,7 +14,7 @@ public class AngelBossSlowState : State
         slowTimer = 6f;
         bsc = (AngelBossStateController)sc;
         target = bsc.player;
-        bsc.navMeshAgent.speed = 1.5f;
+        bsc.navMeshAgent.speed = bsc.slowSpeed;
         bsc.navMeshAgent.enabled = true;
         bsc.navMeshAgent.ResetPath();
     }
