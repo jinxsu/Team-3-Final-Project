@@ -206,6 +206,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: boss 1 v3
       objectReference: {fileID: 0}
+    - target: {fileID: 8099956192198034826, guid: cd11d62b169f9e54bbcadefe6659f89d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 510ac1ef87d491140a9e5ac94bb169d6, type: 2}
+    - target: {fileID: 8938894143036185869, guid: cd11d62b169f9e54bbcadefe6659f89d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d7f1cda9773275f409a9986e4188f2df, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd11d62b169f9e54bbcadefe6659f89d, type: 3}
 --- !u!1 &8234988569692933135 stripped
