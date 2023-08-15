@@ -2,16 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class setResolution : MonoBehaviour
 {
-    private Dropdown dropdown;
+    private TMP_Dropdown dropdown;
     private Resolution[] resolutions;
+ 
 
     // Start is called before the first frame update
     void Start()
     {
-        dropdown = GetComponent<Dropdown>();
+        dropdown = GetComponent<TMP_Dropdown>();
         resolutions = Screen.resolutions;
         List<string> list = new List<string>();
         int position = 0;
@@ -38,7 +40,6 @@ public class setResolution : MonoBehaviour
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreenMode, resolution.refreshRate);
     }
 
-    // Update is called once per frame
     void Update()
     {
         

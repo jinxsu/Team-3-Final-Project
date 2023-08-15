@@ -20,12 +20,12 @@ public class SetVolume : MonoBehaviour
         volumeSlider = GetComponent<Slider>();
         float volume=PlayerPrefs.GetFloat(nameParam, 0.3f);
         volumeSlider.value = volume;
-        mixer.SetFloat(nameParam, Mathf.Log10(volume)*30);
+        mixer.SetFloat(nameParam, Mathf.Log10(volume)*30f);
         
     }
     public void setVolume(float vol)
     {
-        mixer.SetFloat(nameParam, Mathf.Log10(vol)*30);
+        mixer.SetFloat(nameParam, Mathf.Log10(vol)*30f);
         PlayerPrefs.SetFloat(nameParam, vol);
     }
 
