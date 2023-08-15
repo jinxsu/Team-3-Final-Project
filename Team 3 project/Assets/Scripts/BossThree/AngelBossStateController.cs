@@ -11,6 +11,7 @@ public class AngelBossStateController : StateController
     public AngelBossRespawnState RespawnState = new();
     public AngelBossSlowState SlowState = new();
     public AngelBossDeathState DeathState = new();
+    public AngelBossDropState DropState = new();
 
     public NavMeshAgent navMeshAgent;
 
@@ -134,6 +135,12 @@ public class AngelBossStateController : StateController
         {
             ChangeState(RespawnState);
             Debug.Log("OW! A TRAP");
+        }
+
+        if (other.transform.CompareTag("DropTrap"))
+        {
+            ChangeState(DropState);
+            Debug.Log("AAH I FALL!");
         }
     }
 

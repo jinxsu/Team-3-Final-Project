@@ -16,6 +16,7 @@ TagManager:
   - EmergencyDoor
   - BUTTM
   - UsedTrap
+  - DropTrap
   layers:
   - Default
   - TransparentFX
