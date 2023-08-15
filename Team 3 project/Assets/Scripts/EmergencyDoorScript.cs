@@ -9,15 +9,24 @@ public class EmergencyDoorScript : MonoBehaviour
     [SerializeField] private GameObject lightbulb;
     [SerializeField] private GameObject areaLight;
     [SerializeField] private Animator doorAnim;
-    private AudioSource doorOpenSound;
     private Material lightbulbMat;
     public bool canDoorOpen;
+    //when we defeat the boss the sound is to tell us that the emergency door is ready to be used
+    private AudioSource doorReadySound;
+
+    //sound for opening and closing the door
+    [SerializeField] private AudioSource doorOpen;
+    [SerializeField] private float openDelay = 0;
+    [SerializeField] private AudioSource doorClose;
+    [SerializeField] private float closeDelay = 0;
+
+   
 
     private void Start()
     {
         areaLight.GetComponent<Light>().enabled = false;
         lightbulbMat = lightbulb.GetComponent<Renderer>().material;
-        doorOpenSound= GetComponent<AudioSource>();
+        doorReadySound= GetComponent<AudioSource>();
     }
 
     public void BossDefeated()
@@ -26,7 +35,7 @@ public class EmergencyDoorScript : MonoBehaviour
         areaLight.GetComponent<Light>().enabled = true;
         lightbulbMat.EnableKeyword("_EMISSION");
         //play the buzzer sound
-        doorOpenSound.Play();
+        doorReadySound.Play();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -35,6 +44,7 @@ public class EmergencyDoorScript : MonoBehaviour
         {
             doorAnim.SetTrigger("close");
             Debug.Log("Closing door");
+            doorClose.PlayDelayed(closeDelay);
         }
     }
 }

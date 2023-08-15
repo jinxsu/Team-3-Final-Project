@@ -8,6 +8,9 @@ public class FrontDoorScript : MonoBehaviour
 
     private bool playerDetected;
     private PlayerControllerScript player;
+    [SerializeField] private AudioSource doorOpen;
+    [SerializeField] private float openDelay = 0;
+
 
     private void Start()
     {
@@ -24,6 +27,7 @@ public class FrontDoorScript : MonoBehaviour
                 player.intString = "";
                 player.canInteract = false;
                 GetComponent<BoxCollider>().enabled = false;
+                doorOpen.PlayDelayed(openDelay);
             }
         }
     }

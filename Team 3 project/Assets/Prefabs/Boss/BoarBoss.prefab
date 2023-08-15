@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 670567846451602542}
   - component: {fileID: 670567846451602541}
   - component: {fileID: 670567846451602540}
+  - component: {fileID: 1212963030270254700}
   m_Layer: 13
   m_Name: BoarBoss
   m_TagString: Boss
@@ -64,9 +65,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 0
   destroyMe: 0
-  animator: {fileID: 0}
+  animator: {fileID: 6199312905671702419}
   startHealth: 5
   navMeshAgent: {fileID: 0}
+  chargeWarning: {fileID: 1212963030270254700}
+  chargeWarningClip: {fileID: 8300000, guid: 1d96a339f3112d74e98855d5da021d14, type: 3}
 --- !u!114 &670567846451602542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,6 +122,102 @@ NavMeshAgent:
   m_BaseOffset: 0.50000006
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 3
+--- !u!82 &1212963030270254700
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670567846451602532}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &9118073632784789854
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -233,7 +332,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8234988569692933135}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: e3b7101140ec3c642a672ecb24d639a7, type: 3}
+  m_Avatar: {fileID: 9000000, guid: cd11d62b169f9e54bbcadefe6659f89d, type: 3}
   m_Controller: {fileID: 9100000, guid: 88f5139a13ca6fa45a73b31060ea47a9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
