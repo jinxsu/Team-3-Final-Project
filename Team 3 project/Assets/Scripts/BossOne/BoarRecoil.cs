@@ -17,6 +17,7 @@ public class BoarRecoil : State
         recoilStunTimer = 2f;
         Debug.Log("Recoil State");
         bsc.navMeshAgent.enabled = false;
+        bsc.animator.SetBool("chase", false);
     }
 
     protected override void OnUpdate()

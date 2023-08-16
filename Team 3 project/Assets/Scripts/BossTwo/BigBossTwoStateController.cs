@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -33,6 +35,12 @@ public class BigBossTwoStateController : StateController
     [SerializeField]
     int startHealth = 10;
 
+    [SerializeField] private SkinnedMeshRenderer[] skinnedMeshes;
+    [SerializeField] private List<Material> materials;
+
+    [SerializeField] private float dissolveRate = 0.0125f;
+    [SerializeField] private float refreshRate = 0.025f;
+
     private void Awake()
     {
         player = GameObject.FindWithTag("Player");
@@ -46,6 +54,14 @@ public class BigBossTwoStateController : StateController
     void Start()
     {
         ChangeState(IdleState);
+
+        if(skinnedMeshes.Length > 0)
+        {
+            foreach(SkinnedMeshRenderer skinnedMesh in skinnedMeshes)
+            {
+                materials.Add(skinnedMesh.materials[0]);
+            }
+        }
     }
 
     // Update is called once per frame
@@ -58,6 +74,7 @@ public class BigBossTwoStateController : StateController
             animator.SetBool("charge", false);
             animator.SetBool("chase", false);
             ChangeState(DeathState);
+            StartCoroutine(BigBossDies());
         }
 
         if(destroyMe)
@@ -124,6 +141,23 @@ public class BigBossTwoStateController : StateController
     {
         animator.SetBool("charge", true);
         ChangeState(ChargeState);
+    }
+
+    private IEnumerator BigBossDies()
+    {
+        if (materials.Count > 0)
+        {
+            float counter = 0f;
+            while (materials[0].GetFloat("_DissolveAmount") < 1)
+            {
+                counter += dissolveRate;
+                for (int i = 0; i < materials.Count; i++)
+                {
+                    materials[i].SetFloat("_DissolveAmount", counter);
+                }
+                yield return new WaitForSeconds(refreshRate);
+            }
+        }
     }
 
     public void SpawnBosses()

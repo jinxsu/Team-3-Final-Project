@@ -39,6 +39,7 @@ public class BossCutsceneScript : MonoBehaviour
         }
         else if(boss.TryGetComponent(out BoarBossStateController boarboss))
         {
+            boarboss.animator.SetBool("charge", true);
             boarboss.ChangeState(boarboss.ChargeState);
         }
     }
