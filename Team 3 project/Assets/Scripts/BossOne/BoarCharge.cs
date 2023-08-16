@@ -42,6 +42,7 @@ public class BoarCharge : BoarVulnerable
         sc.transform.LookAt(chargeTarget);
         chargePauseTimer = chargePause;
         chargeMaxTimer = chargeMax;
+        bsc.animator.SetTrigger("charge");
 
         //disabling the navmesh agent so that the boar can charge off of cliffs
         bsc.navMeshAgent.enabled = false;
