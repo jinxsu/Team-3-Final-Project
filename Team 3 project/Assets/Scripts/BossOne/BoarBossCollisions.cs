@@ -46,7 +46,7 @@ public class BoarBossCollisions : MonoBehaviour
         //if the boss hits the player
         else if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Collided with  player");
+            Debug.Log("Collided with player");
             player.GetComponent<PlayerControllerScript>().HurtPlayer();
             bsc.ChangeState(bsc.FallState);
         }

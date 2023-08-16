@@ -8,6 +8,7 @@ public class BoarDeath : State
     protected override void OnEnter()
     {
         bsc = (BoarBossStateController)sc;
+        bsc.animator.SetBool("chase", false);
     }
 
     protected override void OnUpdate()

@@ -28,6 +28,7 @@ public class BoarPatrol : BoarVulnerable
         //re-enabling navmesh agent after a charge
         bsc.navMeshAgent.enabled = true;
         bsc.navMeshAgent.ResetPath();
+        bsc.animator.SetBool("chase", true);
 
     }
 

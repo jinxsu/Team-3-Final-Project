@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1470021713}
-  m_IndirectSpecularColor: {r: 0.0073307417, g: 0.0037919488, b: 0.0043191146, a: 1}
+  m_IndirectSpecularColor: {r: 0.007326252, g: 0.0037926377, b: 0.004365271, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3241,6 +3241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 162311428}
   - component: {fileID: 162311427}
+  - component: {fileID: 162311429}
   m_Layer: 0
   m_Name: DeathBox
   m_TagString: Untagged
@@ -3256,7 +3257,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 162311426}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 390.6786, y: 19.4561, z: 447.20084}
@@ -3276,6 +3277,18 @@ Transform:
   m_Father: {fileID: 1792108513}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &162311429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162311426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e05daf9fd309e7d4b90dcd1d3ecae067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &163821798
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11514,7 +11527,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &777861456
 PrefabInstance:
@@ -14536,6 +14549,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1007726470}
   - component: {fileID: 1007726469}
+  - component: {fileID: 1007726471}
   m_Layer: 0
   m_Name: DeathBox (2)
   m_TagString: Untagged
@@ -14551,7 +14565,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1007726468}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 157.24748, y: 19.4561, z: 224.42325}
@@ -14571,6 +14585,18 @@ Transform:
   m_Father: {fileID: 1792108513}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1007726471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007726468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e05daf9fd309e7d4b90dcd1d3ecae067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1008158864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21987,6 +22013,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1595217692}
   - component: {fileID: 1595217691}
+  - component: {fileID: 1595217693}
   m_Layer: 0
   m_Name: DeathBox (3)
   m_TagString: Untagged
@@ -22002,7 +22029,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595217690}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 227.78215, y: 19.4561, z: 224.42325}
@@ -22022,6 +22049,18 @@ Transform:
   m_Father: {fileID: 1792108513}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1595217693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595217690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e05daf9fd309e7d4b90dcd1d3ecae067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1597550430 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 29af6f480a71bb3449adc11f24180a1d,
@@ -23543,6 +23582,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1693031212}
   - component: {fileID: 1693031211}
+  - component: {fileID: 1693031213}
   m_Layer: 0
   m_Name: DeathBox (1)
   m_TagString: Untagged
@@ -23558,7 +23598,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693031210}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 348.5444, y: 19.4561, z: 315.32602}
@@ -23578,6 +23618,18 @@ Transform:
   m_Father: {fileID: 1792108513}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1693031213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693031210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e05daf9fd309e7d4b90dcd1d3ecae067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1693816283 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a94b9d26d6497654690388b93e031a97,
@@ -28353,6 +28405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2128104295}
   - component: {fileID: 2128104296}
+  - component: {fileID: 2128104297}
   m_Layer: 0
   m_Name: DeathBox (4)
   m_TagString: Untagged
@@ -28383,11 +28436,23 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2128104294}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 123.88794, y: 19.4561, z: 110.971}
   m_Center: {x: -35.503525, y: -5.4800415, z: -130.62067}
+--- !u!114 &2128104297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128104294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e05daf9fd309e7d4b90dcd1d3ecae067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2129611890
 PrefabInstance:
   m_ObjectHideFlags: 0

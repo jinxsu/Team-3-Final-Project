@@ -1,3 +1,6 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -24,6 +27,14 @@ public class BoarBossStateController : StateController
     public AudioSource chargeWarning;
     public AudioClip chargeWarningClip;
 
+    [SerializeField] private SkinnedMeshRenderer skinnedMesh;
+    [SerializeField] private MeshRenderer valveMesh;
+
+    [SerializeField] private List<Material> materials;
+
+    [SerializeField] private float dissolveRate = 0.0125f;
+    [SerializeField] private float refreshRate = 0.025f;
+
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -38,6 +49,7 @@ public class BoarBossStateController : StateController
         if (hp <= 0 && currentState != DeathState)
         {
             ChangeState(DeathState);
+            StartCoroutine(BoarBossDies());
         }
 
         if (destroyMe)
@@ -50,9 +62,17 @@ public class BoarBossStateController : StateController
     void Start()
     {
         ChangeState(IdleState);
-    }
 
-    
+        if(skinnedMesh != null)
+        {
+            materials.Add(skinnedMesh.materials[0]);
+        }
+        
+        if(valveMesh != null)
+        {
+            materials.Add(valveMesh.material);
+        }
+    } 
 
     public override void BossHitByRay()
     {
@@ -60,6 +80,23 @@ public class BoarBossStateController : StateController
         {
             chargeWarning.PlayOneShot(chargeWarningClip);
             ChangeState(ChargeState);
+        }
+    }
+
+    private IEnumerator BoarBossDies()
+    {
+        if(materials.Count > 0)
+        {
+            float counter = 0f;
+            while (materials[0].GetFloat("_DissolveAmount") < 1)
+            {
+                counter += dissolveRate;
+                for (int i = 0;  i < materials.Count; i++)
+                {
+                    materials[i].SetFloat("_DissolveAmount", counter);
+                }
+                yield return new WaitForSeconds(refreshRate);
+            }
         }
     }
 }

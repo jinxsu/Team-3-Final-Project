@@ -70,6 +70,10 @@ MonoBehaviour:
   navMeshAgent: {fileID: 0}
   chargeWarning: {fileID: 1212963030270254700}
   chargeWarningClip: {fileID: 8300000, guid: 1d96a339f3112d74e98855d5da021d14, type: 3}
+  skinnedMesh: {fileID: 1072196000875984084}
+  valveMesh: {fileID: 181467196562861139}
+  dissolveRate: 0.0125
+  refreshRate: 0.025
 --- !u!114 &670567846451602542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,14 +313,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 510ac1ef87d491140a9e5ac94bb169d6, type: 2}
+      objectReference: {fileID: 2100000, guid: 689a2860a4031804b8fd2613e3729302, type: 2}
     - target: {fileID: 8938894143036185869, guid: cd11d62b169f9e54bbcadefe6659f89d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d7f1cda9773275f409a9986e4188f2df, type: 2}
+      objectReference: {fileID: 2100000, guid: c705d4276afc66849b7a4131a67117ba, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd11d62b169f9e54bbcadefe6659f89d, type: 3}
+--- !u!23 &181467196562861139 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8938894143036185869, guid: cd11d62b169f9e54bbcadefe6659f89d,
+    type: 3}
+  m_PrefabInstance: {fileID: 9118073632784789854}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &1072196000875984084 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8099956192198034826, guid: cd11d62b169f9e54bbcadefe6659f89d,
+    type: 3}
+  m_PrefabInstance: {fileID: 9118073632784789854}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8234988569692933135 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cd11d62b169f9e54bbcadefe6659f89d,
