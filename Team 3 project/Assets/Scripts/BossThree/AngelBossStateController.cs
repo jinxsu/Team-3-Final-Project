@@ -39,6 +39,9 @@ public class AngelBossStateController : StateController
     bool potentiallyVisible;
 
     float visionCounter = 0f;
+    public Animator animator;
+    public AudioSource scream;
+    public AudioClip screamClip;
     
 
     private void Awake()
@@ -49,6 +52,7 @@ public class AngelBossStateController : StateController
         effectScript = player.GetComponentInChildren<StaticEffectScript>();
         fastSpeed = 6f;
         slowSpeed = 2.5f;
+        animator=GetComponentInChildren<Animator>();
     }
 
     // Start is called before the first frame update
@@ -139,6 +143,7 @@ public class AngelBossStateController : StateController
 
         if (other.transform.CompareTag("DropTrap"))
         {
+            scream.PlayOneShot(screamClip);
             ChangeState(DropState);
             Debug.Log("AAH I FALL!");
         }
