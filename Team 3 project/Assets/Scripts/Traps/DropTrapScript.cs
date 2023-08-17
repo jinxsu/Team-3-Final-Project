@@ -49,9 +49,9 @@ public class DropTrapScript : MonoBehaviour
         if(movingTrapdoor)
         {
             
-            if (trapDoor.transform.position.z < trapdoorTarget.position.z)
+            if (trapDoor.transform.position.x < trapdoorTarget.position.x)
             {
-                trapDoor.transform.position = new Vector3(trapDoor.transform.position.x, trapDoor.transform.position.y, trapDoor.transform.position.z + 0.1f);
+                trapDoor.transform.position = new Vector3(trapDoor.transform.position.x + 0.1f, trapDoor.transform.position.y, trapDoor.transform.position.z);
             }
             else
             {
