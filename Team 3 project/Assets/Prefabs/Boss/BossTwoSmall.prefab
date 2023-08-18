@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6606820335723767244}
   - component: {fileID: 8406928127581841867}
   - component: {fileID: 2464866802932634713}
+  - component: {fileID: 1933344620309237451}
   m_Layer: 13
   m_Name: BossTwoSmall
   m_TagString: Boss
@@ -167,10 +168,11 @@ AudioSource:
   m_GameObject: {fileID: 6606820335723767233}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8088772564242808245, guid: ecc5ef2a9d5f4a44bb59aafec8317a2d,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -254,6 +256,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1933344620309237451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6606820335723767233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da04dd16ce46720469215b62a3a86d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameParam: SFX
 --- !u!1001 &2257724388133136839
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -510,6 +510,7 @@ GameObject:
   - component: {fileID: 9048270066977526501}
   - component: {fileID: 9048270066977526500}
   - component: {fileID: 3859537027133388005}
+  - component: {fileID: -5141272230698862350}
   m_Layer: 15
   m_Name: HuntingTrap
   m_TagString: Trap
@@ -573,9 +574,10 @@ AudioSource:
   m_GameObject: {fileID: 8165167404183449522}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8088772564242808245, guid: ecc5ef2a9d5f4a44bb59aafec8317a2d,
+    type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -660,6 +662,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-5141272230698862350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8165167404183449522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da04dd16ce46720469215b62a3a86d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameParam: SFX
 --- !u!1 &8977228703624694674
 GameObject:
   m_ObjectHideFlags: 0

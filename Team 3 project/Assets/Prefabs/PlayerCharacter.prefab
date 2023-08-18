@@ -725,6 +725,7 @@ GameObject:
   - component: {fileID: 6830388005942920780}
   - component: {fileID: -8946390848776279472}
   - component: {fileID: -4364468895306516656}
+  - component: {fileID: 9189569027012283056}
   m_Layer: 10
   m_Name: PlayerCharacter
   m_TagString: Player
@@ -825,7 +826,8 @@ AudioSource:
   m_GameObject: {fileID: 6830388005942920769}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8088772564242808245, guid: ecc5ef2a9d5f4a44bb59aafec8317a2d,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 10606ffa460a7984bb2968d071994051, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -924,6 +926,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf431438f3d4661459c8d9213be5e863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &9189569027012283056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6830388005942920769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da04dd16ce46720469215b62a3a86d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameParam: SFX
 --- !u!1 &6830388006208403958
 GameObject:
   m_ObjectHideFlags: 0
