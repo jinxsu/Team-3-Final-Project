@@ -10,6 +10,7 @@ public class BossCutsceneScript : MonoBehaviour
     private PlayableDirector cutscene;
     public StateController boss;
     [SerializeField] GameObject cutsceneCam;
+    [SerializeField] GameObject entranceDoor;
 
     // Start is called before the first frame update
     void Awake()
@@ -41,6 +42,14 @@ public class BossCutsceneScript : MonoBehaviour
         {
             boarboss.animator.SetBool("charge", true);
             boarboss.ChangeState(boarboss.ChargeState);
+        }
+    }
+
+    public void BlockEntrance()
+    {
+        if(entranceDoor != null)
+        {
+            entranceDoor.SetActive(true);
         }
     }
 }

@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ArenaFloor_MAT
+  m_Name: ArenaSmallSpikes_MAT
   m_Shader: {fileID: -6465566751694194690, guid: b193ff4209fc2d8448251ed301b56142,
     type: 3}
   m_ValidKeywords: []
@@ -22,15 +22,15 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Albedo:
-        m_Texture: {fileID: 2800000, guid: e0e6934cd8bec6548913aaa161cc28e2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1174553186769d148b29c3752321841f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _AmbientOcclusion:
-        m_Texture: {fileID: 2800000, guid: 52944c2f2b4018d40aa6c9e33c955289, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5dc859edc380f4c4ca1bd1c871c9cb4c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal:
-        m_Texture: {fileID: 2800000, guid: 982d51b67c6583c4ca089a6186341cdd, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0cf85140e26b65142889019ea415d895, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -48,18 +48,19 @@ Material:
     m_Ints: []
     m_Floats:
     - _DissolveAmount: 0
-    - _DissolveScale: 300
+    - _DissolveScale: 38
     - _DissolveWidth: 0.04
-    - _Metallic: 0
+    - _Metallic: 0.6
     - _NormalStrength: 0.9
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Smoothness: 0.6
+    - _Smoothness: 0.7
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _DissolveColor: {r: 0.3490566, g: 0, b: 0.0069072247, a: 0}
+    - _DissolveColor: {r: 0.4980392, g: 0, b: 0, a: 0}
+    - _Tiling: {r: 10, g: 10, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &7070937219741269842
+--- !u!114 &4941800788450389068
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
