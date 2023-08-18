@@ -14,6 +14,9 @@ public class DropTrapScript : MonoBehaviour
     [SerializeField]
     Transform trapdoorTarget;
 
+    [SerializeField]
+    GameObject trapDoorStart;
+
     PlayerControllerScript player;
 
     bool playerIsIn;
