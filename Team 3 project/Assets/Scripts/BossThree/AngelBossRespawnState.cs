@@ -30,7 +30,7 @@ public class AngelBossRespawnState : State
     protected override void OnUpdate()
     {
         waitTimer -= Time.deltaTime;
-        Debug.Log(waitTimer);
+        //Debug.Log(waitTimer);
         if (waitTimer < 0) bsc.ChangeState(bsc.ChaseState);
     }
 }
