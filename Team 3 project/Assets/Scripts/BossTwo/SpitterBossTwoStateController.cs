@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -25,6 +27,12 @@ public class SpitterBossTwoStateController : StateController
 
     float spitterHealth;
 
+    [SerializeField] private SkinnedMeshRenderer skinnedMesh;
+    [SerializeField] private List<Material> materials;
+
+    [SerializeField] private float dissolveRate = 0.0125f;
+    [SerializeField] private float refreshRate = 0.025f;
+
 
     private void Awake()
     {
@@ -38,6 +46,11 @@ public class SpitterBossTwoStateController : StateController
     void Start()
     {
         ChangeState(ChaseState);
+
+        if (skinnedMesh != null)
+        {
+            materials.Add(skinnedMesh.materials[0]);
+        }
     }
 
     // Update is called once per frame
@@ -50,6 +63,7 @@ public class SpitterBossTwoStateController : StateController
         if ( spitterHealth < 0 && currentState != DeathState)
         {
             ChangeState(DeathState);
+            StartCoroutine(SpitterBossDies());
         }
 
         if (destroyMe)
@@ -58,5 +72,20 @@ public class SpitterBossTwoStateController : StateController
         }
     }
 
-    
+    private IEnumerator SpitterBossDies()
+    {
+        if (materials.Count > 0)
+        {
+            float counter = 0f;
+            while (materials[0].GetFloat("_DissolveAmount") < 1)
+            {
+                counter += dissolveRate;
+                for (int i = 0; i < materials.Count; i++)
+                {
+                    materials[i].SetFloat("_DissolveAmount", counter);
+                }
+                yield return new WaitForSeconds(refreshRate);
+            }
+        }
+    }
 }

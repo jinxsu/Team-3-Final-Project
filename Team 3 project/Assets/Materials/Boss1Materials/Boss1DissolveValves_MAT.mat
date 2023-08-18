@@ -66,5 +66,5 @@ Material:
     - _Smoothness: 0.6
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _DissolveColor: {r: 2.8608122, g: 0.0000005712343, b: 0, a: 0}
+    - _DissolveColor: {r: 0.048965584, g: 1.3871076, b: 0, a: 0}
   m_BuildTextureStacks: []

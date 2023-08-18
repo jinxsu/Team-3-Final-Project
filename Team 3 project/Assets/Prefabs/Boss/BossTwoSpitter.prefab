@@ -166,6 +166,10 @@ MonoBehaviour:
   player: {fileID: 0}
   animator: {fileID: 0}
   startHealth: 30
+  skinnedMesh: {fileID: 241734848258358810}
+  materials: []
+  dissolveRate: 0.0125
+  refreshRate: 0.025
 --- !u!1001 &8305457783817258208
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -181,17 +185,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 713fa4255100f994db88f1a0a60e25f8,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 33.135162
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 713fa4255100f994db88f1a0a60e25f8,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 33.135162
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 713fa4255100f994db88f1a0a60e25f8,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 33.135
+      value: 39.9998
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 713fa4255100f994db88f1a0a60e25f8,
         type: 3}
@@ -201,12 +205,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 713fa4255100f994db88f1a0a60e25f8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.652
+      value: -0.455
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 713fa4255100f994db88f1a0a60e25f8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.148
+      value: 1.118
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 713fa4255100f994db88f1a0a60e25f8,
         type: 3}
@@ -243,6 +247,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 8.728
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 713fa4255100f994db88f1a0a60e25f8,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -1146103115357095174, guid: 713fa4255100f994db88f1a0a60e25f8,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -255,6 +264,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 713fa4255100f994db88f1a0a60e25f8, type: 3}
+--- !u!137 &241734848258358810 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -1146103115357095174, guid: 713fa4255100f994db88f1a0a60e25f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 8305457783817258208}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8415064572734677771 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 713fa4255100f994db88f1a0a60e25f8,
