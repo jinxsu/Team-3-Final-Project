@@ -39,6 +39,9 @@ public class AngelBossStateController : StateController
     bool potentiallyVisible;
 
     float visionCounter = 0f;
+    public Animator animator;
+    public AudioSource scream;
+    public AudioClip screamClip;
     
 
     private void Awake()
@@ -49,6 +52,7 @@ public class AngelBossStateController : StateController
         effectScript = player.GetComponentInChildren<StaticEffectScript>();
         fastSpeed = 6f;
         slowSpeed = 2.5f;
+        animator=GetComponentInChildren<Animator>();
     }
 
     // Start is called before the first frame update
@@ -74,7 +78,6 @@ public class AngelBossStateController : StateController
 
         if(potentiallyVisible)
         {
-            Debug.Log("I might be seen");
             if (Physics.Linecast(transform.position, player.transform.position, layerMask))
             {
                 effectScript.isStatic = false;
@@ -134,12 +137,14 @@ public class AngelBossStateController : StateController
         //if the boss hits a trap's trigger zone this is what will be used to determine damage
         if (other.transform.CompareTag("Trap"))
         {
+            other.SendMessage("AngelGot",null,SendMessageOptions.DontRequireReceiver);
             ChangeState(RespawnState);
             Debug.Log("OW! A TRAP");
         }
 
         if (other.transform.CompareTag("DropTrap"))
         {
+            scream.PlayOneShot(screamClip);
             ChangeState(DropState);
             Debug.Log("AAH I FALL!");
         }
