@@ -23,6 +23,12 @@ public class DropTrapScript : MonoBehaviour
 
     bool movingTrapdoor;
 
+    bool trapdoorMoved;
+
+    public bool droppedAngel;
+
+    float resetTimer;
+
     NavMeshObstacle obstacle;
 
     //This is the timer for the carve of the navmesh. Without a timer, the boss gets warped to the edge of the trap and it looks bad
@@ -37,6 +43,7 @@ public class DropTrapScript : MonoBehaviour
         obstacle.enabled = false;
         carveIncoming = false;
         carveTimer = 0.5f;
+        resetTimer = 2f;
     }
 
     private void Update()
@@ -46,6 +53,7 @@ public class DropTrapScript : MonoBehaviour
             dropTrigger.SetActive(true);
             Debug.Log("BUtton PusHED");
             movingTrapdoor = true;
+            resetTimer = 2f;
         }
 
         //This will need to be modified when implemented because the axis that moves will change depending on the direction of the trap
@@ -58,6 +66,7 @@ public class DropTrapScript : MonoBehaviour
             }
             else
             {
+                trapdoorMoved = true;
                 movingTrapdoor = false;
             }
         }
@@ -70,6 +79,27 @@ public class DropTrapScript : MonoBehaviour
                 obstacle.enabled = true;
                 carveIncoming = false;
                 carveTimer = 0.5f;
+            }
+        }
+
+        if (trapdoorMoved && !droppedAngel)
+        {
+            if (resetTimer > 0)
+            {
+                resetTimer -= Time.deltaTime;
+                return;
+            }
+
+            obstacle.enabled = false;
+            dropTrigger.SetActive(false);
+
+            if (trapDoor.transform.position.x > trapDoorStart.transform.position.x)
+            {
+                trapDoor.transform.position = new Vector3(trapDoor.transform.position.x - 0.1f, trapDoor.transform.position.y, trapDoor.transform.position.z);
+            }
+            else
+            {
+                trapdoorMoved = false;
             }
         }
 

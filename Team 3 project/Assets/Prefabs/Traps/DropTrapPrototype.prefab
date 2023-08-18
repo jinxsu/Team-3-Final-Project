@@ -163,6 +163,8 @@ MonoBehaviour:
   dropTrigger: {fileID: 3000567622115707411}
   trapDoor: {fileID: 3000567622199295451}
   trapdoorTarget: {fileID: 3000567622155258914}
+  trapDoorStart: {fileID: 0}
+  droppedAngel: 0
 --- !u!1 &3000567622115707411
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,6 +365,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3000567622509668882}
   - component: {fileID: 3000567622509668883}
+  - component: {fileID: 6478865031891839981}
   m_Layer: 0
   m_Name: DropTrapTrigger
   m_TagString: Trap
@@ -398,3 +401,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 12.291138, y: 2.4026532, z: 15.152}
   m_Center: {x: 0.2607422, y: 0.7013266, z: 0.26581955}
+--- !u!114 &6478865031891839981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3000567622509668881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40df4cca593c8c3458173899c546b0a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trap: {fileID: 3000567621994753213}

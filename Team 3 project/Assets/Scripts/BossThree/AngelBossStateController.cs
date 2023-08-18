@@ -78,7 +78,6 @@ public class AngelBossStateController : StateController
 
         if(potentiallyVisible)
         {
-            Debug.Log("I might be seen");
             if (Physics.Linecast(transform.position, player.transform.position, layerMask))
             {
                 effectScript.isStatic = false;
@@ -138,6 +137,7 @@ public class AngelBossStateController : StateController
         //if the boss hits a trap's trigger zone this is what will be used to determine damage
         if (other.transform.CompareTag("Trap"))
         {
+            other.SendMessage("AngelGot",null,SendMessageOptions.DontRequireReceiver);
             ChangeState(RespawnState);
             Debug.Log("OW! A TRAP");
         }
