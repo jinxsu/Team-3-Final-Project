@@ -33,6 +33,8 @@ public class SpitterBossTwoStateController : StateController
     [SerializeField] private float dissolveRate = 0.0125f;
     [SerializeField] private float refreshRate = 0.025f;
 
+    private Level3TransitionScript winCheck;
+
 
     private void Awake()
     {
@@ -40,6 +42,7 @@ public class SpitterBossTwoStateController : StateController
         animator=GetComponentInChildren<Animator>();
         spitterHealth = startHealth;
         player = GameObject.FindWithTag("Player");
+        winCheck = GameObject.FindWithTag("WinCondition").GetComponent<Level3TransitionScript>();
     }
 
     // Start is called before the first frame update
@@ -63,6 +66,8 @@ public class SpitterBossTwoStateController : StateController
         if ( spitterHealth < 0 && currentState != DeathState)
         {
             ChangeState(DeathState);
+            winCheck.SpitterBossDefeated = true;
+            winCheck.AreAllBossesDefeated();
             StartCoroutine(SpitterBossDies());
         }
 
