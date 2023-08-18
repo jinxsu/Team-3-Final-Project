@@ -29,7 +29,7 @@ public class BackDoorScript : MonoBehaviour
     private IEnumerator LoadLevel2()
     {
         Debug.Log("Fade to black...");
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
