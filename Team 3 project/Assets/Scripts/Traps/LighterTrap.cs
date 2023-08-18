@@ -20,7 +20,8 @@ public class LighterTrap : MonoBehaviour
 
     public bool playerIsIn;
 
-    
+    public AudioSource audio;
+    public AudioClip burningSound;
 
     PlayerControllerScript player;
 
@@ -40,6 +41,7 @@ public class LighterTrap : MonoBehaviour
     {
         if (playerIsIn && GameObject.Find("Lighter Variant(Clone)") && trapActive && angelIsIn)
         {
+            audio.PlayOneShot(burningSound);
             Debug.Log("LIGHTER!!!!");
             if (player.controls.Player.Interact.triggered)
             {

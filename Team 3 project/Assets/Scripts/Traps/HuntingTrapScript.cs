@@ -6,12 +6,15 @@ public class HuntingTrapScript : MonoBehaviour
 
     [SerializeField]
     Mesh closedMesh;
+    public AudioSource audio;
+    public AudioClip TrapClosingsound;
+
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Boss") && !isClosed)
         {
-
+            audio.PlayOneShot(TrapClosingsound);
             Debug.Log("Chomp");
             gameObject.transform.GetChild(1).GetComponent<MeshFilter>().mesh = closedMesh;
             gameObject.transform.GetChild(1).GetComponent<Transform>().position += new Vector3(0,0.5f,-0.5f);
