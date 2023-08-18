@@ -5,6 +5,8 @@ public class SpikeTrapScript : MonoBehaviour
 {
     [SerializeField]
     NavMeshSurface surface;
+    public AudioSource audio;
+    public AudioClip trapBreakingSound;
 
     // Start is called before the first frame update
     
@@ -16,6 +18,7 @@ public class SpikeTrapScript : MonoBehaviour
         {
             Debug.Log("Hit a boss");
             other.GetComponent<StateController>().hp -= 1;
+            audio.PlayOneShot(trapBreakingSound);
             Destroy(gameObject);
         }
     }

@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: -5590804258511396832}
   - component: {fileID: -4579503970833840000}
   - component: {fileID: 6284808112836549060}
+  - component: {fileID: 2349563194873207168}
   m_Layer: 14
   m_Name: Emergency_Door
   m_TagString: EmergencyDoor
@@ -195,7 +196,8 @@ AudioSource:
   m_GameObject: {fileID: 4133651885854831869}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8088772564242808245, guid: ecc5ef2a9d5f4a44bb59aafec8317a2d,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 76f8e2065bb79b14db6184313afc34a4, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -291,9 +293,10 @@ AudioSource:
   m_GameObject: {fileID: 4133651885854831869}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8088772564242808245, guid: ecc5ef2a9d5f4a44bb59aafec8317a2d,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: a51af61b67815594ea7637029d530c10, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
@@ -387,9 +390,10 @@ AudioSource:
   m_GameObject: {fileID: 4133651885854831869}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8088772564242808245, guid: ecc5ef2a9d5f4a44bb59aafec8317a2d,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 1244e135b1b17a3409998bbfced93d5f, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
@@ -474,6 +478,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2349563194873207168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4133651885854831869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da04dd16ce46720469215b62a3a86d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameParam: SFX
 --- !u!1001 &4133651886544894888
 PrefabInstance:
   m_ObjectHideFlags: 0
