@@ -5,10 +5,10 @@ using UnityEngine;
 public class ClickSound : MonoBehaviour
 {
     public AudioSource audio;
-    public AudioClip clickClip;
+    
    
     public void Click()
     {
-        audio.PlayOneShot(clickClip);
+        audio.Play();
     }
 }

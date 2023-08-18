@@ -72,6 +72,7 @@ MonoBehaviour:
   chargeWarningClip: {fileID: 8300000, guid: 1d96a339f3112d74e98855d5da021d14, type: 3}
   skinnedMesh: {fileID: 1072196000875984084}
   valveMesh: {fileID: 181467196562861139}
+  materials: []
   dissolveRate: 0.0125
   refreshRate: 0.025
 --- !u!114 &670567846451602542
@@ -88,6 +89,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bsc: {fileID: 670567846451602543}
   player: {fileID: 0}
+  audio: {fileID: 1212963030270254700}
+  monsterHurtSound: {fileID: 8300000, guid: b74a6266ea213bb4b8da41145f721329, type: 3}
 --- !u!54 &670567846451602541
 Rigidbody:
   m_ObjectHideFlags: 0
