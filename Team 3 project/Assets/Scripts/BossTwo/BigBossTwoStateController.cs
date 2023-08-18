@@ -140,6 +140,7 @@ public class BigBossTwoStateController : StateController
     public override void BossHitByRay()
     {
         animator.SetBool("charge", true);
+
         ChangeState(ChargeState);
     }
 

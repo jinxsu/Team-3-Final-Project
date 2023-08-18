@@ -171,7 +171,7 @@ MonoBehaviour:
   smallBoss: {fileID: 6606820335723767233, guid: 4f7897816a7ad6842a31425e93accf77,
     type: 3}
   smallBossSpawn: {fileID: 4837331526575510956}
-  animator: {fileID: 0}
+  animator: {fileID: 2129611892}
   startHealth: 6
   skinnedMeshes:
   - {fileID: 7621199488356185708}
