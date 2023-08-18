@@ -39313,6 +39313,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1069724725}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1071417102
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1071417103}
+  m_Layer: 0
+  m_Name: RightWallStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1071417103
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071417102}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.08, y: 3.6511006, z: 14.95}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1446160918}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1072901194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51445,6 +51476,16 @@ PrefabInstance:
       propertyPath: wallTarget
       value: 
       objectReference: {fileID: 1434020080}
+    - target: {fileID: 1100058494824781457, guid: 830ac23d0573b3d4e92202edccca4c44,
+        type: 3}
+      propertyPath: wallLeftStart
+      value: 
+      objectReference: {fileID: 1527217461}
+    - target: {fileID: 1100058494824781457, guid: 830ac23d0573b3d4e92202edccca4c44,
+        type: 3}
+      propertyPath: wallRightStart
+      value: 
+      objectReference: {fileID: 1071417102}
     - target: {fileID: 1100058494824781460, guid: 830ac23d0573b3d4e92202edccca4c44,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -53385,6 +53426,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 9.027
       objectReference: {fileID: 0}
+    - target: {fileID: 3000567621994753213, guid: 1020b6a6051f53442b5f14f7d2484fee,
+        type: 3}
+      propertyPath: trapDoorStart
+      value: 
+      objectReference: {fileID: 1911186602}
     - target: {fileID: 3000567622115707420, guid: 1020b6a6051f53442b5f14f7d2484fee,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -54063,6 +54109,37 @@ Transform:
   - {fileID: 1767071125}
   m_Father: {fileID: 0}
   m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1527217461
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1527217462}
+  m_Layer: 0
+  m_Name: LeftWallStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1527217462
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527217461}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.46, y: 3.4888997, z: 14.55}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1446160918}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1530590817
 PrefabInstance:
@@ -67524,6 +67601,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1909363850}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1911186602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1911186603}
+  m_Layer: 0
+  m_Name: TrapDoorStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1911186603
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911186602}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.9, y: -0.17000008, z: 25.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1509736948}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1917381897
 PrefabInstance:
   m_ObjectHideFlags: 0
