@@ -90,8 +90,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.9082729, z: 4.2052402}
-  m_Center: {x: 0, y: 0.61709267, z: 0.4315586}
+  m_Size: {x: 1, y: 1.6929824, z: 3.5871396}
+  m_Center: {x: 0, y: 0.5094472, z: 0.39701447}
 --- !u!195 &6606820335723767243
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -110,7 +110,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 1.8
   m_BaseOffset: 0.25
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -132,6 +132,11 @@ MonoBehaviour:
   navMeshAgent: {fileID: 0}
   player: {fileID: 0}
   startHealth: 3
+  skinnedMesh: {fileID: 8015808531160230989}
+  valveMesh: {fileID: 7158568925676221642}
+  materials: []
+  dissolveRate: 0.0125
+  refreshRate: 0.025
 --- !u!54 &8406928127581841867
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -163,17 +168,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: cd11d62b169f9e54bbcadefe6659f89d,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 35
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cd11d62b169f9e54bbcadefe6659f89d,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 35
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cd11d62b169f9e54bbcadefe6659f89d,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 35
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cd11d62b169f9e54bbcadefe6659f89d,
         type: 3}
@@ -277,6 +282,18 @@ Animator:
 --- !u!4 &1792350338743012908 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cd11d62b169f9e54bbcadefe6659f89d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2257724388133136839}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7158568925676221642 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8938894143036185869, guid: cd11d62b169f9e54bbcadefe6659f89d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2257724388133136839}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &8015808531160230989 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8099956192198034826, guid: cd11d62b169f9e54bbcadefe6659f89d,
     type: 3}
   m_PrefabInstance: {fileID: 2257724388133136839}
   m_PrefabAsset: {fileID: 0}

@@ -53,7 +53,7 @@ Material:
     - _Smoothness: 0.2
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _DissolveColor: {r: 0.4980392, g: 0, b: 0, a: 0}
+    - _DissolveColor: {r: 0.2924528, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &191816210590395874
 MonoBehaviour:

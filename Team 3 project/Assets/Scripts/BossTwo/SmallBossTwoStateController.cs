@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -22,6 +24,14 @@ public class SmallBossTwoStateController : StateController
     [SerializeField]
     int startHealth = 10;
 
+    [SerializeField] private SkinnedMeshRenderer skinnedMesh;
+    [SerializeField] private MeshRenderer valveMesh;
+
+    [SerializeField] private List<Material> materials;
+
+    [SerializeField] private float dissolveRate = 0.0125f;
+    [SerializeField] private float refreshRate = 0.025f;
+
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -35,6 +45,16 @@ public class SmallBossTwoStateController : StateController
     void Start()
     {
         ChangeState(ChaseState);
+
+        if (skinnedMesh != null)
+        {
+            materials.Add(skinnedMesh.materials[0]);
+        }
+
+        if (valveMesh != null)
+        {
+            materials.Add(valveMesh.material);
+        }
     }
 
     // Update is called once per frame
@@ -44,6 +64,7 @@ public class SmallBossTwoStateController : StateController
         if (hp <= 0 && currentState != DeathState)
         {
             ChangeState(DeathState);
+            StartCoroutine(SmallBossDies());
         }
 
         if (destroyMe)
@@ -116,6 +137,23 @@ public class SmallBossTwoStateController : StateController
         {
             Debug.Log("Small boss hit");
             ChangeState(ChargeState);
+        }
+    }
+
+    private IEnumerator SmallBossDies()
+    {
+        if (materials.Count > 0)
+        {
+            float counter = 0f;
+            while (materials[0].GetFloat("_DissolveAmount") < 1)
+            {
+                counter += dissolveRate;
+                for (int i = 0; i < materials.Count; i++)
+                {
+                    materials[i].SetFloat("_DissolveAmount", counter);
+                }
+                yield return new WaitForSeconds(refreshRate);
+            }
         }
     }
 }
