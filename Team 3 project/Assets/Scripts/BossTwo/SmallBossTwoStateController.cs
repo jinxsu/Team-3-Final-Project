@@ -35,13 +35,15 @@ public class SmallBossTwoStateController : StateController
     public AudioClip monsterHurtSound;
     public AudioClip monsterChargeWarning;
 
+    private Level3TransitionScript winCheck;
+
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator=GetComponentInChildren<Animator>();
         hp = startHealth;
         player = GameObject.FindWithTag("Player");
-
+        winCheck = GameObject.FindWithTag("WinCondition").GetComponent<Level3TransitionScript>();
     }
 
     // Start is called before the first frame update
@@ -67,6 +69,8 @@ public class SmallBossTwoStateController : StateController
         if (hp <= 0 && currentState != DeathState)
         {
             ChangeState(DeathState);
+            winCheck.SmallBossDefeated = true;
+            winCheck.AreAllBossesDefeated();
             StartCoroutine(SmallBossDies());
         }
 

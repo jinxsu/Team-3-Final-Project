@@ -16,7 +16,6 @@ public class EmergencyDoorScript : MonoBehaviour
 
     //sound for opening and closing the door
     [SerializeField] private AudioSource doorOpen;
-    [SerializeField] private float openDelay = 0;
     [SerializeField] private AudioSource doorClose;
     [SerializeField] private float closeDelay = 0;
 
