@@ -31,6 +31,9 @@ public class BigBossTwoStateController : StateController
     public GameObject smallBoss;
     public GameObject smallBossSpawn;
     public Animator animator;
+    public AudioSource audio;
+    public AudioClip monsterHurtSound;
+    public AudioClip monsterSlamSound;
 
     [SerializeField]
     int startHealth = 10;
@@ -132,6 +135,7 @@ public class BigBossTwoStateController : StateController
                 animator.SetBool("charge", false);
                 animator.SetBool("chase", false);
                 ChangeState(RecoilState);
+                audio.PlayOneShot(monsterHurtSound);
                 Debug.Log("OW! A TRAP");
             }
         }
@@ -140,7 +144,7 @@ public class BigBossTwoStateController : StateController
     public override void BossHitByRay()
     {
         animator.SetBool("charge", true);
-
+        audio.PlayOneShot(monsterSlamSound);
         ChangeState(ChargeState);
     }
 

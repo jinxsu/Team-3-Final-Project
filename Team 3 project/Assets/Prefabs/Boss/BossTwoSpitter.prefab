@@ -164,7 +164,7 @@ MonoBehaviour:
   spitPoint: {fileID: 3803827567429727876}
   navMeshAgent: {fileID: 0}
   player: {fileID: 0}
-  animator: {fileID: 0}
+  animator: {fileID: 3321552753959953656}
   startHealth: 30
   skinnedMesh: {fileID: 241734848258358810}
   materials: []

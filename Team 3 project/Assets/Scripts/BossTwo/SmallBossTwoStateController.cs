@@ -31,6 +31,9 @@ public class SmallBossTwoStateController : StateController
 
     [SerializeField] private float dissolveRate = 0.0125f;
     [SerializeField] private float refreshRate = 0.025f;
+    public AudioSource audio;
+    public AudioClip monsterHurtSound;
+    public AudioClip monsterChargeWarning;
 
     private void Awake()
     {
@@ -126,6 +129,7 @@ public class SmallBossTwoStateController : StateController
             if (currentState is SmallBossTwoVulnerable)
             {
                 ChangeState(RecoilState);
+                audio.PlayOneShot(monsterHurtSound);
                 Debug.Log("OW! A TRAP");
             }
         }
@@ -136,6 +140,7 @@ public class SmallBossTwoStateController : StateController
         if (currentState is SmallBossTwoVulnerable)
         {
             Debug.Log("Small boss hit");
+            audio.PlayOneShot(monsterChargeWarning);
             ChangeState(ChargeState);
         }
     }

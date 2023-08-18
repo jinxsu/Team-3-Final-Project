@@ -8,6 +8,8 @@ public class BoarBossCollisions : MonoBehaviour
     [SerializeField] BoarBossStateController bsc;
 
     public GameObject player;
+    public AudioSource audio;
+    public AudioClip monsterHurtSound;
 
     private void Awake()
     {
@@ -63,6 +65,7 @@ public class BoarBossCollisions : MonoBehaviour
             if (bsc.CheckCurrentState() is BoarVulnerable)
             {
                 bsc.ChangeState(bsc.RecoilState);
+                audio.PlayOneShot(monsterHurtSound);
                 Debug.Log("OW! A TRAP");
             }
         }
