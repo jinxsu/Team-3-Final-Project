@@ -8,15 +8,22 @@ public class LighterTrap : MonoBehaviour
     [SerializeField]
     GameObject trap;
 
+    [SerializeField]
+    ParticleSystem fire;
+
+    [SerializeField]
+    GameObject blocker;
+
     bool trapActive;
     
     public bool angelIsIn;
 
     public bool playerIsIn;
 
-    ParticleSystem fire;
+    
 
     PlayerControllerScript player;
+
 
 
     // Start is called before the first frame update
@@ -24,6 +31,8 @@ public class LighterTrap : MonoBehaviour
     {
         trap.SetActive(false);
         trapActive = true;
+        fire.Stop();
+        blocker.SetActive(false);
     }
 
     // Update is called once per frame
@@ -35,6 +44,8 @@ public class LighterTrap : MonoBehaviour
             if (player.controls.Player.Interact.triggered)
             {
                 trap.SetActive(true);
+                fire.Play();
+                blocker.SetActive(true);
                 trapActive = false;
             }
         }
