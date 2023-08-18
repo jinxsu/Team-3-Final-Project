@@ -12451,6 +12451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boss: {fileID: 0}
   cutsceneCam: {fileID: 1405111227}
+  entranceDoor: {fileID: 0}
 --- !u!65 &267441531
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21698,6 +21699,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.38690734, y: 0.21562031, z: 0.106601074}
   m_Center: {x: -0.0016478698, y: 0.000317208, z: -0.00019486349}
+--- !u!1 &458365887 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8055034493846200591, guid: 31066802e451369448b5923b1ea8d650,
+    type: 3}
+  m_PrefabInstance: {fileID: 1016552597}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &458365888
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458365887}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.083830714, y: 0.10000724, z: 0.01}
+  m_Center: {x: 0.000000014901161, y: -0.000000029802322, z: 0.00000025494955}
 --- !u!1001 &459775044
 PrefabInstance:
   m_ObjectHideFlags: 0

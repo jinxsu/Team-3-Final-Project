@@ -149,7 +149,7 @@ public class PauseMenuScript : MonoBehaviour
     {
         if(playerController.canInteract)
         {
-            interactText.SetText("Press E to " + playerController.intString);
+            interactText.SetText(playerController.intString);
         }
         else
         {

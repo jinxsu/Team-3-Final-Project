@@ -144,14 +144,23 @@ public class SmushTrapScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) playerIsIn = true;
-        player = other.GetComponent<PlayerControllerScript>();
+        if (other.CompareTag("Player"))
+        {
+            playerIsIn = true;
+            player = other.GetComponent<PlayerControllerScript>();
+            player.intString = "Press E to activate trap";
+            player.canInteract = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player")) playerIsIn = false;
-
-        player = null;
+        if (other.CompareTag("Player"))
+        {
+            playerIsIn = false;
+            player.intString = "";
+            player.canInteract = false;
+            player = null;
+        }
     }
 }

@@ -38,7 +38,7 @@ public class FrontDoorScript : MonoBehaviour
         {
             playerDetected = true;
             player = other.gameObject.GetComponent<PlayerControllerScript>();
-            player.intString = "open door";
+            player.intString = "Press E to open";
             player.canInteract = true;
         }
     }

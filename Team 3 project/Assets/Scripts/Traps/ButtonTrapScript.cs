@@ -33,7 +33,7 @@ public class ButtonTrapScript : MonoBehaviour
             //Placing this in the Update function caused consistency issues
             player = other.gameObject.GetComponent<PlayerControllerScript>();
             playerDetected = true;
-            player.intString = "activate trap";
+            player.intString = "Press E to activate trap";
             player.canInteract = true;
         }
     }

@@ -15,7 +15,5 @@ public class LighterTrapDetectionArea : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Boss")) ligherTrap.angelIsIn = false;
-
-        
     }
 }

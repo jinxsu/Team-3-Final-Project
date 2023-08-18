@@ -6,21 +6,24 @@ using UnityEngine.SceneManagement;
 public class BackDoorScript : MonoBehaviour
 {
     private bool playerDetected;
-    private PlayerControls player;
+    private PlayerControllerScript player;
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
             playerDetected = true;
-            player = other.gameObject.GetComponent<PlayerControllerScript>().controls;
+            player = other.gameObject.GetComponent<PlayerControllerScript>();
+            player.intString = "Press E to open...?";
+            player.canInteract = true;
         }
     }
 
     private void Update()
     {
-        if(playerDetected && player.Player.Interact.triggered)
+        if(playerDetected && player.controls.Player.Interact.triggered)
         {
+            player.canInteract = false;
             StartCoroutine(LoadLevel2());
         }
     }
@@ -37,6 +40,7 @@ public class BackDoorScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            player.canInteract = false;
             player = null;
             playerDetected = false;
         }
