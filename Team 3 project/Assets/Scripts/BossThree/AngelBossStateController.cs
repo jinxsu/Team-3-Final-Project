@@ -16,7 +16,7 @@ public class AngelBossStateController : StateController
     public NavMeshAgent navMeshAgent;
 
     
-    private int startHealth = 3;
+    private int startHealth = 6;
 
     
     public Transform respawnPoint;
@@ -74,6 +74,7 @@ public class AngelBossStateController : StateController
 
         if(potentiallyVisible)
         {
+            Debug.Log("I might be seen");
             if (Physics.Linecast(transform.position, player.transform.position, layerMask))
             {
                 effectScript.isStatic = false;

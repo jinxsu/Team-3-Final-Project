@@ -15,6 +15,9 @@ public class SmushTrapScript : MonoBehaviour
     [SerializeField]
     GameObject trapTrigger;
 
+    [SerializeField]
+    GameObject wallTarget;
+
     PlayerControllerScript player;
 
     public bool playerIsIn;
@@ -35,6 +38,7 @@ public class SmushTrapScript : MonoBehaviour
     {
         if (playerIsIn && player.controls.Player.Interact.triggered)
         {
+            Debug.Log("Button Pushed");
             trapTrigger.SetActive(true);
 
             closingWalls = true;
@@ -44,18 +48,27 @@ public class SmushTrapScript : MonoBehaviour
         {
             //This will need to be adjusted based on the direction of the trap
             int wallsDone = 0;
-            if (wallLeft.transform.position.x < transform.position.x)
+            if (wallLeft.transform.position.z > wallTarget.transform.position.z)
             {
-                wallLeft.transform.position = new Vector3(wallLeft.transform.position.x + 0.1f, wallLeft.transform.position.y, wallLeft.transform.position.z);
+                wallLeft.transform.position = new Vector3(wallLeft.transform.position.x, wallLeft.transform.position.y, wallLeft.transform.position.z - 0.01f);
+                if (wallLeft.transform.position.x > wallTarget.transform.position.x)
+                {
+                    wallLeft.transform.position = new Vector3(wallLeft.transform.position.x - 0.01f, wallLeft.transform.position.y, wallLeft.transform.position.z);
+                }
             }
             else
             {
                 wallsDone++;
             }
 
-            if (wallRight.transform.position.x > transform.position.x)
+            if (wallRight.transform.position.z < wallTarget.transform.position.z)
             {
-                wallRight.transform.position = new Vector3(wallRight.transform.position.x - 0.1f, wallRight.transform.position.y, wallRight.transform.position.z);
+                wallRight.transform.position = new Vector3(wallRight.transform.position.x, wallRight.transform.position.y, wallRight.transform.position.z + 0.01f);
+
+                if (wallRight.transform.position.x < wallTarget.transform.position.x)
+                {
+                    wallRight.transform.position = new Vector3(wallRight.transform.position.x + 0.01f, wallRight.transform.position.y, wallRight.transform.position.z);
+                }
             }
             else
             {
