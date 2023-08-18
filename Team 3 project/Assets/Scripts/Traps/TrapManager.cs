@@ -19,13 +19,20 @@ public class TrapManager : MonoBehaviour
         if (canSpawn) FillSpawns();
     }
 
-
     private void FillSpawns()
     {
         foreach (TrapSpawn spawn in TrapSpawns)
         {
             spawn.SpawnTrap();
             Debug.Log("Populated Trap");
+        }
+    }
+
+    public void DeleteAllTraps()
+    {
+        foreach (TrapSpawn spawn in TrapSpawns)
+        {
+            Destroy(spawn.gameObject);
         }
     }
 }

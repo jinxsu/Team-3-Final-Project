@@ -18,6 +18,8 @@ public class Level3TransitionScript : MonoBehaviour
 
     [SerializeField] private GameObject DeathBoxes;
 
+    public TrapManager trapManager;
+
     private void Start()
     {
         foreach(GameObject obj in objects)
@@ -39,6 +41,7 @@ public class Level3TransitionScript : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         DeathBoxes.SetActive(false);
+        trapManager.DeleteAllTraps();
         print("floor starts breaking now");
 
         if(colliders.Count > 0)
