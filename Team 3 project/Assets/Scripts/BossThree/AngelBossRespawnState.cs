@@ -14,7 +14,7 @@ public class AngelBossRespawnState : State
         bsc.transform.position = bsc.respawnPoint.position;
 
         //In testing, damage was inflicted by the traps used, uncomment next line if that changes in implementation
-        //bsc.hp--;
+        bsc.hp--;
 
 
         if (bsc.hp <= 0)
