@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Timeline.Actions;
 using UnityEngine;
 
 public class FrontDoorScript : MonoBehaviour
@@ -8,8 +9,10 @@ public class FrontDoorScript : MonoBehaviour
 
     private bool playerDetected;
     private PlayerControllerScript player;
-    [SerializeField] private AudioSource doorOpen;
-    [SerializeField] private float openDelay = 0;
+    public AudioSource doorOpen;
+    public bool soundPlayed = false;
+    
+    
 
 
     private void Start()
@@ -27,9 +30,18 @@ public class FrontDoorScript : MonoBehaviour
                 player.intString = "";
                 player.canInteract = false;
                 GetComponent<BoxCollider>().enabled = false;
-                doorOpen.PlayDelayed(openDelay);
+                if(!soundPlayed)
+                {
+                    doorOpen.Play();
+                    soundPlayed = true;
+                }
+              
+                
             }
+           
         }
+        
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -40,6 +52,7 @@ public class FrontDoorScript : MonoBehaviour
             player = other.gameObject.GetComponent<PlayerControllerScript>();
             player.intString = "Press E to open";
             player.canInteract = true;
+         
         }
     }
 
