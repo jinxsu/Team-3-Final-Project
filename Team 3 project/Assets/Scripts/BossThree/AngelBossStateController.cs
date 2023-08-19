@@ -73,6 +73,7 @@ public class AngelBossStateController : StateController
 
         if (destroyMe)
         {
+            player.GetComponent<PlayerControllerScript>().hasWon = true;
             Destroy(gameObject);
         }
 

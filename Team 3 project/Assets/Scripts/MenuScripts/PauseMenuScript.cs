@@ -24,9 +24,12 @@ public class PauseMenuScript : MonoBehaviour
 
     public GameObject deathMenu;
 
+    public GameObject winMenu;
+
     public TextMeshProUGUI interactText;
 
     bool playerDied;
+    bool playerWon;
 
     public static bool isPaused;
     // Start is called before the first frame update
@@ -61,6 +64,12 @@ public class PauseMenuScript : MonoBehaviour
         {
             playerDied = true;
             PlayerDeath();
+        }
+
+        if(playerController.hasWon && !playerWon)
+        {
+            playerWon = true;
+            PlayerWins();
         }
 
         InteractUI();
@@ -139,6 +148,16 @@ public class PauseMenuScript : MonoBehaviour
     {
         GameObject.FindWithTag("ItemCamera").SetActive(false);
         deathMenu.SetActive(true);
+        playerUI.SetActive(false);
+        Time.timeScale = 0.0f;
+        isPaused = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void PlayerWins()
+    {
+        GameObject.FindWithTag("ItemCamera").SetActive(false);
+        winMenu.SetActive(true);
         playerUI.SetActive(false);
         Time.timeScale = 0.0f;
         isPaused = true;

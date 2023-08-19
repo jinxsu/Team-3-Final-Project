@@ -115,6 +115,7 @@ public class PlayerControllerScript : MonoBehaviour
     private int currentHp;
 
     public bool isDead;
+    public bool hasWon;
 
     [SerializeField]
     private LayerMask interactMask;
