@@ -8,6 +8,11 @@ public class LighterTrapDetectionArea : MonoBehaviour
     LighterTrap lighterTrap;
     private PlayerControllerScript player;
 
+    private void Awake()
+    {
+        lighterTrap = GetComponentInParent<LighterTrap>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Boss")) lighterTrap.angelIsIn = true;
