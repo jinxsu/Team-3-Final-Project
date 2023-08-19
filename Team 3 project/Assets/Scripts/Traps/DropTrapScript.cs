@@ -107,15 +107,23 @@ public class DropTrapScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) playerIsIn = true;
-        player = other.GetComponent<PlayerControllerScript>();
+        if (other.CompareTag("Player"))
+        {
+            playerIsIn = true;
+            player = other.GetComponent<PlayerControllerScript>();
+            player.canInteract = true;
+            player.intString = "Press E to activate trap";
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player")) playerIsIn = false;
-
-        player = null;
+        if (other.CompareTag("Player"))
+        {
+            playerIsIn = false;
+            player.canInteract = false;
+            player = null;
+        }
     }
 
 }

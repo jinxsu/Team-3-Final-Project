@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -156,6 +157,12 @@ public class PauseMenuScript : MonoBehaviour
 
     public void PlayerWins()
     {
+        StartCoroutine(Winning());
+    }
+
+    private IEnumerator Winning()
+    {
+        yield return new WaitForSeconds(2f);
         GameObject.FindWithTag("ItemCamera").SetActive(false);
         winMenu.SetActive(true);
         playerUI.SetActive(false);

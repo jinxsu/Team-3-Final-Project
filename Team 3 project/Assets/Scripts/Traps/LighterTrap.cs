@@ -51,6 +51,7 @@ public class LighterTrap : MonoBehaviour
                 blocker.SetActive(true);
                 trapActive = false;
                 player.canInteract = false;
+                GetComponent<BoxCollider>().enabled = false;
             }
         }
         
