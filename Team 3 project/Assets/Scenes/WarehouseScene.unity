@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 20
   m_LinearFogEnd: 400
-  m_AmbientSkyColor: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 1}
+  m_AmbientSkyColor: {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 0.47
@@ -51253,11 +51253,21 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8500830361249393126, guid: 31066802e451369448b5923b1ea8d650,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 24d3d40dfea1e874591169492bc2a364, type: 2}
     - target: {fileID: -7391867803898600109, guid: 31066802e451369448b5923b1ea8d650,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3d464e02019319e41b5fec8ab34617a3, type: 2}
+    - target: {fileID: -5628088438882922561, guid: 31066802e451369448b5923b1ea8d650,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 24d3d40dfea1e874591169492bc2a364, type: 2}
     - target: {fileID: -5532433386158522053, guid: 31066802e451369448b5923b1ea8d650,
         type: 3}
       propertyPath: m_Layer
@@ -51269,6 +51279,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 2dcc89eaddfe5074ebf5b179e920e838, type: 2}
     - target: {fileID: -3619703238252868486, guid: 31066802e451369448b5923b1ea8d650,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 24d3d40dfea1e874591169492bc2a364, type: 2}
+    - target: {fileID: -3208475626112235745, guid: 31066802e451369448b5923b1ea8d650,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 24d3d40dfea1e874591169492bc2a364, type: 2}
+    - target: {fileID: -2654682970221308281, guid: 31066802e451369448b5923b1ea8d650,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
