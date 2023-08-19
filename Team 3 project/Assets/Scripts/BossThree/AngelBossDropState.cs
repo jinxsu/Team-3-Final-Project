@@ -21,7 +21,7 @@ public class AngelBossDropState : State
     {
         if (falling)
         {
-            bsc.transform.position = new Vector3(bsc.transform.position.x, bsc.transform.position.y - 0.01f, bsc.transform.position.z);
+            bsc.transform.position = new Vector3(bsc.transform.position.x, bsc.transform.position.y - (2f * Time.deltaTime), bsc.transform.position.z);
         }
         else
         {

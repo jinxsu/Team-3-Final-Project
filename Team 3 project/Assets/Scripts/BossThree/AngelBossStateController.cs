@@ -16,7 +16,7 @@ public class AngelBossStateController : StateController
     public NavMeshAgent navMeshAgent;
 
     
-    private int startHealth = 6;
+    private int startHealth = 3;
 
     
     public Transform respawnPoint;

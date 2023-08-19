@@ -29,7 +29,7 @@ public class FrontDoorScript : MonoBehaviour
                 doorAnim.SetTrigger("open");
                 player.canInteract = false;
                 GetComponent<BoxCollider>().enabled = false;
-                if(!soundPlayed)
+                if(!soundPlayed && doorOpen != null)
                 {
                     doorOpen.Play();
                     soundPlayed = true;
