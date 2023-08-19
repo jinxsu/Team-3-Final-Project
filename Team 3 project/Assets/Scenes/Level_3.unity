@@ -17074,6 +17074,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Church
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 58244e3e8855f29439e74071ba924b1a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58244e3e8855f29439e74071ba924b1a, type: 3}
 --- !u!4 &447166116 stripped
@@ -17082,6 +17087,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 447166115}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &447166117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 58244e3e8855f29439e74071ba924b1a,
+    type: 3}
+  m_PrefabInstance: {fileID: 447166115}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &447166118
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447166117}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8802484381631620482, guid: 58244e3e8855f29439e74071ba924b1a, type: 3}
 --- !u!1001 &447944871
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23579,11 +23604,21 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8578433623609224457, guid: e5aa09ed35832cf4f9718afb44544b7d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -8432316785492117190, guid: e5aa09ed35832cf4f9718afb44544b7d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 93e0275ea9cbfed46aee3842bed0416e, type: 2}
+    - target: {fileID: -1760714182489039777, guid: e5aa09ed35832cf4f9718afb44544b7d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e5aa09ed35832cf4f9718afb44544b7d,
         type: 3}
       propertyPath: m_Name
@@ -33992,6 +34027,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Church_bench (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 548f904bc24a74140aae9774fcac5cfe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 548f904bc24a74140aae9774fcac5cfe, type: 3}
 --- !u!1 &903735793 stripped
@@ -35720,6 +35760,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Church_Bell
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f35bc18b85481b841ac87259abb01608,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f35bc18b85481b841ac87259abb01608, type: 3}
@@ -38748,6 +38793,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Church_bench (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 548f904bc24a74140aae9774fcac5cfe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 548f904bc24a74140aae9774fcac5cfe, type: 3}
 --- !u!1 &1029250013 stripped
@@ -40864,11 +40914,21 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8578433623609224457, guid: e5aa09ed35832cf4f9718afb44544b7d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -8432316785492117190, guid: e5aa09ed35832cf4f9718afb44544b7d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 93e0275ea9cbfed46aee3842bed0416e, type: 2}
+    - target: {fileID: -1760714182489039777, guid: e5aa09ed35832cf4f9718afb44544b7d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e5aa09ed35832cf4f9718afb44544b7d,
         type: 3}
       propertyPath: m_Name
@@ -41093,6 +41153,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fountain
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3c1c399259fa62f41af8a226b83a00f8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c1c399259fa62f41af8a226b83a00f8, type: 3}
@@ -46679,6 +46744,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Church_bench (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 548f904bc24a74140aae9774fcac5cfe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 548f904bc24a74140aae9774fcac5cfe, type: 3}
 --- !u!1 &1272474756 stripped
@@ -47008,11 +47078,21 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8578433623609224457, guid: e5aa09ed35832cf4f9718afb44544b7d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -8432316785492117190, guid: e5aa09ed35832cf4f9718afb44544b7d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 93e0275ea9cbfed46aee3842bed0416e, type: 2}
+    - target: {fileID: -1760714182489039777, guid: e5aa09ed35832cf4f9718afb44544b7d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e5aa09ed35832cf4f9718afb44544b7d,
         type: 3}
       propertyPath: m_Name
@@ -48587,6 +48667,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Church_bench (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 548f904bc24a74140aae9774fcac5cfe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 548f904bc24a74140aae9774fcac5cfe, type: 3}
@@ -51151,6 +51236,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Church_Windows (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0c40ad469d335724c87213e99db1366a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c40ad469d335724c87213e99db1366a, type: 3}
@@ -57638,6 +57728,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d5eb1fbc3383a844c8f2b0fde811e641, type: 2}
+    - target: {fileID: -8452194905848556858, guid: abbbe506c68564b4c82c659299e9b263,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -4897732323685117858, guid: abbbe506c68564b4c82c659299e9b263,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -57648,6 +57743,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 57dac7a604bf3944c904cc9336d8017a, type: 2}
+    - target: {fileID: -3111565609762313623, guid: abbbe506c68564b4c82c659299e9b263,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -1950733119399844177, guid: abbbe506c68564b4c82c659299e9b263,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -57702,6 +57802,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -69.516
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927089889097759402, guid: abbbe506c68564b4c82c659299e9b263,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abbbe506c68564b4c82c659299e9b263, type: 3}
@@ -65048,6 +65153,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Plank
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1bf7988ae06b14c468ae6e7590c71372,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bf7988ae06b14c468ae6e7590c71372, type: 3}
@@ -75235,6 +75345,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Church_bench (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 548f904bc24a74140aae9774fcac5cfe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 548f904bc24a74140aae9774fcac5cfe, type: 3}
 --- !u!1 &2044163656 stripped
@@ -77783,11 +77898,21 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8578433623609224457, guid: e5aa09ed35832cf4f9718afb44544b7d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -8432316785492117190, guid: e5aa09ed35832cf4f9718afb44544b7d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 93e0275ea9cbfed46aee3842bed0416e, type: 2}
+    - target: {fileID: -1760714182489039777, guid: e5aa09ed35832cf4f9718afb44544b7d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e5aa09ed35832cf4f9718afb44544b7d,
         type: 3}
       propertyPath: m_Name
@@ -79886,6 +80011,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Church_bench
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 548f904bc24a74140aae9774fcac5cfe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 548f904bc24a74140aae9774fcac5cfe, type: 3}
