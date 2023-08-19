@@ -41,14 +41,13 @@ public class LighterTrap : MonoBehaviour
     {
         if (playerIsIn && GameObject.Find("Lighter Variant(Clone)") && trapActive && angelIsIn)
         {
-            audio.PlayOneShot(burningSound);
             Debug.Log("LIGHTER!!!!");
-            player.canInteract = true;
-            player.intString = "Light it up!";
+            player.intString = "Light it up NOW!";
             if (player.controls.Player.Fire.triggered)
             {
                 trap.SetActive(true);
                 fire.Play();
+                audio.PlayOneShot(burningSound);
                 blocker.SetActive(true);
                 trapActive = false;
                 player.canInteract = false;
@@ -64,7 +63,7 @@ public class LighterTrap : MonoBehaviour
             playerIsIn = true;
             player = other.GetComponent<PlayerControllerScript>();
             player.canInteract = true;
-            player.intString = "I could light it from here...";
+            player.intString = "I could light it from here!";
         }
     }
 
