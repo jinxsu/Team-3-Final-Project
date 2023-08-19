@@ -23,7 +23,7 @@ public class CloseDoor : MonoBehaviour
         if (m_DoorScript.canDoorOpen && playerDetected && player.Player.Interact.triggered)
         {
             m_Animator.SetTrigger("open");
-            audio.PlayOneShot(doorOpenSound);
+            
         }
     }
 

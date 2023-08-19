@@ -67738,6 +67738,7 @@ GameObject:
   - component: {fileID: 1451219888}
   - component: {fileID: 1451219889}
   - component: {fileID: 1451219890}
+  - component: {fileID: 1451219892}
   - component: {fileID: 1451219891}
   m_Layer: 14
   m_Name: FrontDoor
@@ -67809,7 +67810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorOpen: {fileID: 1451219890}
-  openDelay: 0
+  soundPlayed: 0
 --- !u!82 &1451219890
 AudioSource:
   m_ObjectHideFlags: 0
@@ -67920,6 +67921,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameParam: SFX
+--- !u!81 &1451219892
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451219885}
+  m_Enabled: 1
 --- !u!1001 &1454521302
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69490,7 +69499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorOpen: {fileID: 1508069791}
-  openDelay: 0
+  soundPlayed: 0
 --- !u!82 &1508069791
 AudioSource:
   m_ObjectHideFlags: 0
@@ -69502,7 +69511,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a51af61b67815594ea7637029d530c10, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -69587,6 +69596,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1508069792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508069786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da04dd16ce46720469215b62a3a86d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameParam: SFX
+--- !u!81 &1508069793
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508069786}
+  m_Enabled: 1
 --- !u!1001 &1528836075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -98601,8 +98631,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08bb828a46f72f642a5935c80f2fc730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorOpen: {fileID: 0}
-  openDelay: 0
+  doorOpenSound: {fileID: 0}
+  audio: {fileID: 0}
 --- !u!65 &4133651885780911874
 BoxCollider:
   m_ObjectHideFlags: 0
