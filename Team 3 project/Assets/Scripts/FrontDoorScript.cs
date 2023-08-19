@@ -24,7 +24,6 @@ public class FrontDoorScript : MonoBehaviour
             if (player.controls.Player.Interact.triggered)
             {
                 doorAnim.SetTrigger("open");
-                player.intString = "";
                 player.canInteract = false;
                 GetComponent<BoxCollider>().enabled = false;
                 doorOpen.PlayDelayed(openDelay);
