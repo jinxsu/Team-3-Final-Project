@@ -8,8 +8,9 @@ public class CloseDoor : MonoBehaviour
     private Animator m_Animator;
     private bool playerDetected;
     private PlayerControls player;
-    [SerializeField] private AudioSource doorOpen;
-    [SerializeField] private float openDelay = 0;
+    public AudioClip doorOpenSound;
+    public AudioSource audio;
+    
    
     private void Start()
     {
@@ -22,7 +23,7 @@ public class CloseDoor : MonoBehaviour
         if (m_DoorScript.canDoorOpen && playerDetected && player.Player.Interact.triggered)
         {
             m_Animator.SetTrigger("open");
-            doorOpen.PlayDelayed(openDelay);
+            audio.PlayOneShot(doorOpenSound);
         }
     }
 

@@ -1478,6 +1478,7 @@ GameObject:
   - component: {fileID: 226311912}
   - component: {fileID: 226311911}
   - component: {fileID: 226311910}
+  - component: {fileID: 226311913}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -1751,6 +1752,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 226311911}
+--- !u!114 &226311913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226311905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da04dd16ce46720469215b62a3a86d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameParam: SFX
 --- !u!1 &227785911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1766,6 +1780,7 @@ GameObject:
   - component: {fileID: 227785918}
   - component: {fileID: 227785917}
   - component: {fileID: 227785916}
+  - component: {fileID: 227785919}
   m_Layer: 5
   m_Name: ControllerRebindButton
   m_TagString: Untagged
@@ -2051,6 +2066,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 227785917}
+--- !u!114 &227785919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227785911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da04dd16ce46720469215b62a3a86d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameParam: SFX
 --- !u!1 &238196450
 GameObject:
   m_ObjectHideFlags: 0
@@ -2292,6 +2320,7 @@ GameObject:
   - component: {fileID: 327970386}
   - component: {fileID: 327970385}
   - component: {fileID: 327970384}
+  - component: {fileID: 327970387}
   m_Layer: 5
   m_Name: StartGameButton
   m_TagString: Untagged
@@ -2565,6 +2594,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 327970385}
+--- !u!114 &327970387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327970379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da04dd16ce46720469215b62a3a86d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameParam: SFX
 --- !u!1 &329228049
 GameObject:
   m_ObjectHideFlags: 0
@@ -2933,6 +2975,7 @@ GameObject:
   - component: {fileID: 405556936}
   - component: {fileID: 405556935}
   - component: {fileID: 405556934}
+  - component: {fileID: 405556937}
   m_Layer: 5
   m_Name: Lv1Button
   m_TagString: Untagged
@@ -3194,6 +3237,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 405556935}
+--- !u!114 &405556937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405556929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da04dd16ce46720469215b62a3a86d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameParam: SFX
 --- !u!1001 &419075873
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5809,6 +5865,7 @@ GameObject:
   - component: {fileID: 746070652}
   - component: {fileID: 746070651}
   - component: {fileID: 746070650}
+  - component: {fileID: 746070653}
   m_Layer: 5
   m_Name: MouseOptionsButton
   m_TagString: Untagged
@@ -6118,6 +6175,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 746070651}
+--- !u!114 &746070653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746070645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da04dd16ce46720469215b62a3a86d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameParam: SFX
 --- !u!1 &754601717
 GameObject:
   m_ObjectHideFlags: 0
@@ -6246,6 +6316,7 @@ GameObject:
   - component: {fileID: 759028062}
   - component: {fileID: 759028061}
   - component: {fileID: 759028060}
+  - component: {fileID: 759028063}
   m_Layer: 5
   m_Name: NewGameButton
   m_TagString: Untagged
@@ -6507,6 +6578,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 759028061}
+--- !u!114 &759028063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759028055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da04dd16ce46720469215b62a3a86d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameParam: SFX
 --- !u!1 &767611482
 GameObject:
   m_ObjectHideFlags: 0
@@ -7408,6 +7492,7 @@ GameObject:
   - component: {fileID: 917800635}
   - component: {fileID: 917800634}
   - component: {fileID: 917800633}
+  - component: {fileID: 917800636}
   m_Layer: 5
   m_Name: KeboardRebindButton
   m_TagString: Untagged
@@ -7693,6 +7778,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 917800634}
+--- !u!114 &917800636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917800628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da04dd16ce46720469215b62a3a86d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameParam: SFX
 --- !u!1 &945658635
 GameObject:
   m_ObjectHideFlags: 0
@@ -8290,6 +8388,7 @@ GameObject:
   - component: {fileID: 984239799}
   - component: {fileID: 984239798}
   - component: {fileID: 984239797}
+  - component: {fileID: 984239800}
   m_Layer: 5
   m_Name: LevelSelectButton
   m_TagString: Untagged
@@ -8563,6 +8662,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 984239798}
+--- !u!114 &984239800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984239792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da04dd16ce46720469215b62a3a86d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameParam: SFX
 --- !u!1 &990556587
 GameObject:
   m_ObjectHideFlags: 0
@@ -8801,6 +8913,7 @@ GameObject:
   - component: {fileID: 1091994332}
   - component: {fileID: 1091994331}
   - component: {fileID: 1091994330}
+  - component: {fileID: 1091994333}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -9074,6 +9187,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 1091994331}
+--- !u!114 &1091994333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091994325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da04dd16ce46720469215b62a3a86d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameParam: SFX
 --- !u!1 &1106651442
 GameObject:
   m_ObjectHideFlags: 0
@@ -9089,6 +9215,7 @@ GameObject:
   - component: {fileID: 1106651446}
   - component: {fileID: 1106651445}
   - component: {fileID: 1106651444}
+  - component: {fileID: 1106651450}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -9362,6 +9489,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1106651442}
   m_CullTransparentMesh: 1
+--- !u!114 &1106651450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106651442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da04dd16ce46720469215b62a3a86d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameParam: SFX
 --- !u!1 &1128379427
 GameObject:
   m_ObjectHideFlags: 0
@@ -10002,6 +10142,7 @@ GameObject:
   - component: {fileID: 1218423876}
   - component: {fileID: 1218423875}
   - component: {fileID: 1218423874}
+  - component: {fileID: 1218423877}
   m_Layer: 5
   m_Name: CloseGameButton
   m_TagString: Untagged
@@ -10263,6 +10404,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 1218423875}
+--- !u!114 &1218423877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218423869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da04dd16ce46720469215b62a3a86d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameParam: SFX
 --- !u!1 &1240241507
 GameObject:
   m_ObjectHideFlags: 0
@@ -11053,6 +11207,7 @@ GameObject:
   - component: {fileID: 1343233478}
   - component: {fileID: 1343233477}
   - component: {fileID: 1343233476}
+  - component: {fileID: 1343233479}
   m_Layer: 5
   m_Name: DebugScene
   m_TagString: Untagged
@@ -11213,8 +11368,9 @@ AudioSource:
   m_GameObject: {fileID: 1343233471}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8088772564242808245, guid: ecc5ef2a9d5f4a44bb59aafec8317a2d,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 6b06e311aa091f14383ad3a62917b5bb, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -11313,6 +11469,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 1343233477}
+--- !u!114 &1343233479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343233471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da04dd16ce46720469215b62a3a86d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameParam: SFX
 --- !u!1 &1373094324
 GameObject:
   m_ObjectHideFlags: 0
@@ -11546,6 +11715,7 @@ GameObject:
   - component: {fileID: 1436039492}
   - component: {fileID: 1436039491}
   - component: {fileID: 1436039490}
+  - component: {fileID: 1436039493}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -11819,6 +11989,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 1436039491}
+--- !u!114 &1436039493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436039485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da04dd16ce46720469215b62a3a86d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameParam: SFX
 --- !u!1 &1439022370
 GameObject:
   m_ObjectHideFlags: 0
@@ -13941,6 +14124,7 @@ GameObject:
   - component: {fileID: 1669437474}
   - component: {fileID: 1669437473}
   - component: {fileID: 1669437472}
+  - component: {fileID: 1669437475}
   m_Layer: 5
   m_Name: Lv2Button
   m_TagString: Untagged
@@ -14202,6 +14386,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 1669437473}
+--- !u!114 &1669437475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669437467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da04dd16ce46720469215b62a3a86d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameParam: SFX
 --- !u!1 &1691405290
 GameObject:
   m_ObjectHideFlags: 0
@@ -15155,6 +15352,7 @@ GameObject:
   - component: {fileID: 1763015840}
   - component: {fileID: 1763015839}
   - component: {fileID: 1763015838}
+  - component: {fileID: 1763015841}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -15428,6 +15626,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 1763015839}
+--- !u!114 &1763015841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763015833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da04dd16ce46720469215b62a3a86d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameParam: SFX
 --- !u!1 &1764302503
 GameObject:
   m_ObjectHideFlags: 0
@@ -15739,7 +15950,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 2104310301}
   m_HandleRect: {fileID: 1509522996}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 1
@@ -15773,6 +15984,7 @@ GameObject:
   - component: {fileID: 1819905261}
   - component: {fileID: 1819905260}
   - component: {fileID: 1819905259}
+  - component: {fileID: 1819905265}
   m_Layer: 5
   m_Name: Lv3Button
   m_TagString: Untagged
@@ -16034,6 +16246,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1819905257}
   m_CullTransparentMesh: 1
+--- !u!114 &1819905265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819905257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da04dd16ce46720469215b62a3a86d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameParam: SFX
 --- !u!1 &1839145254
 GameObject:
   m_ObjectHideFlags: 0
@@ -16620,6 +16845,7 @@ GameObject:
   - component: {fileID: 1954743564}
   - component: {fileID: 1954743563}
   - component: {fileID: 1954743562}
+  - component: {fileID: 1954743565}
   m_Layer: 5
   m_Name: MainMenuButton
   m_TagString: Untagged
@@ -16893,6 +17119,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 1954743563}
+--- !u!114 &1954743565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954743557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da04dd16ce46720469215b62a3a86d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameParam: SFX
 --- !u!1 &1961608820
 GameObject:
   m_ObjectHideFlags: 0
@@ -17043,6 +17282,7 @@ GameObject:
   - component: {fileID: 1963141424}
   - component: {fileID: 1963141423}
   - component: {fileID: 1963141422}
+  - component: {fileID: 1963141425}
   m_Layer: 5
   m_Name: SettingsButton
   m_TagString: Untagged
@@ -17316,6 +17556,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 1963141423}
+--- !u!114 &1963141425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963141417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da04dd16ce46720469215b62a3a86d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameParam: SFX
 --- !u!224 &1964768413 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6540536497259211223, guid: a4c7c45cdee82b344ae437670dadbd97,
@@ -17337,6 +17590,7 @@ GameObject:
   - component: {fileID: 2012524467}
   - component: {fileID: 2012524466}
   - component: {fileID: 2012524465}
+  - component: {fileID: 2012524468}
   m_Layer: 5
   m_Name: SoundAnGraphicButton
   m_TagString: Untagged
@@ -17610,6 +17864,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 2012524466}
+--- !u!114 &2012524468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012524460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da04dd16ce46720469215b62a3a86d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameParam: SFX
 --- !u!1 &2013410972
 GameObject:
   m_ObjectHideFlags: 0
@@ -18250,6 +18517,7 @@ GameObject:
   - component: {fileID: 2146467028}
   - component: {fileID: 2146467027}
   - component: {fileID: 2146467026}
+  - component: {fileID: 2146467029}
   m_Layer: 5
   m_Name: MainMenuButton
   m_TagString: Untagged
@@ -18523,6 +18791,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 2146467027}
+--- !u!114 &2146467029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146467021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da04dd16ce46720469215b62a3a86d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameParam: SFX
 --- !u!1001 &6540536495819371391
 PrefabInstance:
   m_ObjectHideFlags: 0
