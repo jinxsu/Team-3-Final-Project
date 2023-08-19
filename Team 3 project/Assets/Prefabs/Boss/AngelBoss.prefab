@@ -48,7 +48,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1747885087383562030}
   m_Enabled: 1
   m_AgentTypeID: -902729914
-  m_Radius: 1.66
+  m_Radius: 1.1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -369,8 +369,8 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5739704045598920516}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &6855064933828679751
-BoxCollider:
+--- !u!136 &1840793156812015569
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -379,9 +379,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.06779381, y: 0.07575573, z: 0.057057414}
-  m_Center: {x: 0.0009864304, y: 0.03214013, z: -0.0047370926}
+  m_Radius: 0.02829459
+  m_Height: 0.07242871
+  m_Direction: 1
+  m_Center: {x: 0.0016538067, y: 0.032425173, z: 0}
 --- !u!4 &5200882509200926895 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4147a5cd57960354aafc31cb29f037dc,
